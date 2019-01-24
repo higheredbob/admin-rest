@@ -1,0 +1,37 @@
+{
+  "campaignId": "00174",
+  "fleetId": "matel",
+  "truckPosition": "1",
+  "totalTrucks": "1",
+  "consult": "01-01-2018",
+  "quote": "01-03-2018",
+  "initialDocuments": "01-07-2018",
+  "design": "01-09-2018",
+  "LoA": "01-13-2018",
+  "scheduledGraphics": "01-23-2018",
+  "actualGraphics": "01-22-2018",
+  "graphicLink": "http://www.yourtruck.com",
+  "tableHead": [
+    "campaign-id",
+    "fleetId",
+    "truck-position",
+    "total-trucks",
+    "consult",
+    "quote",
+    "initial-documents",
+    "design",
+    "LoA",
+    "scheduled-graphics",
+    "actual-graphics",
+    "graphic-link"
+  ],
+  "trucks": [
+
+      "<td>00174</td><td>matel</td><td>1</td><td>5</td><td>01-01-2018</td><td>01-03-2018</td><td>01-07-2018</td><td>01-09-2018</td><td>01-13-2018</td><td>2018-01-23</td><td class='final'>2018-01-23</td><td>http://www.yourtruck.com</td>",
+      "<td>00175</td><td>matel</td><td>2</td><td>5</td><td>01-01-2018</td><td>01-03-2018</td><td>01-07-2018</td><td>01-09-2018</td><td>01-13-2018</td><td>2018-01-23</td><td class='final'>2018-01-22</td><td>http://www.yourtruck.com</td>",
+      "<td>00176</td><td>matel</td><td>3</td><td>5</td><td>01-01-2018</td><td>01-03-2018</td><td>01-07-2018</td><td>01-09-2018</td><td>01-13-2018</td><td>2018-01-23</td><td class='final'>2018-01-21</td><td>http://www.yourtruck.com</td>",
+      "<td>00177</td><td>matel</td><td>4</td><td>5</td><td>01-01-2018</td><td>01-03-2018</td><td>01-07-2018</td><td>01-09-2018</td><td>01-13-2018</td><td>2018-01-23</td><td class='final'>2018-01-20</td><td>http://www.yourtruck.com</td>",
+      "<td>00178</td><td>matel</td><td>5</td><td>5</td><td>01-01-2018</td><td>01-03-2018</td><td>01-07-2018</td><td>01-09-2018</td><td>01-13-2018</td><td>2018-01-23</td><td class='final'>2018-01-19</td><td>http://www.yourtruck.com</td>"
+
+  ]
+}

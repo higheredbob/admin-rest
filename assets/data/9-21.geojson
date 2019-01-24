@@ -1,0 +1,3995 @@
+{
+   "type": "FeatureCollection",
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011966,33.2852775 ]
+    },
+    "properties": {
+    "medallion":23124,
+    "pickuptime":"9/21/2015 0:01",
+    "dropofftime":"9/21/2015 0:29",
+    "dropoffx":-111.7012446,
+    "dropoffy":33.2853158,
+    "distance":0.003832217
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012446,33.2853158 ]
+    },
+    "properties": {
+    "medallion":23120,
+    "pickuptime":"9/21/2015 0:29",
+    "dropofftime":"9/21/2015 0:35",
+    "dropoffx":-111.7011893,
+    "dropoffy":33.2853008,
+    "distance":0.003363635
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011893,33.2853008 ]
+    },
+    "properties": {
+    "medallion":23119,
+    "pickuptime":"9/21/2015 0:35",
+    "dropofftime":"9/21/2015 0:56",
+    "dropoffx":-111.7011612,
+    "dropoffy":33.2853059,
+    "distance":0.001664013
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011612,33.2853059 ]
+    },
+    "properties": {
+    "medallion":23115,
+    "pickuptime":"9/21/2015 0:56",
+    "dropofftime":"9/21/2015 1:01",
+    "dropoffx":-111.7012193,
+    "dropoffy":33.2853081,
+    "distance":0.003366331
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012193,33.2853081 ]
+    },
+    "properties": {
+    "medallion":23114,
+    "pickuptime":"9/21/2015 1:01",
+    "dropofftime":"9/21/2015 1:36",
+    "dropoffx":-111.7012156,
+    "dropoffy":33.2853136,
+    "distance":0.000435355
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012156,33.2853136 ]
+    },
+    "properties": {
+    "medallion":23107,
+    "pickuptime":"9/21/2015 1:36",
+    "dropofftime":"9/21/2015 1:37",
+    "dropoffx":-111.7012337,
+    "dropoffy":33.2853225,
+    "distance":0.001213994
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012337,33.2853225 ]
+    },
+    "properties": {
+    "medallion":23106,
+    "pickuptime":"9/21/2015 1:37",
+    "dropofftime":"9/21/2015 2:13",
+    "dropoffx":-111.7012158,
+    "dropoffy":33.2853217,
+    "distance":0.001037545
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012158,33.2853217 ]
+    },
+    "properties": {
+    "medallion":23099,
+    "pickuptime":"9/21/2015 2:13",
+    "dropofftime":"9/21/2015 2:43",
+    "dropoffx":-111.7011988,
+    "dropoffy":33.2853103,
+    "distance":0.001259151
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011988,33.2853103 ]
+    },
+    "properties": {
+    "medallion":23093,
+    "pickuptime":"9/21/2015 2:43",
+    "dropofftime":"9/21/2015 2:46",
+    "dropoffx":-111.7011935,
+    "dropoffy":33.2853499,
+    "distance":0.00274626
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011935,33.2853499 ]
+    },
+    "properties": {
+    "medallion":23092,
+    "pickuptime":"9/21/2015 2:46",
+    "dropofftime":"9/21/2015 3:13",
+    "dropoffx":-111.7012081,
+    "dropoffy":33.2853169,
+    "distance":0.00242616
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012081,33.2853169 ]
+    },
+    "properties": {
+    "medallion":23088,
+    "pickuptime":"9/21/2015 3:13",
+    "dropofftime":"9/21/2015 3:51",
+    "dropoffx":-111.701191,
+    "dropoffy":33.2853207,
+    "distance":0.001023833
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701191,33.2853207 ]
+    },
+    "properties": {
+    "medallion":23084,
+    "pickuptime":"9/21/2015 3:51",
+    "dropofftime":"9/21/2015 3:59",
+    "dropoffx":-111.7011506,
+    "dropoffy":33.2853122,
+    "distance":0.002410667
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011506,33.2853122 ]
+    },
+    "properties": {
+    "medallion":23083,
+    "pickuptime":"9/21/2015 3:59",
+    "dropofftime":"9/21/2015 4:30",
+    "dropoffx":-111.701407,
+    "dropoffy":33.2853748,
+    "distance":0.015455144
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701407,33.2853748 ]
+    },
+    "properties": {
+    "medallion":23079,
+    "pickuptime":"9/21/2015 4:30",
+    "dropofftime":"9/21/2015 4:59",
+    "dropoffx":-111.7012175,
+    "dropoffy":33.2852782,
+    "distance":0.012830757
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012175,33.2852782 ]
+    },
+    "properties": {
+    "medallion":23075,
+    "pickuptime":"9/21/2015 4:59",
+    "dropofftime":"9/21/2015 5:04",
+    "dropoffx":-111.7012012,
+    "dropoffy":33.2853027,
+    "distance":0.001934158
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012012,33.2853027 ]
+    },
+    "properties": {
+    "medallion":23074,
+    "pickuptime":"9/21/2015 5:04",
+    "dropofftime":"9/21/2015 5:35",
+    "dropoffx":-111.7011738,
+    "dropoffy":33.2852895,
+    "distance":0.001828329
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011738,33.2852895 ]
+    },
+    "properties": {
+    "medallion":23068,
+    "pickuptime":"9/21/2015 5:35",
+    "dropofftime":"9/21/2015 5:40",
+    "dropoffx":-111.7012256,
+    "dropoffy":33.2853092,
+    "distance":0.003291318
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012256,33.2853092 ]
+    },
+    "properties": {
+    "medallion":23067,
+    "pickuptime":"9/21/2015 5:40",
+    "dropofftime":"9/21/2015 6:24",
+    "dropoffx":-111.7012029,
+    "dropoffy":33.2853009,
+    "distance":0.001115627
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012029,33.2853009 ]
+    },
+    "properties": {
+    "medallion":23061,
+    "pickuptime":"9/21/2015 6:24",
+    "dropofftime":"9/21/2015 6:26",
+    "dropoffx":-111.7012072,
+    "dropoffy":33.2853504,
+    "distance":0.003420408
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012072,33.2853504 ]
+    },
+    "properties": {
+    "medallion":23060,
+    "pickuptime":"9/21/2015 6:26",
+    "dropofftime":"9/21/2015 6:41",
+    "dropoffx":-111.7012212,
+    "dropoffy":33.2852928,
+    "distance":0.004051427
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012212,33.2852928 ]
+    },
+    "properties": {
+    "medallion":23057,
+    "pickuptime":"9/21/2015 6:41",
+    "dropofftime":"9/21/2015 6:51",
+    "dropoffx":-111.7012192,
+    "dropoffy":33.2853335,
+    "distance":0.002807268
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012192,33.2853335 ]
+    },
+    "properties": {
+    "medallion":23055,
+    "pickuptime":"9/21/2015 6:51",
+    "dropofftime":"9/21/2015 7:05",
+    "dropoffx":-111.7012464,
+    "dropoffy":33.2852455,
+    "distance":0.006265629
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012464,33.2852455 ]
+    },
+    "properties": {
+    "medallion":23053,
+    "pickuptime":"9/21/2015 7:05",
+    "dropofftime":"9/21/2015 7:12",
+    "dropoffx":-111.7011903,
+    "dropoffy":33.2853097,
+    "distance":0.005488112
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011903,33.2853097 ]
+    },
+    "properties": {
+    "medallion":23052,
+    "pickuptime":"9/21/2015 7:12",
+    "dropofftime":"9/21/2015 7:16",
+    "dropoffx":-111.7012382,
+    "dropoffy":33.2853136,
+    "distance":0.002785521
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012382,33.2853136 ]
+    },
+    "properties": {
+    "medallion":23051,
+    "pickuptime":"9/21/2015 7:16",
+    "dropofftime":"9/21/2015 7:18",
+    "dropoffx":-111.7008434,
+    "dropoffy":33.285054,
+    "distance":0.029021905
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7008434,33.285054 ]
+    },
+    "properties": {
+    "medallion":23050,
+    "pickuptime":"9/21/2015 7:18",
+    "dropofftime":"9/21/2015 7:21",
+    "dropoffx":-111.6966773,
+    "dropoffy":33.2910344,
+    "distance":0.47750252
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.6966773,33.2910344 ]
+    },
+    "properties": {
+    "medallion":23049,
+    "pickuptime":"9/21/2015 7:21",
+    "dropofftime":"9/21/2015 7:22",
+    "dropoffx":-111.7023072,
+    "dropoffy":33.2927296,
+    "distance":0.346152925
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7023072,33.2927296 ]
+    },
+    "properties": {
+    "medallion":23048,
+    "pickuptime":"9/21/2015 7:22",
+    "dropofftime":"9/21/2015 7:22",
+    "dropoffx":-111.7107722,
+    "dropoffy":33.2926822,
+    "distance":0.489936457
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7107722,33.2926822 ]
+    },
+    "properties": {
+    "medallion":23047,
+    "pickuptime":"9/21/2015 7:22",
+    "dropofftime":"9/21/2015 7:24",
+    "dropoffx":-111.7090657,
+    "dropoffy":33.2923914,
+    "distance":0.100779372
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7090657,33.2923914 ]
+    },
+    "properties": {
+    "medallion":23046,
+    "pickuptime":"9/21/2015 7:24",
+    "dropofftime":"9/21/2015 7:30",
+    "dropoffx":-111.7394425,
+    "dropoffy":33.2957902,
+    "distance":1.773613584
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7394425,33.2957902 ]
+    },
+    "properties": {
+    "medallion":23045,
+    "pickuptime":"9/21/2015 7:30",
+    "dropofftime":"9/21/2015 7:34",
+    "dropoffx":-111.8014965,
+    "dropoffy":33.2825082,
+    "distance":3.706426212
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8014965,33.2825082 ]
+    },
+    "properties": {
+    "medallion":23043,
+    "pickuptime":"9/21/2015 7:34",
+    "dropofftime":"9/21/2015 7:36",
+    "dropoffx":-111.8232279,
+    "dropoffy":33.2833829,
+    "distance":1.259323521
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8232279,33.2833829 ]
+    },
+    "properties": {
+    "medallion":23042,
+    "pickuptime":"9/21/2015 7:36",
+    "dropofftime":"9/21/2015 7:37",
+    "dropoffx":-111.8365269,
+    "dropoffy":33.2901156,
+    "distance":0.898781235
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8365269,33.2901156 ]
+    },
+    "properties": {
+    "medallion":23041,
+    "pickuptime":"9/21/2015 7:37",
+    "dropofftime":"9/21/2015 7:41",
+    "dropoffx":-111.8561106,
+    "dropoffy":33.288232,
+    "distance":1.140892906
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8561106,33.288232 ]
+    },
+    "properties": {
+    "medallion":23039,
+    "pickuptime":"9/21/2015 7:41",
+    "dropofftime":"9/21/2015 7:44",
+    "dropoffx":-111.9383363,
+    "dropoffy":33.2914284,
+    "distance":4.764196738
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9383363,33.2914284 ]
+    },
+    "properties": {
+    "medallion":23038,
+    "pickuptime":"9/21/2015 7:44",
+    "dropofftime":"9/21/2015 7:45",
+    "dropoffx":-111.966554,
+    "dropoffy":33.2990184,
+    "distance":1.714822122
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.966554,33.2990184 ]
+    },
+    "properties": {
+    "medallion":23037,
+    "pickuptime":"9/21/2015 7:45",
+    "dropofftime":"9/21/2015 7:47",
+    "dropoffx":-111.9720609,
+    "dropoffy":33.316419,
+    "distance":1.240801964
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9720609,33.316419 ]
+    },
+    "properties": {
+    "medallion":23036,
+    "pickuptime":"9/21/2015 7:47",
+    "dropofftime":"9/21/2015 7:49",
+    "dropoffx":-111.9720211,
+    "dropoffy":33.317022,
+    "distance":0.041620301
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9720211,33.317022 ]
+    },
+    "properties": {
+    "medallion":23035,
+    "pickuptime":"9/21/2015 7:49",
+    "dropofftime":"9/21/2015 7:51",
+    "dropoffx":-111.9718876,
+    "dropoffy":33.3308162,
+    "distance":0.95067803
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9718876,33.3308162 ]
+    },
+    "properties": {
+    "medallion":23034,
+    "pickuptime":"9/21/2015 7:51",
+    "dropofftime":"9/21/2015 7:53",
+    "dropoffx":-111.9717897,
+    "dropoffy":33.3218881,
+    "distance":0.615318852
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9717897,33.3218881 ]
+    },
+    "properties": {
+    "medallion":23033,
+    "pickuptime":"9/21/2015 7:53",
+    "dropofftime":"9/21/2015 7:56",
+    "dropoffx":-111.9719707,
+    "dropoffy":33.3061226,
+    "distance":1.086550299
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9719707,33.3061226 ]
+    },
+    "properties": {
+    "medallion":23032,
+    "pickuptime":"9/21/2015 7:56",
+    "dropofftime":"9/21/2015 8:00",
+    "dropoffx":-111.9628947,
+    "dropoffy":33.3634526,
+    "distance":3.985716982
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9628947,33.3634526 ]
+    },
+    "properties": {
+    "medallion":23031,
+    "pickuptime":"9/21/2015 8:00",
+    "dropofftime":"9/21/2015 8:02",
+    "dropoffx":-111.9599115,
+    "dropoffy":33.3755663,
+    "distance":0.852475298
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9599115,33.3755663 ]
+    },
+    "properties": {
+    "medallion":23030,
+    "pickuptime":"9/21/2015 8:02",
+    "dropofftime":"9/21/2015 8:04",
+    "dropoffx":-111.9618151,
+    "dropoffy":33.3773374,
+    "distance":0.164357708
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9618151,33.3773374 ]
+    },
+    "properties": {
+    "medallion":23029,
+    "pickuptime":"9/21/2015 8:04",
+    "dropofftime":"9/21/2015 8:05",
+    "dropoffx":-111.9619192,
+    "dropoffy":33.3778979,
+    "distance":0.039094123
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9619192,33.3778979 ]
+    },
+    "properties": {
+    "medallion":23028,
+    "pickuptime":"9/21/2015 8:05",
+    "dropofftime":"9/21/2015 8:07",
+    "dropoffx":-111.9620117,
+    "dropoffy":33.3781427,
+    "distance":0.017698355
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9620117,33.3781427 ]
+    },
+    "properties": {
+    "medallion":23027,
+    "pickuptime":"9/21/2015 8:07",
+    "dropofftime":"9/21/2015 8:09",
+    "dropoffx":-111.9614326,
+    "dropoffy":33.380925,
+    "distance":0.194649297
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9614326,33.380925 ]
+    },
+    "properties": {
+    "medallion":23026,
+    "pickuptime":"9/21/2015 8:09",
+    "dropofftime":"9/21/2015 8:11",
+    "dropoffx":-111.9609326,
+    "dropoffy":33.3897053,
+    "distance":0.605802792
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9609326,33.3897053 ]
+    },
+    "properties": {
+    "medallion":23025,
+    "pickuptime":"9/21/2015 8:11",
+    "dropofftime":"9/21/2015 8:14",
+    "dropoffx":-111.9624416,
+    "dropoffy":33.4030876,
+    "distance":0.926386992
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9624416,33.4030876 ]
+    },
+    "properties": {
+    "medallion":23024,
+    "pickuptime":"9/21/2015 8:14",
+    "dropofftime":"9/21/2015 8:19",
+    "dropoffx":-111.9658597,
+    "dropoffy":33.402144,
+    "distance":0.20800641
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658597,33.402144 ]
+    },
+    "properties": {
+    "medallion":23023,
+    "pickuptime":"9/21/2015 8:19",
+    "dropofftime":"9/21/2015 8:30",
+    "dropoffx":-111.9658709,
+    "dropoffy":33.4021309,
+    "distance":0.001110952
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658709,33.4021309 ]
+    },
+    "properties": {
+    "medallion":23022,
+    "pickuptime":"9/21/2015 8:30",
+    "dropofftime":"9/21/2015 8:32",
+    "dropoffx":-111.9658713,
+    "dropoffy":33.4021388,
+    "distance":0.000544937
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658713,33.4021388 ]
+    },
+    "properties": {
+    "medallion":23021,
+    "pickuptime":"9/21/2015 8:32",
+    "dropofftime":"9/21/2015 8:40",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.612737891
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":23020,
+    "pickuptime":"9/21/2015 8:40",
+    "dropofftime":"9/21/2015 8:49",
+    "dropoffx":-111.9653545,
+    "dropoffy":33.3935029,
+    "distance":1.959698097
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9653545,33.3935029 ]
+    },
+    "properties": {
+    "medallion":23019,
+    "pickuptime":"9/21/2015 8:49",
+    "dropofftime":"9/21/2015 9:02",
+    "dropoffx":-111.9658545,
+    "dropoffy":33.4021306,
+    "distance":0.595186189
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658545,33.4021306 ]
+    },
+    "properties": {
+    "medallion":23017,
+    "pickuptime":"9/21/2015 9:02",
+    "dropofftime":"9/21/2015 9:06",
+    "dropoffx":-111.965852,
+    "dropoffy":33.4021394,
+    "distance":0.000623451
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965852,33.4021394 ]
+    },
+    "properties": {
+    "medallion":23016,
+    "pickuptime":"9/21/2015 9:06",
+    "dropofftime":"9/21/2015 9:09",
+    "dropoffx":-111.96585,
+    "dropoffy":33.4021293,
+    "distance":0.0007056
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.96585,33.4021293 ]
+    },
+    "properties": {
+    "medallion":23015,
+    "pickuptime":"9/21/2015 9:09",
+    "dropofftime":"9/21/2015 9:13",
+    "dropoffx":-111.9658383,
+    "dropoffy":33.4021455,
+    "distance":0.001588355
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658383,33.4021455 ]
+    },
+    "properties": {
+    "medallion":23013,
+    "pickuptime":"9/21/2015 9:13",
+    "dropofftime":"9/21/2015 9:17",
+    "dropoffx":-111.9658183,
+    "dropoffy":33.4021534,
+    "distance":0.001277871
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658183,33.4021534 ]
+    },
+    "properties": {
+    "medallion":23012,
+    "pickuptime":"9/21/2015 9:17",
+    "dropofftime":"9/21/2015 9:23",
+    "dropoffx":-111.9658236,
+    "dropoffy":33.4021446,
+    "distance":0.00067946
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658236,33.4021446 ]
+    },
+    "properties": {
+    "medallion":23011,
+    "pickuptime":"9/21/2015 9:23",
+    "dropofftime":"9/21/2015 9:25",
+    "dropoffx":-111.9658562,
+    "dropoffy":33.402146,
+    "distance":0.001886887
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658562,33.402146 ]
+    },
+    "properties": {
+    "medallion":23010,
+    "pickuptime":"9/21/2015 9:25",
+    "dropofftime":"9/21/2015 9:28",
+    "dropoffx":-111.9658497,
+    "dropoffy":33.402125,
+    "distance":0.001495239
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658497,33.402125 ]
+    },
+    "properties": {
+    "medallion":23009,
+    "pickuptime":"9/21/2015 9:28",
+    "dropofftime":"9/21/2015 9:34",
+    "dropoffx":-111.9658643,
+    "dropoffy":33.4021335,
+    "distance":0.001027325
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658643,33.4021335 ]
+    },
+    "properties": {
+    "medallion":23008,
+    "pickuptime":"9/21/2015 9:34",
+    "dropofftime":"9/21/2015 9:38",
+    "dropoffx":-111.9658512,
+    "dropoffy":33.4021347,
+    "distance":0.000761738
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658512,33.4021347 ]
+    },
+    "properties": {
+    "medallion":23007,
+    "pickuptime":"9/21/2015 9:38",
+    "dropofftime":"9/21/2015 9:42",
+    "dropoffx":-111.9658667,
+    "dropoffy":33.4021525,
+    "distance":0.001519084
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658667,33.4021525 ]
+    },
+    "properties": {
+    "medallion":23006,
+    "pickuptime":"9/21/2015 9:42",
+    "dropofftime":"9/21/2015 9:45",
+    "dropoffx":-111.9658313,
+    "dropoffy":33.4021497,
+    "distance":0.002055349
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658313,33.4021497 ]
+    },
+    "properties": {
+    "medallion":23005,
+    "pickuptime":"9/21/2015 9:45",
+    "dropofftime":"9/21/2015 9:49",
+    "dropoffx":-111.9658381,
+    "dropoffy":33.4021381,
+    "distance":0.000890846
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658381,33.4021381 ]
+    },
+    "properties": {
+    "medallion":23004,
+    "pickuptime":"9/21/2015 9:49",
+    "dropofftime":"9/21/2015 9:53",
+    "dropoffx":-111.9658469,
+    "dropoffy":33.402138,
+    "distance":0.000508721
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658469,33.402138 ]
+    },
+    "properties": {
+    "medallion":23003,
+    "pickuptime":"9/21/2015 9:53",
+    "dropofftime":"9/21/2015 9:56",
+    "dropoffx":-111.9658249,
+    "dropoffy":33.4021582,
+    "distance":0.001885531
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658249,33.4021582 ]
+    },
+    "properties": {
+    "medallion":23002,
+    "pickuptime":"9/21/2015 9:56",
+    "dropofftime":"9/21/2015 10:00",
+    "dropoffx":-111.9658486,
+    "dropoffy":33.4021363,
+    "distance":0.002038319
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658486,33.4021363 ]
+    },
+    "properties": {
+    "medallion":23001,
+    "pickuptime":"9/21/2015 10:00",
+    "dropofftime":"9/21/2015 10:03",
+    "dropoffx":-111.9658351,
+    "dropoffy":33.4021473,
+    "distance":0.001087961
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658351,33.4021473 ]
+    },
+    "properties": {
+    "medallion":23000,
+    "pickuptime":"9/21/2015 10:03",
+    "dropofftime":"9/21/2015 10:10",
+    "dropoffx":-111.9658253,
+    "dropoffy":33.4021437,
+    "distance":0.000704382
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658253,33.4021437 ]
+    },
+    "properties": {
+    "medallion":22998,
+    "pickuptime":"9/21/2015 10:10",
+    "dropofftime":"9/21/2015 10:16",
+    "dropoffx":-111.9658483,
+    "dropoffy":33.402157,
+    "distance":0.001614843
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658483,33.402157 ]
+    },
+    "properties": {
+    "medallion":22997,
+    "pickuptime":"9/21/2015 10:16",
+    "dropofftime":"9/21/2015 10:20",
+    "dropoffx":-111.9658363,
+    "dropoffy":33.4021495,
+    "distance":0.000865053
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658363,33.4021495 ]
+    },
+    "properties": {
+    "medallion":22996,
+    "pickuptime":"9/21/2015 10:20",
+    "dropofftime":"9/21/2015 10:23",
+    "dropoffx":-111.9658081,
+    "dropoffy":33.4021339,
+    "distance":0.001952696
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658081,33.4021339 ]
+    },
+    "properties": {
+    "medallion":22995,
+    "pickuptime":"9/21/2015 10:23",
+    "dropofftime":"9/21/2015 10:25",
+    "dropoffx":-111.965854,
+    "dropoffy":33.4021496,
+    "distance":0.002865358
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965854,33.4021496 ]
+    },
+    "properties": {
+    "medallion":22994,
+    "pickuptime":"9/21/2015 10:25",
+    "dropofftime":"9/21/2015 10:26",
+    "dropoffx":-111.965856,
+    "dropoffy":33.4021333,
+    "distance":0.001129285
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965856,33.4021333 ]
+    },
+    "properties": {
+    "medallion":22993,
+    "pickuptime":"9/21/2015 10:26",
+    "dropofftime":"9/21/2015 10:33",
+    "dropoffx":-111.9657994,
+    "dropoffy":33.4021376,
+    "distance":0.003285115
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657994,33.4021376 ]
+    },
+    "properties": {
+    "medallion":22992,
+    "pickuptime":"9/21/2015 10:33",
+    "dropofftime":"9/21/2015 10:36",
+    "dropoffx":-111.9658244,
+    "dropoffy":33.4021485,
+    "distance":0.00162869
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658244,33.4021485 ]
+    },
+    "properties": {
+    "medallion":22991,
+    "pickuptime":"9/21/2015 10:36",
+    "dropofftime":"9/21/2015 10:40",
+    "dropoffx":-111.9658512,
+    "dropoffy":33.4021383,
+    "distance":0.001701184
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658512,33.4021383 ]
+    },
+    "properties": {
+    "medallion":22990,
+    "pickuptime":"9/21/2015 10:40",
+    "dropofftime":"9/21/2015 10:47",
+    "dropoffx":-111.9658353,
+    "dropoffy":33.4021461,
+    "distance":0.001009774
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658353,33.4021461 ]
+    },
+    "properties": {
+    "medallion":22988,
+    "pickuptime":"9/21/2015 10:47",
+    "dropofftime":"9/21/2015 10:51",
+    "dropoffx":-111.9658168,
+    "dropoffy":33.4021488,
+    "distance":0.001085447
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658168,33.4021488 ]
+    },
+    "properties": {
+    "medallion":22987,
+    "pickuptime":"9/21/2015 10:51",
+    "dropofftime":"9/21/2015 10:53",
+    "dropoffx":-111.9657929,
+    "dropoffy":33.4020684,
+    "distance":0.005710579
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657929,33.4020684 ]
+    },
+    "properties": {
+    "medallion":22986,
+    "pickuptime":"9/21/2015 10:53",
+    "dropofftime":"9/21/2015 10:53",
+    "dropoffx":-111.9657773,
+    "dropoffy":33.4020532,
+    "distance":0.001382206
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657773,33.4020532 ]
+    },
+    "properties": {
+    "medallion":22985,
+    "pickuptime":"9/21/2015 10:53",
+    "dropofftime":"9/21/2015 10:54",
+    "dropoffx":-111.9662298,
+    "dropoffy":33.4026775,
+    "distance":0.050351867
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9662298,33.4026775 ]
+    },
+    "properties": {
+    "medallion":22984,
+    "pickuptime":"9/21/2015 10:54",
+    "dropofftime":"9/21/2015 10:56",
+    "dropoffx":-111.966456,
+    "dropoffy":33.4027709,
+    "distance":0.014573782
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.966456,33.4027709 ]
+    },
+    "properties": {
+    "medallion":22983,
+    "pickuptime":"9/21/2015 10:56",
+    "dropofftime":"9/21/2015 10:58",
+    "dropoffx":-111.9657871,
+    "dropoffy":33.4062281,
+    "distance":0.241377656
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657871,33.4062281 ]
+    },
+    "properties": {
+    "medallion":22982,
+    "pickuptime":"9/21/2015 10:58",
+    "dropofftime":"9/21/2015 11:00",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.486144995
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":22981,
+    "pickuptime":"9/21/2015 11:00",
+    "dropofftime":"9/21/2015 11:02",
+    "dropoffx":-111.9449937,
+    "dropoffy":33.4074924,
+    "distance":0.481274511
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9449937,33.4074924 ]
+    },
+    "properties": {
+    "medallion":22980,
+    "pickuptime":"9/21/2015 11:02",
+    "dropofftime":"9/21/2015 11:04",
+    "dropoffx":-111.9395085,
+    "dropoffy":33.4155885,
+    "distance":0.64174137
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9395085,33.4155885 ]
+    },
+    "properties": {
+    "medallion":22979,
+    "pickuptime":"9/21/2015 11:04",
+    "dropofftime":"9/21/2015 11:06",
+    "dropoffx":-111.9399851,
+    "dropoffy":33.421546,
+    "distance":0.411498641
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9399851,33.421546 ]
+    },
+    "properties": {
+    "medallion":22978,
+    "pickuptime":"9/21/2015 11:06",
+    "dropofftime":"9/21/2015 11:08",
+    "dropoffx":-111.9346999,
+    "dropoffy":33.4228299,
+    "distance":0.317995226
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9346999,33.4228299 ]
+    },
+    "properties": {
+    "medallion":22977,
+    "pickuptime":"9/21/2015 11:08",
+    "dropofftime":"9/21/2015 11:10",
+    "dropoffx":-111.9356799,
+    "dropoffy":33.4240738,
+    "distance":0.10274473
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9356799,33.4240738 ]
+    },
+    "properties": {
+    "medallion":22976,
+    "pickuptime":"9/21/2015 11:10",
+    "dropofftime":"9/21/2015 11:30",
+    "dropoffx":-111.9717979,
+    "dropoffy":33.3218872,
+    "distance":7.34553935
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9717979,33.3218872 ]
+    },
+    "properties": {
+    "medallion":22974,
+    "pickuptime":"9/21/2015 11:30",
+    "dropofftime":"9/21/2015 12:05",
+    "dropoffx":-111.9346401,
+    "dropoffy":33.4235797,
+    "distance":7.330298112
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9346401,33.4235797 ]
+    },
+    "properties": {
+    "medallion":22970,
+    "pickuptime":"9/21/2015 12:05",
+    "dropofftime":"9/21/2015 12:15",
+    "dropoffx":-111.9348053,
+    "dropoffy":33.4235236,
+    "distance":0.010300085
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9348053,33.4235236 ]
+    },
+    "properties": {
+    "medallion":22968,
+    "pickuptime":"9/21/2015 12:15",
+    "dropofftime":"9/21/2015 12:19",
+    "dropoffx":-111.9350951,
+    "dropoffy":33.4238872,
+    "distance":0.030139736
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9350951,33.4238872 ]
+    },
+    "properties": {
+    "medallion":22967,
+    "pickuptime":"9/21/2015 12:19",
+    "dropofftime":"9/21/2015 12:21",
+    "dropoffx":-111.9351351,
+    "dropoffy":33.4240987,
+    "distance":0.014758212
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9351351,33.4240987 ]
+    },
+    "properties": {
+    "medallion":22966,
+    "pickuptime":"9/21/2015 12:21",
+    "dropofftime":"9/21/2015 12:23",
+    "dropoffx":-111.9384691,
+    "dropoffy":33.4219503,
+    "distance":0.242992709
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9384691,33.4219503 ]
+    },
+    "properties": {
+    "medallion":22965,
+    "pickuptime":"9/21/2015 12:23",
+    "dropofftime":"9/21/2015 12:24",
+    "dropoffx":-111.9497615,
+    "dropoffy":33.4219271,
+    "distance":0.652602684
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9497615,33.4219271 ]
+    },
+    "properties": {
+    "medallion":22964,
+    "pickuptime":"9/21/2015 12:24",
+    "dropofftime":"9/21/2015 12:25",
+    "dropoffx":-111.9608324,
+    "dropoffy":33.4212692,
+    "distance":0.641407054
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9608324,33.4212692 ]
+    },
+    "properties": {
+    "medallion":22963,
+    "pickuptime":"9/21/2015 12:25",
+    "dropofftime":"9/21/2015 12:26",
+    "dropoffx":-111.9607999,
+    "dropoffy":33.421631,
+    "distance":0.025004987
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9607999,33.421631 ]
+    },
+    "properties": {
+    "medallion":22962,
+    "pickuptime":"9/21/2015 12:26",
+    "dropofftime":"9/21/2015 12:28",
+    "dropoffx":-111.9550702,
+    "dropoffy":33.4070093,
+    "distance":1.060708258
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9550702,33.4070093 ]
+    },
+    "properties": {
+    "medallion":22961,
+    "pickuptime":"9/21/2015 12:28",
+    "dropofftime":"9/21/2015 12:32",
+    "dropoffx":-111.9658119,
+    "dropoffy":33.4021288,
+    "distance":0.706149521
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658119,33.4021288 ]
+    },
+    "properties": {
+    "medallion":22960,
+    "pickuptime":"9/21/2015 12:32",
+    "dropofftime":"9/21/2015 12:34",
+    "dropoffx":-111.9658093,
+    "dropoffy":33.4021202,
+    "distance":0.000611447
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658093,33.4021202 ]
+    },
+    "properties": {
+    "medallion":22959,
+    "pickuptime":"9/21/2015 12:34",
+    "dropofftime":"9/21/2015 12:36",
+    "dropoffx":-111.9658604,
+    "dropoffy":33.4021356,
+    "distance":0.003138684
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658604,33.4021356 ]
+    },
+    "properties": {
+    "medallion":22958,
+    "pickuptime":"9/21/2015 12:36",
+    "dropofftime":"9/21/2015 12:39",
+    "dropoffx":-111.9658502,
+    "dropoffy":33.4021458,
+    "distance":0.000917483
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658502,33.4021458 ]
+    },
+    "properties": {
+    "medallion":22957,
+    "pickuptime":"9/21/2015 12:39",
+    "dropofftime":"9/21/2015 12:40",
+    "dropoffx":-111.9658633,
+    "dropoffy":33.4021368,
+    "distance":0.000978837
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658633,33.4021368 ]
+    },
+    "properties": {
+    "medallion":22956,
+    "pickuptime":"9/21/2015 12:40",
+    "dropofftime":"9/21/2015 12:42",
+    "dropoffx":-111.9658422,
+    "dropoffy":33.4021471,
+    "distance":0.001411198
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658422,33.4021471 ]
+    },
+    "properties": {
+    "medallion":22955,
+    "pickuptime":"9/21/2015 12:42",
+    "dropofftime":"9/21/2015 12:44",
+    "dropoffx":-111.9658275,
+    "dropoffy":33.4021475,
+    "distance":0.00085017
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658275,33.4021475 ]
+    },
+    "properties": {
+    "medallion":22954,
+    "pickuptime":"9/21/2015 12:44",
+    "dropofftime":"9/21/2015 12:45",
+    "dropoffx":-111.9658172,
+    "dropoffy":33.40216,
+    "distance":0.001047187
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658172,33.40216 ]
+    },
+    "properties": {
+    "medallion":22953,
+    "pickuptime":"9/21/2015 12:45",
+    "dropofftime":"9/21/2015 12:48",
+    "dropoffx":-111.9658168,
+    "dropoffy":33.4021297,
+    "distance":0.002088321
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658168,33.4021297 ]
+    },
+    "properties": {
+    "medallion":22952,
+    "pickuptime":"9/21/2015 12:48",
+    "dropofftime":"9/21/2015 12:52",
+    "dropoffx":-111.965796,
+    "dropoffy":33.4021417,
+    "distance":0.001459293
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965796,33.4021417 ]
+    },
+    "properties": {
+    "medallion":22951,
+    "pickuptime":"9/21/2015 12:52",
+    "dropofftime":"9/21/2015 12:58",
+    "dropoffx":-111.9658342,
+    "dropoffy":33.4021276,
+    "distance":0.002412483
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658342,33.4021276 ]
+    },
+    "properties": {
+    "medallion":22950,
+    "pickuptime":"9/21/2015 12:58",
+    "dropofftime":"9/21/2015 13:01",
+    "dropoffx":-111.9658407,
+    "dropoffy":33.4021327,
+    "distance":0.000514496
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658407,33.4021327 ]
+    },
+    "properties": {
+    "medallion":22949,
+    "pickuptime":"9/21/2015 13:01",
+    "dropofftime":"9/21/2015 13:07",
+    "dropoffx":-111.9658432,
+    "dropoffy":33.4021586,
+    "distance":0.001790798
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658432,33.4021586 ]
+    },
+    "properties": {
+    "medallion":22948,
+    "pickuptime":"9/21/2015 13:07",
+    "dropofftime":"9/21/2015 13:11",
+    "dropoffx":-111.9658133,
+    "dropoffy":33.402125,
+    "distance":0.002889512
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658133,33.402125 ]
+    },
+    "properties": {
+    "medallion":22947,
+    "pickuptime":"9/21/2015 13:11",
+    "dropofftime":"9/21/2015 13:17",
+    "dropoffx":-111.9658477,
+    "dropoffy":33.4021356,
+    "distance":0.002118411
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658477,33.4021356 ]
+    },
+    "properties": {
+    "medallion":22946,
+    "pickuptime":"9/21/2015 13:17",
+    "dropofftime":"9/21/2015 13:20",
+    "dropoffx":-111.965841,
+    "dropoffy":33.4021327,
+    "distance":0.000435815
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965841,33.4021327 ]
+    },
+    "properties": {
+    "medallion":22945,
+    "pickuptime":"9/21/2015 13:20",
+    "dropofftime":"9/21/2015 13:23",
+    "dropoffx":-111.9658249,
+    "dropoffy":33.4021265,
+    "distance":0.001024051
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658249,33.4021265 ]
+    },
+    "properties": {
+    "medallion":22944,
+    "pickuptime":"9/21/2015 13:23",
+    "dropofftime":"9/21/2015 13:26",
+    "dropoffx":-111.9658192,
+    "dropoffy":33.4021378,
+    "distance":0.000845597
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658192,33.4021378 ]
+    },
+    "properties": {
+    "medallion":22943,
+    "pickuptime":"9/21/2015 13:26",
+    "dropofftime":"9/21/2015 13:30",
+    "dropoffx":-111.9658735,
+    "dropoffy":33.4021361,
+    "distance":0.003140957
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658735,33.4021361 ]
+    },
+    "properties": {
+    "medallion":22942,
+    "pickuptime":"9/21/2015 13:30",
+    "dropofftime":"9/21/2015 13:33",
+    "dropoffx":-111.9658083,
+    "dropoffy":33.40214,
+    "distance":0.00377841
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658083,33.40214 ]
+    },
+    "properties": {
+    "medallion":22941,
+    "pickuptime":"9/21/2015 13:33",
+    "dropofftime":"9/21/2015 13:35",
+    "dropoffx":-111.9658549,
+    "dropoffy":33.4021479,
+    "distance":0.002748149
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658549,33.4021479 ]
+    },
+    "properties": {
+    "medallion":22940,
+    "pickuptime":"9/21/2015 13:35",
+    "dropofftime":"9/21/2015 13:38",
+    "dropoffx":-111.9658094,
+    "dropoffy":33.4021321,
+    "distance":0.002846591
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658094,33.4021321 ]
+    },
+    "properties": {
+    "medallion":22939,
+    "pickuptime":"9/21/2015 13:38",
+    "dropofftime":"9/21/2015 13:41",
+    "dropoffx":-111.9657894,
+    "dropoffy":33.4021358,
+    "distance":0.001183873
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657894,33.4021358 ]
+    },
+    "properties": {
+    "medallion":22938,
+    "pickuptime":"9/21/2015 13:41",
+    "dropofftime":"9/21/2015 13:45",
+    "dropoffx":-111.9657795,
+    "dropoffy":33.4020964,
+    "distance":0.002774987
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657795,33.4020964 ]
+    },
+    "properties": {
+    "medallion":22937,
+    "pickuptime":"9/21/2015 13:45",
+    "dropofftime":"9/21/2015 13:49",
+    "dropoffx":-111.965833,
+    "dropoffy":33.4021217,
+    "distance":0.003550197
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965833,33.4021217 ]
+    },
+    "properties": {
+    "medallion":22936,
+    "pickuptime":"9/21/2015 13:49",
+    "dropofftime":"9/21/2015 13:53",
+    "dropoffx":-111.9658148,
+    "dropoffy":33.4021433,
+    "distance":0.001822842
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658148,33.4021433 ]
+    },
+    "properties": {
+    "medallion":22935,
+    "pickuptime":"9/21/2015 13:53",
+    "dropofftime":"9/21/2015 13:56",
+    "dropoffx":-111.9658217,
+    "dropoffy":33.4021513,
+    "distance":0.00068048
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658217,33.4021513 ]
+    },
+    "properties": {
+    "medallion":22934,
+    "pickuptime":"9/21/2015 13:56",
+    "dropofftime":"9/21/2015 14:00",
+    "dropoffx":-111.9658111,
+    "dropoffy":33.4021635,
+    "distance":0.000903993
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658111,33.4021635 ]
+    },
+    "properties": {
+    "medallion":22932,
+    "pickuptime":"9/21/2015 14:00",
+    "dropofftime":"9/21/2015 14:04",
+    "dropoffx":-111.965813,
+    "dropoffy":33.4021439,
+    "distance":0.001355236
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965813,33.4021439 ]
+    },
+    "properties": {
+    "medallion":22931,
+    "pickuptime":"9/21/2015 14:04",
+    "dropofftime":"9/21/2015 14:07",
+    "dropoffx":-111.9658122,
+    "dropoffy":33.4021305,
+    "distance":0.000924649
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658122,33.4021305 ]
+    },
+    "properties": {
+    "medallion":22930,
+    "pickuptime":"9/21/2015 14:07",
+    "dropofftime":"9/21/2015 14:10",
+    "dropoffx":-111.9658581,
+    "dropoffy":33.4021472,
+    "distance":0.002892087
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658581,33.4021472 ]
+    },
+    "properties": {
+    "medallion":22929,
+    "pickuptime":"9/21/2015 14:10",
+    "dropofftime":"9/21/2015 14:16",
+    "dropoffx":-111.9658159,
+    "dropoffy":33.4021254,
+    "distance":0.002864886
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658159,33.4021254 ]
+    },
+    "properties": {
+    "medallion":22928,
+    "pickuptime":"9/21/2015 14:16",
+    "dropofftime":"9/21/2015 14:19",
+    "dropoffx":-111.9657764,
+    "dropoffy":33.4021224,
+    "distance":0.00229261
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657764,33.4021224 ]
+    },
+    "properties": {
+    "medallion":22927,
+    "pickuptime":"9/21/2015 14:19",
+    "dropofftime":"9/21/2015 14:22",
+    "dropoffx":-111.9658202,
+    "dropoffy":33.4021566,
+    "distance":0.003459112
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658202,33.4021566 ]
+    },
+    "properties": {
+    "medallion":22926,
+    "pickuptime":"9/21/2015 14:22",
+    "dropofftime":"9/21/2015 14:26",
+    "dropoffx":-111.9658204,
+    "dropoffy":33.402124,
+    "distance":0.002246733
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658204,33.402124 ]
+    },
+    "properties": {
+    "medallion":22925,
+    "pickuptime":"9/21/2015 14:26",
+    "dropofftime":"9/21/2015 14:31",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.610712602
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":22924,
+    "pickuptime":"9/21/2015 14:31",
+    "dropofftime":"9/21/2015 14:37",
+    "dropoffx":-111.9657971,
+    "dropoffy":33.4021354,
+    "distance":1.609233475
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657971,33.4021354 ]
+    },
+    "properties": {
+    "medallion":22922,
+    "pickuptime":"9/21/2015 14:37",
+    "dropofftime":"9/21/2015 14:41",
+    "dropoffx":-111.9658221,
+    "dropoffy":33.4021351,
+    "distance":0.001445254
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658221,33.4021351 ]
+    },
+    "properties": {
+    "medallion":22921,
+    "pickuptime":"9/21/2015 14:41",
+    "dropofftime":"9/21/2015 14:44",
+    "dropoffx":-111.9657959,
+    "dropoffy":33.4021357,
+    "distance":0.001515036
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657959,33.4021357 ]
+    },
+    "properties": {
+    "medallion":22920,
+    "pickuptime":"9/21/2015 14:44",
+    "dropofftime":"9/21/2015 14:49",
+    "dropoffx":-111.9657798,
+    "dropoffy":33.4021105,
+    "distance":0.001970352
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657798,33.4021105 ]
+    },
+    "properties": {
+    "medallion":22919,
+    "pickuptime":"9/21/2015 14:49",
+    "dropofftime":"9/21/2015 14:59",
+    "dropoffx":-111.9658129,
+    "dropoffy":33.4021523,
+    "distance":0.003458247
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658129,33.4021523 ]
+    },
+    "properties": {
+    "medallion":22916,
+    "pickuptime":"9/21/2015 14:59",
+    "dropofftime":"9/21/2015 15:04",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.609353614
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":22915,
+    "pickuptime":"9/21/2015 15:04",
+    "dropofftime":"9/21/2015 15:05",
+    "dropoffx":-111.9658152,
+    "dropoffy":33.4020938,
+    "distance":1.611506108
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658152,33.4020938 ]
+    },
+    "properties": {
+    "medallion":22914,
+    "pickuptime":"9/21/2015 15:05",
+    "dropofftime":"9/21/2015 15:10",
+    "dropoffx":-111.9658432,
+    "dropoffy":33.4021505,
+    "distance":0.004229541
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658432,33.4021505 ]
+    },
+    "properties": {
+    "medallion":22913,
+    "pickuptime":"9/21/2015 15:10",
+    "dropofftime":"9/21/2015 15:12",
+    "dropoffx":-111.9657988,
+    "dropoffy":33.4021396,
+    "distance":0.002674185
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657988,33.4021396 ]
+    },
+    "properties": {
+    "medallion":22912,
+    "pickuptime":"9/21/2015 15:12",
+    "dropofftime":"9/21/2015 15:27",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.609091925
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":22909,
+    "pickuptime":"9/21/2015 15:27",
+    "dropofftime":"9/21/2015 15:28",
+    "dropoffx":-111.9658391,
+    "dropoffy":33.4021368,
+    "distance":1.611200156
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658391,33.4021368 ]
+    },
+    "properties": {
+    "medallion":22908,
+    "pickuptime":"9/21/2015 15:28",
+    "dropofftime":"9/21/2015 15:38",
+    "dropoffx":-111.9658477,
+    "dropoffy":33.4021384,
+    "distance":0.000509197
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658477,33.4021384 ]
+    },
+    "properties": {
+    "medallion":22906,
+    "pickuptime":"9/21/2015 15:38",
+    "dropofftime":"9/21/2015 15:40",
+    "dropoffx":-111.9657971,
+    "dropoffy":33.4021625,
+    "distance":0.003363573
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657971,33.4021625 ]
+    },
+    "properties": {
+    "medallion":22905,
+    "pickuptime":"9/21/2015 15:40",
+    "dropofftime":"9/21/2015 15:42",
+    "dropoffx":-111.965826,
+    "dropoffy":33.4021347,
+    "distance":0.002541926
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.965826,33.4021347 ]
+    },
+    "properties": {
+    "medallion":22904,
+    "pickuptime":"9/21/2015 15:42",
+    "dropofftime":"9/21/2015 15:47",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.610619511
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":22903,
+    "pickuptime":"9/21/2015 15:47",
+    "dropofftime":"9/21/2015 15:52",
+    "dropoffx":-111.9657777,
+    "dropoffy":33.4021339,
+    "distance":1.608238037
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657777,33.4021339 ]
+    },
+    "properties": {
+    "medallion":22902,
+    "pickuptime":"9/21/2015 15:52",
+    "dropofftime":"9/21/2015 16:08",
+    "dropoffx":-111.9658236,
+    "dropoffy":33.4021524,
+    "distance":0.002943654
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658236,33.4021524 ]
+    },
+    "properties": {
+    "medallion":22899,
+    "pickuptime":"9/21/2015 16:08",
+    "dropofftime":"9/21/2015 16:14",
+    "dropoffx":-111.9717979,
+    "dropoffy":33.3218872,
+    "distance":5.542402117
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9717979,33.3218872 ]
+    },
+    "properties": {
+    "medallion":22898,
+    "pickuptime":"9/21/2015 16:14",
+    "dropofftime":"9/21/2015 16:19",
+    "dropoffx":-111.9384544,
+    "dropoffy":33.4157723,
+    "distance":6.751450716
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9384544,33.4157723 ]
+    },
+    "properties": {
+    "medallion":22897,
+    "pickuptime":"9/21/2015 16:19",
+    "dropofftime":"9/21/2015 16:23",
+    "dropoffx":-111.9658335,
+    "dropoffy":33.4021105,
+    "distance":1.84141551
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658335,33.4021105 ]
+    },
+    "properties": {
+    "medallion":22896,
+    "pickuptime":"9/21/2015 16:23",
+    "dropofftime":"9/21/2015 16:27",
+    "dropoffx":-111.9657798,
+    "dropoffy":33.4021044,
+    "distance":0.003132428
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657798,33.4021044 ]
+    },
+    "properties": {
+    "medallion":22895,
+    "pickuptime":"9/21/2015 16:27",
+    "dropofftime":"9/21/2015 16:28",
+    "dropoffx":-111.9658138,
+    "dropoffy":33.4021531,
+    "distance":0.003889362
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658138,33.4021531 ]
+    },
+    "properties": {
+    "medallion":22894,
+    "pickuptime":"9/21/2015 16:28",
+    "dropofftime":"9/21/2015 16:33",
+    "dropoffx":-111.9658125,
+    "dropoffy":33.4021235,
+    "distance":0.002041335
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658125,33.4021235 ]
+    },
+    "properties": {
+    "medallion":22893,
+    "pickuptime":"9/21/2015 16:33",
+    "dropofftime":"9/21/2015 16:36",
+    "dropoffx":-111.9658348,
+    "dropoffy":33.4021567,
+    "distance":0.002626176
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658348,33.4021567 ]
+    },
+    "properties": {
+    "medallion":22892,
+    "pickuptime":"9/21/2015 16:36",
+    "dropofftime":"9/21/2015 16:41",
+    "dropoffx":-111.9417715,
+    "dropoffy":33.4139317,
+    "distance":1.610293858
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9417715,33.4139317 ]
+    },
+    "properties": {
+    "medallion":22891,
+    "pickuptime":"9/21/2015 16:41",
+    "dropofftime":"9/21/2015 16:45",
+    "dropoffx":-111.9658117,
+    "dropoffy":33.4021144,
+    "distance":1.610613165
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658117,33.4021144 ]
+    },
+    "properties": {
+    "medallion":22890,
+    "pickuptime":"9/21/2015 16:45",
+    "dropofftime":"9/21/2015 16:48",
+    "dropoffx":-111.9658756,
+    "dropoffy":33.40214,
+    "distance":0.004093416
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658756,33.40214 ]
+    },
+    "properties": {
+    "medallion":22889,
+    "pickuptime":"9/21/2015 16:48",
+    "dropofftime":"9/21/2015 16:52",
+    "dropoffx":-111.9384544,
+    "dropoffy":33.4157723,
+    "distance":1.842469412
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9384544,33.4157723 ]
+    },
+    "properties": {
+    "medallion":22888,
+    "pickuptime":"9/21/2015 16:52",
+    "dropofftime":"9/21/2015 16:55",
+    "dropoffx":-111.9658317,
+    "dropoffy":33.4021522,
+    "distance":1.839857931
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658317,33.4021522 ]
+    },
+    "properties": {
+    "medallion":22887,
+    "pickuptime":"9/21/2015 16:55",
+    "dropofftime":"9/21/2015 16:57",
+    "dropoffx":-111.9658025,
+    "dropoffy":33.4021374,
+    "distance":0.001972132
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9658025,33.4021374 ]
+    },
+    "properties": {
+    "medallion":22886,
+    "pickuptime":"9/21/2015 16:57",
+    "dropofftime":"9/21/2015 17:00",
+    "dropoffx":-111.9657866,
+    "dropoffy":33.4020813,
+    "distance":0.003974001
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657866,33.4020813 ]
+    },
+    "properties": {
+    "medallion":22885,
+    "pickuptime":"9/21/2015 17:00",
+    "dropofftime":"9/21/2015 17:01",
+    "dropoffx":-111.9657268,
+    "dropoffy":33.40205,
+    "distance":0.004074541
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9657268,33.40205 ]
+    },
+    "properties": {
+    "medallion":22884,
+    "pickuptime":"9/21/2015 17:01",
+    "dropofftime":"9/21/2015 17:02",
+    "dropoffx":-111.9662247,
+    "dropoffy":33.4027413,
+    "distance":0.055660895
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9662247,33.4027413 ]
+    },
+    "properties": {
+    "medallion":22883,
+    "pickuptime":"9/21/2015 17:02",
+    "dropofftime":"9/21/2015 17:03",
+    "dropoffx":-111.963453,
+    "dropoffy":33.4024878,
+    "distance":0.161164905
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.963453,33.4024878 ]
+    },
+    "properties": {
+    "medallion":22882,
+    "pickuptime":"9/21/2015 17:03",
+    "dropofftime":"9/21/2015 17:05",
+    "dropoffx":-111.9602701,
+    "dropoffy":33.4000071,
+    "distance":0.251156529
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9602701,33.4000071 ]
+    },
+    "properties": {
+    "medallion":22881,
+    "pickuptime":"9/21/2015 17:05",
+    "dropofftime":"9/21/2015 17:06",
+    "dropoffx":-111.9607978,
+    "dropoffy":33.3978485,
+    "distance":0.151860036
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9607978,33.3978485 ]
+    },
+    "properties": {
+    "medallion":22880,
+    "pickuptime":"9/21/2015 17:06",
+    "dropofftime":"9/21/2015 17:06",
+    "dropoffx":-111.9608337,
+    "dropoffy":33.3974871,
+    "distance":0.024992993
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9608337,33.3974871 ]
+    },
+    "properties": {
+    "medallion":22879,
+    "pickuptime":"9/21/2015 17:06",
+    "dropofftime":"9/21/2015 17:09",
+    "dropoffx":-111.9607405,
+    "dropoffy":33.3930362,
+    "distance":0.306790864
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9607405,33.3930362 ]
+    },
+    "properties": {
+    "medallion":22878,
+    "pickuptime":"9/21/2015 17:09",
+    "dropofftime":"9/21/2015 17:10",
+    "dropoffx":-111.9608034,
+    "dropoffy":33.3929384,
+    "distance":0.00765842
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9608034,33.3929384 ]
+    },
+    "properties": {
+    "medallion":22877,
+    "pickuptime":"9/21/2015 17:10",
+    "dropofftime":"9/21/2015 17:12",
+    "dropoffx":-111.9607612,
+    "dropoffy":33.3887582,
+    "distance":0.28809779
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9607612,33.3887582 ]
+    },
+    "properties": {
+    "medallion":22876,
+    "pickuptime":"9/21/2015 17:12",
+    "dropofftime":"9/21/2015 17:14",
+    "dropoffx":-111.9467801,
+    "dropoffy":33.3855731,
+    "distance":0.837580952
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9467801,33.3855731 ]
+    },
+    "properties": {
+    "medallion":22875,
+    "pickuptime":"9/21/2015 17:14",
+    "dropofftime":"9/21/2015 17:15",
+    "dropoffx":-111.9291057,
+    "dropoffy":33.3857443,
+    "distance":1.021916548
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9291057,33.3857443 ]
+    },
+    "properties": {
+    "medallion":22874,
+    "pickuptime":"9/21/2015 17:15",
+    "dropofftime":"9/21/2015 17:17",
+    "dropoffx":-111.9189567,
+    "dropoffy":33.3857111,
+    "distance":0.586770155
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.9189567,33.3857111 ]
+    },
+    "properties": {
+    "medallion":22873,
+    "pickuptime":"9/21/2015 17:17",
+    "dropofftime":"9/21/2015 17:19",
+    "dropoffx":-111.8949524,
+    "dropoffy":33.3855446,
+    "distance":1.387860603
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8949524,33.3855446 ]
+    },
+    "properties": {
+    "medallion":22872,
+    "pickuptime":"9/21/2015 17:19",
+    "dropofftime":"9/21/2015 17:21",
+    "dropoffx":-111.882636,
+    "dropoffy":33.3838858,
+    "distance":0.721200662
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.882636,33.3838858 ]
+    },
+    "properties": {
+    "medallion":22871,
+    "pickuptime":"9/21/2015 17:21",
+    "dropofftime":"9/21/2015 17:23",
+    "dropoffx":-111.8733295,
+    "dropoffy":33.3853672,
+    "distance":0.547663383
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8733295,33.3853672 ]
+    },
+    "properties": {
+    "medallion":22870,
+    "pickuptime":"9/21/2015 17:23",
+    "dropofftime":"9/21/2015 17:27",
+    "dropoffx":-111.8423963,
+    "dropoffy":33.3864928,
+    "distance":1.790084248
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8423963,33.3864928 ]
+    },
+    "properties": {
+    "medallion":22868,
+    "pickuptime":"9/21/2015 17:27",
+    "dropofftime":"9/21/2015 17:29",
+    "dropoffx":-111.8102447,
+    "dropoffy":33.3861981,
+    "distance":1.858946541
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8102447,33.3861981 ]
+    },
+    "properties": {
+    "medallion":22867,
+    "pickuptime":"9/21/2015 17:29",
+    "dropofftime":"9/21/2015 17:30",
+    "dropoffx":-111.8025183,
+    "dropoffy":33.3861529,
+    "distance":0.446711346
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.8025183,33.3861529 ]
+    },
+    "properties": {
+    "medallion":22866,
+    "pickuptime":"9/21/2015 17:30",
+    "dropofftime":"9/21/2015 17:32",
+    "dropoffx":-111.7838923,
+    "dropoffy":33.3857759,
+    "distance":1.077174971
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7838923,33.3857759 ]
+    },
+    "properties": {
+    "medallion":22865,
+    "pickuptime":"9/21/2015 17:32",
+    "dropofftime":"9/21/2015 17:34",
+    "dropoffx":-111.7542099,
+    "dropoffy":33.386865,
+    "distance":1.717720632
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7542099,33.386865 ]
+    },
+    "properties": {
+    "medallion":22864,
+    "pickuptime":"9/21/2015 17:34",
+    "dropofftime":"9/21/2015 17:35",
+    "dropoffx":-111.7385811,
+    "dropoffy":33.3829099,
+    "distance":0.943806605
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7385811,33.3829099 ]
+    },
+    "properties": {
+    "medallion":22863,
+    "pickuptime":"9/21/2015 17:35",
+    "dropofftime":"9/21/2015 17:38",
+    "dropoffx":-111.7392925,
+    "dropoffy":33.3738641,
+    "distance":0.624765007
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7392925,33.3738641 ]
+    },
+    "properties": {
+    "medallion":22862,
+    "pickuptime":"9/21/2015 17:38",
+    "dropofftime":"9/21/2015 17:38",
+    "dropoffx":-111.7392614,
+    "dropoffy":33.3734542,
+    "distance":0.028306241
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7392614,33.3734542 ]
+    },
+    "properties": {
+    "medallion":22861,
+    "pickuptime":"9/21/2015 17:38",
+    "dropofftime":"9/21/2015 17:40",
+    "dropoffx":-111.739046,
+    "dropoffy":33.3585973,
+    "distance":1.023966834
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.739046,33.3585973 ]
+    },
+    "properties": {
+    "medallion":22860,
+    "pickuptime":"9/21/2015 17:40",
+    "dropofftime":"9/21/2015 17:41",
+    "dropoffx":-111.7397896,
+    "dropoffy":33.3554286,
+    "distance":0.22257088
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7397896,33.3554286 ]
+    },
+    "properties": {
+    "medallion":22859,
+    "pickuptime":"9/21/2015 17:41",
+    "dropofftime":"9/21/2015 17:42",
+    "dropoffx":-111.7381464,
+    "dropoffy":33.3356282,
+    "distance":1.367883161
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7381464,33.3356282 ]
+    },
+    "properties": {
+    "medallion":22858,
+    "pickuptime":"9/21/2015 17:42",
+    "dropofftime":"9/21/2015 17:44",
+    "dropoffx":-111.7428765,
+    "dropoffy":33.3209606,
+    "distance":1.047225026
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7428765,33.3209606 ]
+    },
+    "properties": {
+    "medallion":22857,
+    "pickuptime":"9/21/2015 17:44",
+    "dropofftime":"9/21/2015 17:46",
+    "dropoffx":-111.7454792,
+    "dropoffy":33.3140834,
+    "distance":0.497300841
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7454792,33.3140834 ]
+    },
+    "properties": {
+    "medallion":22856,
+    "pickuptime":"9/21/2015 17:46",
+    "dropofftime":"9/21/2015 17:48",
+    "dropoffx":-111.7447956,
+    "dropoffy":33.3067361,
+    "distance":0.507891135
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7447956,33.3067361 ]
+    },
+    "properties": {
+    "medallion":22854,
+    "pickuptime":"9/21/2015 17:48",
+    "dropofftime":"9/21/2015 17:50",
+    "dropoffx":-111.7206084,
+    "dropoffy":33.2975985,
+    "distance":1.534855043
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7206084,33.2975985 ]
+    },
+    "properties": {
+    "medallion":22853,
+    "pickuptime":"9/21/2015 17:50",
+    "dropofftime":"9/21/2015 17:52",
+    "dropoffx":-111.706624,
+    "dropoffy":33.2925527,
+    "distance":0.88088868
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.706624,33.2925527 ]
+    },
+    "properties": {
+    "medallion":22852,
+    "pickuptime":"9/21/2015 17:52",
+    "dropofftime":"9/21/2015 17:53",
+    "dropoffx":-111.694135,
+    "dropoffy":33.2892281,
+    "distance":0.758279053
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.694135,33.2892281 ]
+    },
+    "properties": {
+    "medallion":22851,
+    "pickuptime":"9/21/2015 17:53",
+    "dropofftime":"9/21/2015 17:55",
+    "dropoffx":-111.7010997,
+    "dropoffy":33.2852561,
+    "distance":0.487272954
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7010997,33.2852561 ]
+    },
+    "properties": {
+    "medallion":22850,
+    "pickuptime":"9/21/2015 17:55",
+    "dropofftime":"9/21/2015 17:56",
+    "dropoffx":-111.7012296,
+    "dropoffy":33.2853015,
+    "distance":0.008143819
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012296,33.2853015 ]
+    },
+    "properties": {
+    "medallion":22849,
+    "pickuptime":"9/21/2015 17:56",
+    "dropofftime":"9/21/2015 17:56",
+    "dropoffx":-111.7012076,
+    "dropoffy":33.2853057,
+    "distance":0.001305875
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012076,33.2853057 ]
+    },
+    "properties": {
+    "medallion":22848,
+    "pickuptime":"9/21/2015 17:56",
+    "dropofftime":"9/21/2015 17:59",
+    "dropoffx":-111.7012251,
+    "dropoffy":33.2853158,
+    "distance":0.001229027
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012251,33.2853158 ]
+    },
+    "properties": {
+    "medallion":22847,
+    "pickuptime":"9/21/2015 17:59",
+    "dropofftime":"9/21/2015 18:00",
+    "dropoffx":-111.7012295,
+    "dropoffy":33.2853543,
+    "distance":0.00266546
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012295,33.2853543 ]
+    },
+    "properties": {
+    "medallion":22846,
+    "pickuptime":"9/21/2015 18:00",
+    "dropofftime":"9/21/2015 18:02",
+    "dropoffx":-111.701223,
+    "dropoffy":33.2853238,
+    "distance":0.002135342
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701223,33.2853238 ]
+    },
+    "properties": {
+    "medallion":22845,
+    "pickuptime":"9/21/2015 18:02",
+    "dropofftime":"9/21/2015 18:04",
+    "dropoffx":-111.7012369,
+    "dropoffy":33.2853151,
+    "distance":0.001003388
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012369,33.2853151 ]
+    },
+    "properties": {
+    "medallion":22844,
+    "pickuptime":"9/21/2015 18:04",
+    "dropofftime":"9/21/2015 18:05",
+    "dropoffx":-111.7012316,
+    "dropoffy":33.2853467,
+    "distance":0.002199245
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012316,33.2853467 ]
+    },
+    "properties": {
+    "medallion":22843,
+    "pickuptime":"9/21/2015 18:05",
+    "dropofftime":"9/21/2015 18:07",
+    "dropoffx":-111.7011891,
+    "dropoffy":33.2853239,
+    "distance":0.002918964
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011891,33.2853239 ]
+    },
+    "properties": {
+    "medallion":22842,
+    "pickuptime":"9/21/2015 18:07",
+    "dropofftime":"9/21/2015 18:38",
+    "dropoffx":-111.7012341,
+    "dropoffy":33.2853254,
+    "distance":0.002606718
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012341,33.2853254 ]
+    },
+    "properties": {
+    "medallion":22838,
+    "pickuptime":"9/21/2015 18:38",
+    "dropofftime":"9/21/2015 18:44",
+    "dropoffx":-111.7012245,
+    "dropoffy":33.2853296,
+    "distance":0.000626528
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012245,33.2853296 ]
+    },
+    "properties": {
+    "medallion":22837,
+    "pickuptime":"9/21/2015 18:44",
+    "dropofftime":"9/21/2015 18:54",
+    "dropoffx":-111.7012241,
+    "dropoffy":33.2853194,
+    "distance":0.000703324
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012241,33.2853194 ]
+    },
+    "properties": {
+    "medallion":22836,
+    "pickuptime":"9/21/2015 18:54",
+    "dropofftime":"9/21/2015 19:02",
+    "dropoffx":-111.7012343,
+    "dropoffy":33.2853206,
+    "distance":0.000596152
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012343,33.2853206 ]
+    },
+    "properties": {
+    "medallion":22835,
+    "pickuptime":"9/21/2015 19:02",
+    "dropofftime":"9/21/2015 19:04",
+    "dropoffx":-111.7012264,
+    "dropoffy":33.2853054,
+    "distance":0.001142975
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012264,33.2853054 ]
+    },
+    "properties": {
+    "medallion":22834,
+    "pickuptime":"9/21/2015 19:04",
+    "dropofftime":"9/21/2015 19:07",
+    "dropoffx":-111.7012391,
+    "dropoffy":33.2853249,
+    "distance":0.001531773
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012391,33.2853249 ]
+    },
+    "properties": {
+    "medallion":22833,
+    "pickuptime":"9/21/2015 19:07",
+    "dropofftime":"9/21/2015 19:10",
+    "dropoffx":-111.701237,
+    "dropoffy":33.2853781,
+    "distance":0.003668344
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701237,33.2853781 ]
+    },
+    "properties": {
+    "medallion":22832,
+    "pickuptime":"9/21/2015 19:10",
+    "dropofftime":"9/21/2015 19:14",
+    "dropoffx":-111.7012463,
+    "dropoffy":33.2853449,
+    "distance":0.002350479
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012463,33.2853449 ]
+    },
+    "properties": {
+    "medallion":22831,
+    "pickuptime":"9/21/2015 19:14",
+    "dropofftime":"9/21/2015 19:17",
+    "dropoffx":-111.7012341,
+    "dropoffy":33.2853611,
+    "distance":0.001321018
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012341,33.2853611 ]
+    },
+    "properties": {
+    "medallion":22830,
+    "pickuptime":"9/21/2015 19:17",
+    "dropofftime":"9/21/2015 19:20",
+    "dropoffx":-111.701232,
+    "dropoffy":33.2853453,
+    "distance":0.001095636
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701232,33.2853453 ]
+    },
+    "properties": {
+    "medallion":22829,
+    "pickuptime":"9/21/2015 19:20",
+    "dropofftime":"9/21/2015 19:24",
+    "dropoffx":-111.7012264,
+    "dropoffy":33.2853497,
+    "distance":0.00044386
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012264,33.2853497 ]
+    },
+    "properties": {
+    "medallion":22828,
+    "pickuptime":"9/21/2015 19:24",
+    "dropofftime":"9/21/2015 19:29",
+    "dropoffx":-111.7012413,
+    "dropoffy":33.2853337,
+    "distance":0.001399872
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012413,33.2853337 ]
+    },
+    "properties": {
+    "medallion":22827,
+    "pickuptime":"9/21/2015 19:29",
+    "dropofftime":"9/21/2015 19:36",
+    "dropoffx":-111.7012389,
+    "dropoffy":33.2853269,
+    "distance":0.000488784
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012389,33.2853269 ]
+    },
+    "properties": {
+    "medallion":22826,
+    "pickuptime":"9/21/2015 19:36",
+    "dropofftime":"9/21/2015 19:39",
+    "dropoffx":-111.7012282,
+    "dropoffy":33.2853335,
+    "distance":0.000768412
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012282,33.2853335 ]
+    },
+    "properties": {
+    "medallion":22825,
+    "pickuptime":"9/21/2015 19:39",
+    "dropofftime":"9/21/2015 19:43",
+    "dropoffx":-111.7012543,
+    "dropoffy":33.2853392,
+    "distance":0.001560943
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012543,33.2853392 ]
+    },
+    "properties": {
+    "medallion":22824,
+    "pickuptime":"9/21/2015 19:43",
+    "dropofftime":"9/21/2015 19:45",
+    "dropoffx":-111.7012495,
+    "dropoffy":33.2853013,
+    "distance":0.00262665
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012495,33.2853013 ]
+    },
+    "properties": {
+    "medallion":22823,
+    "pickuptime":"9/21/2015 19:45",
+    "dropofftime":"9/21/2015 19:47",
+    "dropoffx":-111.7012361,
+    "dropoffy":33.285319,
+    "distance":0.001445516
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012361,33.285319 ]
+    },
+    "properties": {
+    "medallion":22822,
+    "pickuptime":"9/21/2015 19:47",
+    "dropofftime":"9/21/2015 19:52",
+    "dropoffx":-111.7012398,
+    "dropoffy":33.285309,
+    "distance":0.000721669
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012398,33.285309 ]
+    },
+    "properties": {
+    "medallion":22821,
+    "pickuptime":"9/21/2015 19:52",
+    "dropofftime":"9/21/2015 19:55",
+    "dropoffx":-111.7012489,
+    "dropoffy":33.285326,
+    "distance":0.001284528
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012489,33.285326 ]
+    },
+    "properties": {
+    "medallion":22820,
+    "pickuptime":"9/21/2015 19:55",
+    "dropofftime":"9/21/2015 20:00",
+    "dropoffx":-111.7012361,
+    "dropoffy":33.2853146,
+    "distance":0.00107988
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012361,33.2853146 ]
+    },
+    "properties": {
+    "medallion":22819,
+    "pickuptime":"9/21/2015 20:00",
+    "dropofftime":"9/21/2015 20:01",
+    "dropoffx":-111.7012489,
+    "dropoffy":33.2853456,
+    "distance":0.002261215
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012489,33.2853456 ]
+    },
+    "properties": {
+    "medallion":22818,
+    "pickuptime":"9/21/2015 20:01",
+    "dropofftime":"9/21/2015 20:04",
+    "dropoffx":-111.7012259,
+    "dropoffy":33.2852773,
+    "distance":0.004891602
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012259,33.2852773 ]
+    },
+    "properties": {
+    "medallion":22817,
+    "pickuptime":"9/21/2015 20:04",
+    "dropofftime":"9/21/2015 20:17",
+    "dropoffx":-111.7011953,
+    "dropoffy":33.2853471,
+    "distance":0.005126049
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011953,33.2853471 ]
+    },
+    "properties": {
+    "medallion":22815,
+    "pickuptime":"9/21/2015 20:17",
+    "dropofftime":"9/21/2015 20:22",
+    "dropoffx":-111.7011925,
+    "dropoffy":33.2852975,
+    "distance":0.003422072
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011925,33.2852975 ]
+    },
+    "properties": {
+    "medallion":22813,
+    "pickuptime":"9/21/2015 20:22",
+    "dropofftime":"9/21/2015 20:28",
+    "dropoffx":-111.7011878,
+    "dropoffy":33.2852883,
+    "distance":0.000689925
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011878,33.2852883 ]
+    },
+    "properties": {
+    "medallion":22811,
+    "pickuptime":"9/21/2015 20:28",
+    "dropofftime":"9/21/2015 20:35",
+    "dropoffx":-111.7011872,
+    "dropoffy":33.2853425,
+    "distance":0.003735407
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011872,33.2853425 ]
+    },
+    "properties": {
+    "medallion":22810,
+    "pickuptime":"9/21/2015 20:35",
+    "dropofftime":"9/21/2015 20:43",
+    "dropoffx":-111.7012184,
+    "dropoffy":33.2853143,
+    "distance":0.002652962
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012184,33.2853143 ]
+    },
+    "properties": {
+    "medallion":22808,
+    "pickuptime":"9/21/2015 20:43",
+    "dropofftime":"9/21/2015 20:45",
+    "dropoffx":-111.7011915,
+    "dropoffy":33.285335,
+    "distance":0.00211172
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011915,33.285335 ]
+    },
+    "properties": {
+    "medallion":22807,
+    "pickuptime":"9/21/2015 20:45",
+    "dropofftime":"9/21/2015 20:48",
+    "dropoffx":-111.7011965,
+    "dropoffy":33.2853474,
+    "distance":0.000902233
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011965,33.2853474 ]
+    },
+    "properties": {
+    "medallion":22806,
+    "pickuptime":"9/21/2015 20:48",
+    "dropofftime":"9/21/2015 20:49",
+    "dropoffx":-111.7012106,
+    "dropoffy":33.2853726,
+    "distance":0.001918888
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012106,33.2853726 ]
+    },
+    "properties": {
+    "medallion":22805,
+    "pickuptime":"9/21/2015 20:49",
+    "dropofftime":"9/21/2015 20:59",
+    "dropoffx":-111.7011963,
+    "dropoffy":33.2853407,
+    "distance":0.002349073
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011963,33.2853407 ]
+    },
+    "properties": {
+    "medallion":22804,
+    "pickuptime":"9/21/2015 20:59",
+    "dropofftime":"9/21/2015 21:02",
+    "dropoffx":-111.7011983,
+    "dropoffy":33.2853161,
+    "distance":0.001699281
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011983,33.2853161 ]
+    },
+    "properties": {
+    "medallion":22803,
+    "pickuptime":"9/21/2015 21:02",
+    "dropofftime":"9/21/2015 21:07",
+    "dropoffx":-111.7011874,
+    "dropoffy":33.2853125,
+    "distance":0.000677936
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011874,33.2853125 ]
+    },
+    "properties": {
+    "medallion":22802,
+    "pickuptime":"9/21/2015 21:07",
+    "dropofftime":"9/21/2015 21:12",
+    "dropoffx":-111.7012184,
+    "dropoffy":33.2852995,
+    "distance":0.002005557
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012184,33.2852995 ]
+    },
+    "properties": {
+    "medallion":22801,
+    "pickuptime":"9/21/2015 21:12",
+    "dropofftime":"9/21/2015 21:21",
+    "dropoffx":-111.7390465,
+    "dropoffy":33.3586012,
+    "distance":5.505420833
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7390465,33.3586012 ]
+    },
+    "properties": {
+    "medallion":22800,
+    "pickuptime":"9/21/2015 21:21",
+    "dropofftime":"9/21/2015 21:41",
+    "dropoffx":-111.7012137,
+    "dropoffy":33.2853033,
+    "distance":5.505288631
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012137,33.2853033 ]
+    },
+    "properties": {
+    "medallion":22796,
+    "pickuptime":"9/21/2015 21:41",
+    "dropofftime":"9/21/2015 21:50",
+    "dropoffx":-111.7012793,
+    "dropoffy":33.2852859,
+    "distance":0.003981877
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012793,33.2852859 ]
+    },
+    "properties": {
+    "medallion":22795,
+    "pickuptime":"9/21/2015 21:50",
+    "dropofftime":"9/21/2015 22:00",
+    "dropoffx":-111.7012109,
+    "dropoffy":33.2853505,
+    "distance":0.005957724
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012109,33.2853505 ]
+    },
+    "properties": {
+    "medallion":22793,
+    "pickuptime":"9/21/2015 22:00",
+    "dropofftime":"9/21/2015 22:01",
+    "dropoffx":-111.7012798,
+    "dropoffy":33.2852538,
+    "distance":0.007766315
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012798,33.2852538 ]
+    },
+    "properties": {
+    "medallion":22792,
+    "pickuptime":"9/21/2015 22:01",
+    "dropofftime":"9/21/2015 22:32",
+    "dropoffx":-111.7012163,
+    "dropoffy":33.2853125,
+    "distance":0.005465723
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012163,33.2853125 ]
+    },
+    "properties": {
+    "medallion":22786,
+    "pickuptime":"9/21/2015 22:32",
+    "dropofftime":"9/21/2015 22:34",
+    "dropoffx":-111.7012179,
+    "dropoffy":33.2853385,
+    "distance":0.001794207
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012179,33.2853385 ]
+    },
+    "properties": {
+    "medallion":22785,
+    "pickuptime":"9/21/2015 22:34",
+    "dropofftime":"9/21/2015 22:35",
+    "dropoffx":-111.7012197,
+    "dropoffy":33.2853123,
+    "distance":0.001808602
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012197,33.2853123 ]
+    },
+    "properties": {
+    "medallion":22784,
+    "pickuptime":"9/21/2015 22:35",
+    "dropofftime":"9/21/2015 22:37",
+    "dropoffx":-111.701215,
+    "dropoffy":33.285324,
+    "distance":0.000850972
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701215,33.285324 ]
+    },
+    "properties": {
+    "medallion":22783,
+    "pickuptime":"9/21/2015 22:37",
+    "dropofftime":"9/21/2015 23:01",
+    "dropoffx":-111.701194,
+    "dropoffy":33.2853528,
+    "distance":0.002327406
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701194,33.2853528 ]
+    },
+    "properties": {
+    "medallion":22778,
+    "pickuptime":"9/21/2015 23:01",
+    "dropofftime":"9/21/2015 23:32",
+    "dropoffx":-111.7012203,
+    "dropoffy":33.285341,
+    "distance":0.001725877
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012203,33.285341 ]
+    },
+    "properties": {
+    "medallion":22774,
+    "pickuptime":"9/21/2015 23:32",
+    "dropofftime":"9/21/2015 23:40",
+    "dropoffx":-111.7012009,
+    "dropoffy":33.2852307,
+    "distance":0.007683923
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012009,33.2852307 ]
+    },
+    "properties": {
+    "medallion":22772,
+    "pickuptime":"9/21/2015 23:40",
+    "dropofftime":"9/22/2015 0:10",
+    "dropoffx":-111.7012157,
+    "dropoffy":33.2853194,
+    "distance":0.00617258
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012268,33.2853379 ]
+    },
+    "properties": {
+    "medallion":23142,
+    "pickuptime":"9/20/2015 21:57",
+    "dropofftime":"9/20/2015 22:01",
+    "dropoffx":-111.701227,
+    "dropoffy":33.2852498,
+    "distance":0.006071508
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701227,33.2852498 ]
+    },
+    "properties": {
+    "medallion":23141,
+    "pickuptime":"9/20/2015 22:01",
+    "dropofftime":"9/20/2015 22:13",
+    "dropoffx":-111.7011978,
+    "dropoffy":33.2853352,
+    "distance":0.006123299
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011978,33.2853352 ]
+    },
+    "properties": {
+    "medallion":23139,
+    "pickuptime":"9/20/2015 22:13",
+    "dropofftime":"9/20/2015 22:25",
+    "dropoffx":-111.7012072,
+    "dropoffy":33.2853105,
+    "distance":0.001787063
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012072,33.2853105 ]
+    },
+    "properties": {
+    "medallion":23137,
+    "pickuptime":"9/20/2015 22:25",
+    "dropofftime":"9/20/2015 22:50",
+    "dropoffx":-111.701159,
+    "dropoffy":33.285397,
+    "distance":0.006581774
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.701159,33.285397 ]
+    },
+    "properties": {
+    "medallion":23134,
+    "pickuptime":"9/20/2015 22:50",
+    "dropofftime":"9/20/2015 22:54",
+    "dropoffx":-111.7011906,
+    "dropoffy":33.2853337,
+    "distance":0.004730308
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7011906,33.2853337 ]
+    },
+    "properties": {
+    "medallion":23133,
+    "pickuptime":"9/20/2015 22:54",
+    "dropofftime":"9/20/2015 22:59",
+    "dropoffx":-111.7012054,
+    "dropoffy":33.2852748,
+    "distance":0.00414856
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7012054,33.2852748 ]
+    },
+    "properties": {
+    "medallion":23132,
+    "pickuptime":"9/20/2015 22:59",
+    "dropofftime":"9/20/2015 23:23",
+    "dropoffx":-111.7010793,
+    "dropoffy":33.2853134,
+    "distance":0.007768511
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ -111.7010793,33.2853134 ]
+    },
+    "properties": {
+    "medallion":23129,
+    "pickuptime":"9/20/2015 23:23",
+    "dropofftime":"9/21/2015 0:01",
+    "dropoffx":-111.7011966,
+    "dropoffy":33.2852775,
+    "distance":0.007226231
+    }
+  }
+]
+}
