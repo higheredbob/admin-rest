@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="Admin Dashboard">
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+
+<title>MiM-Admin</title>
+<meta name="description" content="MiM-Admin is a material design and bootstrap based responsive dashboard, to visualize geo-spatial data, and provide various metrics/analytic capabilities."/>
+
+<link rel="shortcut icon" type="image/x-icon" href="themes/images/favicon.ico">
+<link href="https://cdn.materialdesignicons.com/2.7.94/css/materialdesignicons.css" rel="stylesheet" type="text/css">
+<!-- Google icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+<!-- Bootstrap css -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" type="text/css">
+<link rel="stylesheet" href="assets/css/MarkerCluster.css" type="text/css" />
+<link rel="stylesheet" href="assets/css/FullScreen.css" />
+<link href="assets/css/lightgallery.css" rel="stylesheet">
+<link href="assets/css/sweetalert.css" rel="stylesheet" />
+<!-- Propeller css -->
+<!-- build:[href] assets/css/ -->
+<link rel="stylesheet" type="text/css" href="assets/css/propeller.min.css">
+<!-- /build -->
+
+<!-- Propeller date time picker css-->
+<link rel="stylesheet" type="text/css" href="components/datetimepicker/css/bootstrap-datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="components/datetimepicker/css/pmd-datetimepicker.css" />
+
+<!-- Propeller theme css-->
+<link rel="stylesheet" type="text/css" href="themes/css/propeller-theme.css" />
+
+<!-- Propeller admin theme css-->
+<link rel="stylesheet" type="text/css" href="themes/css/propeller-admin.css">
+<link href="assets/css/app.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Header Starts -->
+<!--Start Nav bar -->
+<nav class="navbar navbar-inverse navbar-fixed-top pmd-navbar pmd-z-depth">
+
+	<div class="container-fluid">
+		<div class="pmd-navbar-right-icon pull-right navigation">
+			<!-- Notifications -->
+             <!-- End notifications -->
+		</div>
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<a href="javascript:void(0);" data-target="basicSidebar" data-placement="left" data-position="slidepush" is-open="true" is-open-width="1200" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle"><i class="material-icons md-light">menu</i></a>
+		  <a href="mimdex.html" class="navbar-brand">
+
+		  </a>
+		</div>
+	</div>
+
+</nav><!--End Nav bar -->
+<!-- Header Ends -->
+
+<!-- Sidebar Starts -->
+<div class="pmd-sidebar-overlay"></div>
+
+<!-- Left sidebar -->
+<aside id="basicSidebar" class="pmd-sidebar  sidebar-default pmd-sidebar-slide-push pmd-sidebar-left pmd-sidebar-open bg-fill-darkblue sidebar-with-icons" role="navigation">
+	<ul class="nav pmd-sidebar-nav">
+
+		<!-- User info -->
+		<li class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg">
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" aria-expandedhref="javascript:void(0);">
+				<div class="media-left">
+					<img src="themes/images/user-icon.png" alt="New User">
+				</div>
+				<div class="media-body media-middle">Jeff Kates</div>
+				<div class="media-right media-middle"><i class="dic-more-vert dic"></i></div>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a href="login.html">Logout</a></li>
+			</ul>
+		</li><!-- End user info -->
+
+		<li>
+			<a class="pmd-ripple-effect" href="index.html">
+				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="19.83px" height="18px" viewBox="287.725 407.535 19.83 18" enable-background="new 287.725 407.535 19.83 18"
+	 xml:space="preserve">
+<g>
+	<path fill="#C9C8C8" d="M307.555,407.535h-9.108v10.264h9.108V407.535z M287.725,407.535v6.232h9.109v-6.232H287.725z
+		 M296.834,415.271h-9.109v10.264h9.109V415.271z M307.555,419.303h-9.108v6.232h9.108V419.303z"/>
+</g>
+</svg></i>
+				<span class="media-body">Dashboard</span>
+			</a>
+		</li>
+
+		<li class="dropdown pmd-dropdown">
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">
+				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="18px" height="18.001px" viewBox="0 0 18 18.001" enable-background="new 0 0 18 18.001" xml:space="preserve">
+<path fill="#C9C8C8" d="M6.188,0.001C5.232,0.001,4.5,0.732,4.5,1.688c0,0.394,0.166,0.739,0.334,1.02L5.45,3.71
+	c0.113,0.113,0.176,0.341,0.176,0.51v0.281c0,0.619-0.506,1.125-1.125,1.125H0.282c-0.169,0-0.281,0.112-0.281,0.281V17.72
+	c0,0.168,0.112,0.281,0.281,0.281h4.219c0.619,0,1.125-0.506,1.125-1.125v-0.281c0-0.168-0.063-0.397-0.176-0.509
+	c0,0-0.615-0.946-0.615-1.002C4.666,14.802,4.5,14.457,4.5,14.063c0-0.956,0.731-1.688,1.688-1.688s1.688,0.731,1.688,1.688
+	c0,0.394-0.166,0.739-0.334,1.02l-0.616,1.002c-0.056,0.112-0.176,0.341-0.176,0.509v0.281c0,0.619,0.506,1.125,1.125,1.125h4.219
+	c0.168,0,0.281-0.113,0.281-0.281V13.5c0-0.619,0.506-1.125,1.125-1.125h0.281c0.169,0,0.396,0.063,0.51,0.176
+	c0,0,0.945,0.616,1.002,0.616c0.337,0.168,0.626,0.334,1.02,0.334c0.956,0,1.687-0.731,1.687-1.687c0-0.957-0.731-1.688-1.687-1.688
+	c-0.394,0-0.738,0.166-1.02,0.334l-1.002,0.616c-0.113,0.056-0.341,0.176-0.51,0.176H13.5c-0.619,0-1.125-0.506-1.125-1.125V5.908
+	c0-0.168-0.113-0.281-0.281-0.281H7.875c-0.619,0-1.125-0.506-1.125-1.125V4.221c0-0.168,0.063-0.397,0.176-0.51
+	c0,0,0.616-0.945,0.616-1.001c0.168-0.281,0.334-0.626,0.334-1.02C7.875,0.733,7.144,0.002,6.188,0.001L6.188,0.001z"/>
+</svg></i>
+				<span class="media-body">Geo-Data</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a id="routedata"  data-type="confirm" data-target="d3route" href="javascript:void(0)">Polyline</a></li>
+				<li><a id="tinfoleak"  data-type="confirm" href="javascript:void(0)">All 9*</a></li>
+				<li><a id="septroute"  data-type="confirm" href="javascript:void(0)">9-27</a></li>
+				<li><a id="latedist"  data-type="confirm" href="javascript:void(0)">Night Test</a></li>
+				<li><a id="junegeo"  data-type="confirm" href="javascript:void(0)">6-25</a></li>
+				<li><a id="latemay"  data-type="confirm" href="javascript:void(0)">5-31</a></li>
+				<li><a id="latemaytwo"  data-type="confirm" href="javascript:void(0)">5-30</a></li>
+				<li><a id="earlyaug"  data-type="confirm" href="javascript:void(0)">8-4</a></li>
+				<li><a id="earlyaugtwo"  data-type="confirm" href="javascript:void(0)">8-5</a></li>
+				<li><a id="midaug"  data-type="confirm" href="javascript:void(0)">8-17</a></li>
+				<li><a id="midaugtwo"  data-type="confirm" href="javascript:void(0)">8-18</a></li>
+				<li><a id="midaugthr"  data-type="confirm" href="javascript:void(0)">8-19</a></li>
+				<li><a id="midaugfour"  data-type="confirm" href="javascript:void(0)">8-20</a></li>
+				<!--<li><a href="sidebar.html">Sidebar</a></li> -->
+			</ul>
+		</li>
+		<li class="dropdown pmd-dropdown">
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">
+				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="14.187px" height="18px" viewBox="0 0 14.187 18" enable-background="new 0 0 14.187 18" xml:space="preserve">
+				<path fill="#C9C8C8" d="M0,0v18h14.187V0H0z M3.121,3.293h2.023v4.767H3.121V3.293z M11.211,14.764H2.948v-2.022h8.263V14.764
+					L11.211,14.764z M11.211,11.585H2.948V9.563h8.263V11.585L11.211,11.585z M11.211,8.407H7.455V6.385h3.756V8.407z M11.211,5.229
+					H7.455V3.207h3.756V5.229z"/>
+				</svg></i>
+				<span class="media-body">Visualization</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a id="animateRoute" data-target="d3modal" href="javascript:void(0)">D3 Route v3</a></li>
+				<li><a id="d3modal" href="javascript:void(0)">D3 Poly v3</a></li>
+				<li><a id="d3stepper" href="javascript:void(0)">D3 Stepper v3</a></li>
+				<li><a id="perClickAnimate" href="javascript:void(0)">D3 Clicker v3</a></li>
+				<li><a id="truckbutton" href="javascript:void(0)">Truckin</a></li>
+				<li><a id="newestd3anim" href="javascript:void(0)">D3 V5 animation</a></li>
+				<li><a id="d3ptline" href="javascript:void(0)">Point Bomber v5</a></li>
+				<li><a id="latecalc" href="javascript:void(0)">late dist calcs</a></li>
+				<li><a id="canvasclick" href="javascript:void(0)">Canvas</a></li>
+				<li><a id="finalie" href="javascript:void(0)">Finalie</a></li>
+				<li><a id="d3loading" href="javascript:void(0)">D3 loads, instead of parser</a></li>
+				<li><a id="poilink" href="javascript:void(0)">AZ POI</a></li>
+				<!--<li><a href="sidebar.html">Sidebar</a></li> -->
+			</ul>
+		</li>
+		<li class="dropdown pmd-dropdown">
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">
+				<i class="material-icons media-left pmd-sm">swap_calls</i>
+				<span class="media-body">Image Media Details</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a id="processLink" data-toggle="modal" data-target="#tableModal">Truck/s Information</a></li>
+				<li><a id="" data-toggle="modal" data-target="#galleryModal">Truck Gallery</a></li>
+				<li><a id="fancyclick" data-target="#tableModal" data-toggle="modal" >Fancy Datatables</a></li>
+				<li><a id="straptables" data-target="#tableModal" data-toggle="modal" >BootStrap Tables</a></li>
+			</ul>
+		</li>
+		<li class="dropdown pmd-dropdown">
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">
+				<i class="media-left media-middle"><svg version="1.1" x="0px" y="0px" width="18px" height="12.706px" viewBox="0 0 18 12.706" enable-background="new 0 0 18 12.706" xml:space="preserve">
+<path fill="#C9C8C8" d="M0,0v12.706h18V0H0z M12.706,4.235v3.176H9.108V4.235H12.706z M8.049,4.235v3.176h-6.99V4.235H8.049z
+	 M1.059,8.47h6.99v3.177h-6.99V8.47z M9.108,11.647V8.47h3.599v3.177H9.108z M13.766,11.647V8.47h3.176v3.177H13.766z M16.942,7.412
+	h-3.176V4.235h3.176V7.412L16.942,7.412z"/>
+</svg></i>
+				<span class="media-body">Table</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a href="table.html">Normal Table</a></li>
+				<li><a href="data-table.html">Data Table</a></li>
+				<li><a href="table-with-expand-collapse.html">Table with Expand/Collapse</a></li>
+			</ul>
+		</li>
+		<li>
+			<a class="pmd-ripple-effect" href="login.html">
+				<i class="media-left media-middle">
+				<svg version="1.1" id="Layer_1" x="0px" y="0px" width="18px" height="18px" viewBox="288.64 337.535 18 18" enable-background="new 288.64 337.535 18 18" xml:space="preserve">
+				<path fill="#C9C8C8" d="M295.39,337.535v2.25h9v13.5h-9v2.25h11.25v-18H295.39z M297.64,342.035v3.375h-9v2.25h9v3.375l3.375-3.375
+					l1.125-1.125l-1.125-1.125L297.64,342.035z"/>
+				</svg></i>
+				<span class="media-body">Login</span>
+			</a>
+		</li>
+		<li>
+			<a class="pmd-ripple-effect" href="inbox.html">
+				<i class="media-left media-middle">
+				<svg version="1.1" x="0px" y="0px" width="18px" height="12.479px" viewBox="288.64 363.118 18 12.479" enable-background="new 288.64 363.118 18 12.479" xml:space="preserve">
+					<g transform="translate(641.29613,1096.2351)">
+						<path fill="#C9C8C8" d="M-352.656-726.466v-5.828l4.484,4.484c2.467,2.466,4.499,4.484,4.516,4.484s2.049-2.018,4.516-4.484
+							l4.484-4.484v5.828v5.828h-9h-9V-726.466z M-347.854-728.929l-4.188-4.188h8.385h8.386l-4.188,4.188
+							c-2.304,2.303-4.192,4.188-4.198,4.188S-345.551-726.626-347.854-728.929z"/>
+					</g>
+				</svg></i>
+				<span class="media-body">Inbox</span>
+			</a>
+		</li>
+		<li>
+			<a class="pmd-ripple-effect" href="notifications.html">
+				<i class="media-left media-middle">
+				<svg version="1.1" id="Layer_1" x="0px" y="0px" width="15.3px" height="18px" viewBox="289.99 337.535 15.3 18" enable-background="new 289.99 337.535 15.3 18" xml:space="preserve">
+					<g>
+						<g>
+							<path fill="#C9C8C8" d="M297.64,355.535c0.99,0,1.8-0.81,1.8-1.8h-3.6C295.84,354.725,296.65,355.535,297.64,355.535z
+								 M303.49,350.135v-4.95c0-2.79-1.891-5.041-4.501-5.67v-0.63c0-0.72-0.63-1.35-1.35-1.35c-0.72,0-1.35,0.63-1.35,1.35v0.63
+								c-2.61,0.629-4.5,2.88-4.5,5.67v4.95l-1.8,1.8v0.9h15.3v-0.9L303.49,350.135z"/>
+						</g>
+					</g>
+				</svg></i>
+				<span class="media-body">Notifications</span>
+			</a>
+		</li>
+		<li style="margin-left:6px;">
+                    <div class="container" id="stepper-main">
+                      <div id="controls" class="row">
+                        <div class="row clearfix">
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            	<button id = "begin" class="btn pmd-btn-raised pmd-ripple-effect btn-success" role="button">Begin <span class="mdi mdi-play"></span></button>
+                          <button id="reload" class="btn pmd-btn-raised pmd-ripple-effect btn-warning">Reload</button>
+
+                           <button id="cleardata" class="btn pmd-btn-raised pmd-ripple-effect btn-danger">Clear</button>
+                          <div id="slider-div">
+                            <label>TimeFactor: <span id="date-label"></span></label>
+                            <div id="date-slider" class="slider"></div>
+                          </div>
+                          <div id="slider-div">
+                            <label>MileageCluster: <span id="mile-label"></span></label>
+                            <div id="mile-slider" class="slider slider-warning"></div>
+                          </div>
+                          <h4 id="timecounter"> </h4>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </li>
+	</ul>
+</aside><!-- End Left sidebar -->
+<!-- Sidebar Ends -->
+
+<!--content area start-->
+<div id="content" class="pmd-content content-area dashboard">
+
+	<div class="container-fluid">
+		<div class="row" id="card-masonry">
+
+		 <!-- Today's Site Activity -->
+		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div id="mapwrap" >
+                          <div id="map">
+                            <div id="layerIn"></div>
+                          </div>
+                    </div>
+				<span class="btn-loader loader hidden">Loading...</span>
+		 </div> <!--end Today's Site Activity -->
+
+		 <div class="dateTimeBox box">
+        <div class = "date"></div>
+        <div class = "time"><span class="mdi mdi-clock"></span> <span class = "readableTime"></span></div>
+        <div class= "controls">
+        	<div id="slower"></div>
+
+            <button type="button" class="btn btn-primary pmd-ripple-effect pmd-btn-raised pmd-btn-xs slower"><span class="glyphicon glyphicon-backward"></span> Slower</button>
+            <button type="button" class="btn pmd-ripple-effect btn-secondary pmd-btn-raised pmd-btn-xs faster">Faster <span class="glyphicon glyphicon-forward"></span> </button>
+        </div>
+        <div>Time Factor: <span class = "timeFactor"></span> minutes per second</div>
+    </div>
+    <br>
+    <div class="legendBox box">
+        <div class = "boxHeader"><span class="mdi mdi-map-marker"></span> Legend</div>
+        <div class = 'legendItem'>
+        <svg>
+            <circle r="5" id="marker" transform="translate(20,20)"></circle>
+        </svg><p>Full Taxi</p></div>
+        <div class = 'legendItem'>
+        <svg>
+            <circle r="20" id="marker" transform="translate(20,20)" style="opacity:0.30000000000000004"></circle>
+        </svg><p>Empty Taxi<sup>*</sup></p></div>
+        <div class = 'legendItem'>
+        <svg>
+            <circle r="5" class="startPoint" transform="translate(20,20)"></circle>
+        </svg><p>Trip Start Point</p></div>
+        <div class = 'legendItem'>
+        <svg>
+            <circle r="5" class="endPoint" transform="translate(20,20)"></circle>
+        </svg><p>Trip End Point</p></div>
+        <div class = 'legendItem'>
+        <svg>
+            <path class="trip true" style="opacity:.7" d="M10,10L30,30" ></path>
+        </svg><p>Trip Route<sup>*</sup></p></div>
+        <div class="legendItem">
+        	<svg>
+        		<path class="false" style="opacity:0.7" d="M10,10L30,30"></path>
+        	</svg><p>Trip Inactive</div>
+    </div>
+
+    <div class="newBox box">
+     <button type="button" class="btn btn-default btn-lg reload">
+      <span class="mdi mdi-refresh"></span> Load Another Truck!
+    </button>
+    </div>
+    <!--$: <span class = "runningFare">Test</span>-->
+
+    <div class="totalsBox box">
+        <div class = "boxHeader"><span class="mdi mdi-pie-chart"></span> Running Totals</div>
+
+        <p>Total Mileage: <span class = "runningFare running"></span></p>
+        <p>Surcharge: <span class = "runningSurcharge running"></span></p>
+        <p>MTA Tax: <span class = "runningTax running"></span></p>
+        <p>Minutes<sup>*</sup>: <span class = "runningTip running"></span></p>
+        <p class = "tolls">MS Time <span class = "runningTolls running"></span></p>
+        <p>Total: <span class = "runningTotal running"></span></p>
+        <p>Id <span class = "runningPassengers running"></span></p>
+        <div class = "mdi mdi-car"></div>
+    </div>
+
+
+    <div class="areaChartBox box">
+    </div>
+		 <!--Sidebar-->
+		 <div class="col-xs-12 col-sm-12 col-md-6">
+			<div id="sidebar">
+              <div class="card card-nav-tabs" style="background-color: rgba(174,128,12,0.9); color:#f4e9cf">
+                <div class="card-header card-header-info" style="padding-top:5px; padding-bottom: 5px;">
+                  <i class="mdi mdi-map-search-outline" style="font-size: 36px;"></i>Features
+                </div>
+                <ul id="sidebarlist" class="list-group list-group-flush">
+                  <li class="list-group-item"></li>
+                </ul>
+              </div>
+            </div>
+		 </div><!-- end sidebar-->
+
+		  <!-- User details-->
+		 <div class="col-xs-12 col-sm-12 col-md-6">
+			<div class="container">
+            <div class="modal fade" id="tableModal" tabindex="-1" role="dialog" style="height:700px;">
+                <div class="modal-dialog modal-lg" role="document">
+
+                    <div class="modal-content" id="tableContent">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="tableModalLabel">Truck Media Details</h4>
+                        </div>
+                        <div id="tableBody" class="center modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link waves-effect bg-amber">CLOSE</button>
+                            <button type="button" class="btn btn-link bg-yellow waves-effect" data-dismiss="modal">DISMISS</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="galleryModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content" id="galleryContent">
+                        <!--
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="galleryModalLabel">Truck Media Details</h4>
+                        </div>
+                        <div id="galleryBody" class="modal-body">
+                        -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                GALLERY
+                                <small>All pictures taken from <a href="https://unsplash.com/" target="_blank">unsplash.com</a></small>
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/1.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-1.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/2.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-2.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/3.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-3.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/4.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-4.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/5.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-5.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/6.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-6.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/7.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-7.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/8.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-8.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/9.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-9.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/10.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-10.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/11.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-11.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/12.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-12.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/13.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-13.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/14.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-14.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/15.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-15.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/16.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-16.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/17.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-17.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/18.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-18.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/19.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-19.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                    <a href="images/image-gallery/20.jpg" data-sub-html="Demo Description">
+                                        <img class="img-responsive thumbnail" src="images/image-gallery/thumb/thumb-20.jpg">
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link waves-effect bg-pink" data-dismiss="modal">CLOSE</button>
+                                <button type="button" class="btn btn-link waves-effect bg-lime" data-dismiss="modal">DISMISS</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+            <div class="modal fade bg-example-modal-lg" id="d3points" tabindex="-1" role="dialog" style="right:10rem;" aria-labelledby="d3PointsLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document" style="height:60vh; width:80vw;">
+                <div class="modal-content" style="width:50vw;">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="d3PointsLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="d3points" style="height:60vh;"></div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="modal fade bg-example-modal-lg" id="d3Steam" tabindex="-1" role="dialog" style="right:10rem;"  aria-labelledby="d3SteamModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document" style="height:60vh; width:80vw;">
+                <div class="modal-content" style="width:50vw;">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="d3SteamModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="d3piechart" style="height:70vh;"></div>
+                    <div id="d3legend"><div id="d3vals"></div></div>
+                    <div id="slider-div3" style="width:30%">
+                    <label>Data Set: <span id="pie-label" style="color:#000;"></span></label>
+                    <div id="pie-slider" class="slider slider-rose"></div>
+                  </div>
+                  </div>
+                  <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Scripts Starts -->
+<script src="assets/js/jquery-1.12.2.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+<script src="assets/js/helpers/leaflet-search.js"></script>
+<script src="assets/js/helpers/easybutton.js"></script>
+<script src="assets/js/helpers/sidebar.js"></script>
+<script src="assets/js/helpers/togeojson.js"></script>
+<script src="assets/js/helpers/leaflet.filelayer.js"></script>
+<script src="assets/js/core/leaflet.markercluster.js"></script>
+<script src="assets/js/helpers/geojson-minifier.js"></script>
+<script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+<script src="assets/data/poi.js"></script>
+<script src="assets/js/helpers/FullScreen.js"></script>
+<script src="assets/js/helpers/wNumb.js"></script>
+<script src="assets/js/helpers/leaflet.groupedlayercontrol.min.js"></script>
+<script src="assets/js/sweetalert.min.js"></script>
+<script src="assets/js/core/d3layer.js"></script>
+<script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="assets/js/libs/moments.js"></script>
+<script src="assets/data/censusdata.js"></script>
+<script src="assets/js/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables.bootstrap.js"></script>
+<script src="assets/js/dataTables.buttons.min.js"></script>
+<script src="assets/js/buttons.flash.min.js"></script>
+<script src="assets/js/jszip.min.js"></script>
+<script src="assets/js/pdfmake.min.js"></script>
+<script src="assets/js/vfs_fonts.js"></script>
+<script src="assets/js/buttons.html5.min.js"></script>
+<script src="assets/js/buttons.print.min.js"></script>
+<script src="assets/js/lightgallery.js"></script>
+<script src="assets/js/propeller.min.js"></script>
+<script src="assets/js/core/Ld3.js"></script>
+<script src="assets/js/core/canvasoverlay.js"></script>
+<!-- Javascript for revenue progressbar animation effect-->
+
+<!--circle chart-->
+
+<!-- Scripts Ends -->
+<!-- Javascript for Datepicker -->
+<script type="text/javascript" language="javascript" src="components/datetimepicker/js/moment-with-locales.js"></script>
+<script type="text/javascript" language="javascript" src="components/datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<!-- Custom Js -->
+<!--
+<script src="assets/data/lh.js" type="text/javascript"></script>
+<script src="assets/data/lht.js" type="text/javascript"></script>
+
+<script src="assets/js/minifyCoords.js" type="text/javascript"></script>
+
+<script src="assets/js/geojson-tidy.js" type="text/javascript"></script>
+-->
+<script src="assets/js/core/charting.js" type="text/javascript"></script>
+<script src="assets/js/core/school-app2.js"></script>
+<script>
+	$(document).ready(function() {
+		var sPath=window.location.pathname;
+		var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+		$(".pmd-sidebar-nav").each(function(){
+			$(this).find("a[href='"+sPage+"']").parents(".dropdown").addClass("open");
+			$(this).find("a[href='"+sPage+"']").parents(".dropdown").find('.dropdown-menu').css("display", "block");
+			$(this).find("a[href='"+sPage+"']").parents(".dropdown").find('a.dropdown-toggle').addClass("active");
+			$(this).find("a[href='"+sPage+"']").addClass("active");
+		});
+	});
+</script>
+<script type="text/javascript">
+(function() {
+  "use strict";
+  var toggles = document.querySelectorAll(".c-hamburger");
+  for (var i = toggles.length - 1; i >= 0; i--) {
+    var toggle = toggles[i];
+    toggleHandler(toggle);
+  };
+  function toggleHandler(toggle) {
+    toggle.addEventListener( "click", function(e) {
+      e.preventDefault();
+      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+    });
+  }
+
+})();
+</script>
+
+
+<script>
+	// Linked date and time picker
+	// start date date and time picker
+	$('#datepicker-default').datetimepicker();
+	$(".auto-update-year").html(new Date().getFullYear());
+</script>
+
+</body>
+</html>
