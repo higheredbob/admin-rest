@@ -1,0 +1,4219 @@
+
+config = {
+    hoverProperty: "pickuptime",
+    hoverPropertyTwo: 'dist4',
+    hprop: 'dropofftime',
+    hproptwo: 'dropoffx',
+    hpropthree: 'dropoffy',
+    base: [33.2852648,  -111.7012255],
+    opts: {units: 'miles'},
+    geoType: 'multiLineString',
+    customerComplete: '2018-01-23'
+
+};
+//$('#geolink').hide();
+//$('#tablelink').hide();
+//$('#functionlink').hide();
+//$('#menuWrangle').hide();
+//$('#animlink').hide();
+$('#lastcomplete').html('<h5>Completed Imagery: '+config.customerComplete+'</h5>');
+
+$(document).ready(function(){
+var mapboxOSM = L.tileLayer("https://{s}.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token={access_token}", {
+  maxZoom: 19,
+  access_token: 'pk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqbzZsZXR5cDA1cDUza29qYnV1NjA0OTAifQ.pvTwwdIdX0vK0P7e18U9CQ',
+  subdomains: ["a", "b", "c", "d"],
+  attribution: 'Basemap <a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox © OpenStreetMap</a>'
+});
+
+var  mapboxDark = L.tileLayer("https://{s}.tiles.mapbox.com/v3/mapbox.world-dark/{z}/{x}/{y}.png", {
+  attribution: 'Basemap <a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox © OpenStreetMap</a>'
+});
+
+var mapboxSat = L.tileLayer("https://{s}.tiles.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token={access_token}", {
+  maxZoom: 19,
+  access_token: 'pk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqbzZsZXR5cDA1cDUza29qYnV1NjA0OTAifQ.pvTwwdIdX0vK0P7e18U9CQ',
+  subdomains: ["a", "b", "c", "d"],
+  attribution: 'Basemap <a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox © OpenStreetMap</a>'
+});
+var mapboxStyled = L.tileLayer('https://api.mapbox.com/styles/v1/higherbob/cjp0uuubn0lks2smif2xgf4cy/tiles/{z}/{x}/{y}?access_token=sk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqcDFqb3owcjAxdHUzd2xieW1mcnFxZzQifQ.SglahG2gZ66A7orjOxzWKg', {
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+var mapboxBluebox = L.tileLayer('https://api.mapbox.com/styles/v1/higherbob/cjp1ep6bn14452smi9uk1nvon/tiles/{z}/{x}/{y}?access_token=sk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqcDFqb3owcjAxdHUzd2xieW1mcnFxZzQifQ.SglahG2gZ66A7orjOxzWKg', {
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+var mapboxGreybox = L.tileLayer('https://api.mapbox.com/styles/v1/higherbob/cjp2q1xgr11822rnsd5oael0q/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqbzZsZXR5cDA1cDUza29qYnV1NjA0OTAifQ.pvTwwdIdX0vK0P7e18U9CQ', {
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+var mapboxDecimal = L.tileLayer('https://api.mapbox.com/styles/v1/higherbob/cjp1ep6bn14452smi9uk1nvon/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqbzZsZXR5cDA1cDUza29qYnV1NjA0OTAifQ.pvTwwdIdX0vK0P7e18U9CQ', {
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+var mapboxTraffic = L.tileLayer('https://api.mapbox.com/styles/v1/higherbob/cjq9du46o2a0w2rqu6iic6djf/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGlnaGVyYm9iIiwiYSI6ImNqbzZsZXR5cDA1cDUza29qYnV1NjA0OTAifQ.pvTwwdIdX0vK0P7e18U9CQ', {
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+var OSM = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  });
+
+var OSM_hot = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+});
+
+var OSM_topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  maxZoom: 17,
+  attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
+var open_grey = L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roadsg/x={x}&y={y}&z={z}', {
+  maxZoom: 19,
+  attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+var hyda_street = L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+var stamen_terrain = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  subdomains: 'abcd',
+  minZoom: 0,
+  maxZoom: 18,
+  ext: 'png'
+});
+
+var esri_street = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
+});
+
+var esri_delohme = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Copyright: &copy;2012 DeLorme',
+  minZoom: 1,
+  maxZoom: 18
+});
+
+var esri_satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+
+var carto_dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
+});
+
+var hike_bike = L.tileLayer('http://{s}.tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+function getColorY(n) {
+  return n > 3.4 ? '#fff59d' :
+           n > 2.5 ? '#fff176' :
+           n > 1.5 ? '#ffee58' :
+           n > 0.5 ? '#ffeb3b' :
+           n > 0.25 ? '#ffe436' :
+           n > 0.18 ? '#fdd835' :
+           n > 0.12 ? '#fbc02d' :
+           n > 0.08 ? '#f9a825' :
+           n > 0.04 ? '#f57f17' :
+           n > 0.02 ? '#d46e13' :
+                    '#be6314';
+}
+
+function getColorO(n) {
+    return n > 3.4 ? '#94f0ff' :
+           n > 2.5 ? '#7fd5f0' :
+           n > 1.75 ? '#71c3e6' :
+           n > 1.2 ? '#63b1dc' :
+           n > 0.60 ? '#559fd2' :
+           n > 0.25 ? '#478dc8' :
+           n > 0.12 ? '#397bbe' :
+           n > 0.08 ? '#2b69b4' :
+           n > 0.04 ? '#164ea5' :
+           n > 0.02 ? '#013396' :
+                    '#002588';
+}
+
+
+function getColor(n) {
+    return n > 3.4 ? '#ff7272' :
+           n > 2.5 ? '#f06363' :
+           n > 1.75 ? '#e65959' :
+           n > 1.2 ? '#dc4f4f' :
+           n > 0.60 ? '#d24545' :
+           n > 0.25 ? '#c83b3b' :
+           n > 0.12 ? '#be3131' :
+           n > 0.08 ? '#af2222' :
+           n > 0.04 ? '#a51818' :
+           n > 0.02 ? '#960909' :
+                    '#8c0303';
+}
+
+
+function getColorR(n) {
+    return n > 3.4 ? '#018664' :
+           n > 2.5 ? '#e5eac4' :
+           n > 1.75 ? '#cbdeb9' :
+           n > 1.2 ? '#b1d2ae' :
+           n > 0.60 ? '#97c6a3' :
+           n > 0.25 ? '#7dba98' :
+           n > 0.12 ? '#63ae8d' :
+           n > 0.08 ? '#49a282' :
+           n > 0.04 ? '#2f9677' :
+           n > 0.02 ? '#158a6c' :
+                    '#fff6cf';
+}
+
+
+highlightLayer = L.geoJson(null, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, {
+            radius: 3,
+            color: '#536dfe',
+            weight: 2,
+            opacity: 1,
+            fillColor: '#536dfe',
+            fillOpacity: 1,
+            clickable: false
+        });
+    },
+    style: function (feature) {
+        return {
+            color: '#536dfe',
+            weight: 2,
+            opacity: 1,
+            fillColor: '#536dfe',
+            fillOpacity: 0.5,
+            clickable: false
+        };
+    }
+});
+
+
+featureLayer = L.geoJson(null, {
+    filter: function(feature, layer) {
+        return feature.geometry.coordinates[0] !== 0 && feature.geometry.coordinates[1] !== 0;
+    },
+    pointToLayer: function(feature, latlng) {
+      var props = L.Util.extend({
+        'start': '',
+        'end': '',
+        'distance': '',
+        'name': '',
+        'venue': ''
+      }, feature.properties),
+      textPopup = L.Util.template('<h3>{start}</h3>{end}<br>{distance}<br>{name}<br>{venue}', props);
+        return L.circleMarker(latlng, {
+            radius: 3,
+            weight: 2,
+            fillColor: getColorY(feature.properties.dist4),
+            color: getColorY(feature.properties.dist4),
+            opacity: 1,
+            fillOpacity: 1
+        });
+    },
+    onEachFeature: function(feature, layer) {
+        //console.log(layer);
+        layer.on({
+            mouseover: function (e) {
+
+                $(".info-control").html(feature.properties[config.hoverProperty]);
+                $('.info-control').html(["Pickup: "+feature.properties[config.hoverProperty]+"<br />","distance: "+ feature.properties[config.hoverPropertyTwo]]);
+                $('.info-control').show();
+            },
+            mouseout: function (e) {
+
+                $('.info-control').hide();
+            },
+            click: function(e) {
+                identifyFeature(L.stamp(layer));
+                highlightLayer.clearLayers();
+                highlightLayer.addData(featureLayer.getLayer(L.stamp(layer)).toGeoJSON());
+            }
+        });
+    }
+
+});
+
+
+
+
+//.on('search:collapsed', function(e){
+//  featureLayer.eachLayer(function(layer){
+//    featureLayer.resetStyle(layer);
+//  })
+//})
+
+featureLayerAlt = L.geoJson(null, {
+    filter: function(feature, layer) {
+        return feature.geometry.coordinates[0] !== 0 && feature.geometry.coordinates[1] !== 0;
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+            radius: 3,
+            weight: 2,
+            fillColor: getColorR(feature.properties.dist4),
+            color: getColorR(feature.properties.dist4),
+            opacity: 1,
+            fillOpacity: 1
+        });
+    },
+    onEachFeature: function(feature, layer) {
+        //console.log(layer);
+        layer.on({
+            mouseover: function (e) {
+
+                $(".info-control").html(feature.properties[config.hoverProperty]);
+                $('.info-control').html(["Pickup: "+feature.properties[config.hoverProperty]+"<br />","distance: "+ feature.properties[config.hoverPropertyTwo]]);
+                $('.info-control').show();
+            },
+            mouseout: function (e) {
+
+                $('.info-control').hide();
+            },
+            click: function(e) {
+                identifyFeature(L.stamp(layer));
+                highlightLayer.clearLayers();
+                highlightLayer.addData(featureLayer.getLayer(L.stamp(layer)).toGeoJSON());
+            }
+        });
+    }
+
+});
+
+
+featureLayerAlt2 = L.geoJson(null, {
+    filter: function(feature, layer) {
+        return feature.geometry.coordinates[0] !== 0 && feature.geometry.coordinates[1] !== 0;
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+            radius: 3,
+            weight: 2,
+            fillColor: getColorO(feature.properties.dist4),
+            color: getColorO(feature.properties.dist4),
+            opacity: 1,
+            fillOpacity: 1
+        });
+    },
+    onEachFeature: function(feature, layer) {
+        //console.log(layer);
+        layer.on({
+            mouseover: function (e) {
+
+                $(".info-control").html(feature.properties[config.hoverProperty]);
+                $('.info-control').html(["Pickup: "+feature.properties[config.hoverProperty]+"<br />","distance: "+ feature.properties[config.hoverPropertyTwo]]);
+                $('.info-control').show();
+            },
+            mouseout: function (e) {
+
+                $('.info-control').hide();
+            },
+            click: function(e) {
+                identifyFeature(L.stamp(layer));
+                highlightLayer.clearLayers();
+                highlightLayer.addData(featureLayer.getLayer(L.stamp(layer)).toGeoJSON());
+            }
+        });
+    }
+
+});
+featureLayerD3 = L.geoJson(null, {
+    filter: function(feature, layer) {
+        return feature.geometry.coordinates[0] !== 0 && feature.geometry.coordinates[1] !== 0;
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+            radius: 3,
+            weight: 2,
+            fillColor: getColor(feature.properties.dist4),
+            color: getColor(feature.properties.dist4),
+            opacity: 1,
+            fillOpacity: 1
+        });
+    },
+    onEachFeature: function(feature, layer) {
+        //console.log(layer);
+        layer.on({
+            mouseover: function (e) {
+              /*d3.select( ".legend .value" )
+                .attr( "value", (
+                  feature.properties.slice(2, 3) == "-" ? "d" +
+                  ( ( /^[EAOUIY]/i).test( feature.properties[config.d3test] ) ? true : "false ") : "") +
+                feature.properties[config.d3feature] + " : " +
+                ( feature.properties[config.d3featuretwo] + ": " + feature.properties[config.d3featurethree] + ": ") +
+                feature.properties[config.d3featurefour] != undefined ? feature.properties[config.d3featurefour] : "" )
+                */
+                $(".info-control").html(feature.properties[config.hoverProperty]);
+                $('.info-control').html(["Pickup: "+feature.properties[config.hoverProperty]+"<br />","distance: "+ feature.properties[config.hoverPropertyTwo]]);
+                $('.info-control').show();
+            },
+            mouseout: function (e) {
+                //d3.select( '.legend .value')
+                 // .attr( "value", "" )
+                $('.info-control').hide();
+            },
+            click: function(e) {
+                identifyFeature(L.stamp(layer));
+                highlightLayer.clearLayers();
+                highlightLayer.addData(featureLayer.getLayer(L.stamp(layer)).toGeoJSON());
+            }
+        });
+    }
+
+});
+L.Control.FileLayerLoad.LABEL = '<i class="material-icons">folder</i>';
+layerLoader = L.Control.fileLayerLoad({
+  fitBounds: true,
+  layerOptions: {
+    filter: function(feature, layer) {
+        return feature.geometry.coordinates[0] !== 0 && feature.geometry.coordinates[1] !== 0;
+    },
+    pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, {
+            radius: 3,
+            weight: 2,
+            fillColor: getColor(feature.properties.dist4),
+            color: getColor(feature.properties.dist4),
+            opacity: 1,
+            fillOpacity: 1
+        });
+    },
+    onEachFeature: function(feature, layer) {
+        //console.log(layer);
+        layer.on({
+            mouseover: function (e) {
+
+                $(".info-control").html(feature.properties[config.hoverProperty]);
+                $('.info-control').html(["Pickup: "+feature.properties[config.hoverProperty]+"<br />","distance: "+ feature.properties[config.hoverPropertyTwo]]);
+                $('.info-control').show();
+            },
+            mouseout: function (e) {
+
+                $('.info-control').hide();
+            },
+            click: function(e) {
+                identifyFeature(L.stamp(layer));
+                highlightLayer.clearLayers();
+                highlightLayer.addData(featureLayer.getLayer(L.stamp(layer)).toGeoJSON());
+            }
+        });
+    }
+
+  }
+})
+
+
+var baseLayers = {
+  "Street Map": mapboxOSM,
+  "Dark Map": mapboxDark,
+  "Aerial Imagery": mapboxSat,
+  "bluebox": mapboxBluebox,
+  "decimal": mapboxDecimal,
+  "greybox": mapboxGreybox,
+  'trafficbox': mapboxTraffic,
+  "styled": mapboxStyled,
+  "osm street": OSM,
+  "osm hot": OSM_hot,
+  "osm topo": OSM_topo,
+  "openmaps": open_grey,
+  "hyda": hyda_street,
+  "stamen terrain": stamen_terrain,
+  "esri street": esri_street,
+  "esri delohme": esri_delohme,
+  "esri satellite": esri_satellite,
+  "carto dark": carto_dark,
+  "hike bike": hike_bike
+};
+
+
+var overlayLayers = {
+  "featureLayers":{
+  "<span id='layerRoot'>Lr</span>": featureLayer,
+  "<span id='layerAlt'>La</span>": featureLayerAlt,
+  "<span id='layerLg'>Lg</span>": featureLayerAlt2,
+  },
+  "d3layers":{
+  "<span id='layerD3a'>LD3</span>": featureLayerD3,
+}
+};
+
+
+
+var map = L.map('map', {
+    layers: [mapboxTraffic, featureLayer, highlightLayer],
+    center: config.base,
+    zoom: 12,
+    maxZoom: 21,
+    fullscreenControl: true,
+    zoomControl: false,
+    zoomSnap: 0.125,
+    zoomDelta: 0.5,
+    wheelPxPerZoomLevel: 100
+});
+var marker;
+//L.svg().addTo(maptwo);
+var layerControl = L.control.groupedLayers(baseLayers, overlayLayers);
+//layerControlR = L.control.layers( overlayLayersR);
+//layerControlO = L.control.layers( overlayLayersO);
+var zoom = L.control.zoom({zoomInText: '', zoomOutText: '',position: 'topleft'})
+layerControl.addTo(map);
+zoom.addTo(map);
+
+layerLoader.addTo(map);
+var sidebar = L.control.sidebar('sidebar', {autoPan: false, closeButton: false});
+sidebar.addTo(map);
+
+//layerControlR.addTo(map);
+//layerControlO.addTo(map);
+var searchControl = new L.Control.Search({
+  url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
+  jsonpParam: 'json_callback',
+  propertyName: 'display_name',
+  propertyLoc: ['lat', 'lon'],
+  circleLocation: false,
+  autoType: false,
+  autoCollapse: false,
+  minLength: 2,
+  zoom: 13,
+  textPlaceholder: 'Search Addresses',
+  collapsed: false,
+  //moveToLocation: function(latlng, title, map) {
+  //  var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+  //  map.setView(latlng, zoom);
+  //}
+  //buildTip: function(text, val){
+  //    var type = val.layer.feature.properties;
+  //    return '<a href="#" class="'+type+'">'+text+'<b>'+type+'</b></a>';
+  //}
+});
+searchControl.addTo(map);
+searchControl.on('search:locationfound', function(e){
+  console.log(e);
+  //map.fire('click', {latlng:e.latlng});
+  searchControl.collapse();
+  if(marker){
+    map.removeLayer(marker);
+  }
+  //var name = e.display_name;
+  marker = new L.marker([e.latlng.lat, e.latlng.lng], {icon: wiicon}).addTo(map);
+  searchControl.addTo(map);
+  //moveToLocation(e.latlng, name, map);
+  //if(e.layer._popup) {
+  //  e.layer.openPopup();
+  //}
+});
+
+var MiIcon = L.Icon.Default.extend({
+  options: {
+        iconUrl: 'marker.svg'
+  }
+});
+
+var miicon = new MiIcon();
+
+var RiIcon = L.Icon.Default.extend({
+  options: {
+        iconUrl: 'red-marker.png'
+  }
+});
+
+var riicon = new RiIcon();
+
+var QiIcon = L.Icon.Default.extend({
+  options: {
+      iconUrl: 'sun-marker.png'
+  }
+})
+
+var qiicon = new QiIcon();
+
+var WiIcon = L.Icon.Default.extend({
+  options: {
+        iconUrl: 'wine-marker.png'
+  }
+});
+
+var wiicon = new WiIcon();
+
+var TlIcon = L.Icon.Default.extend({
+  options: {
+        iconUrl: 'stylish-marker.png'
+  }
+});
+
+var tlicon = new TlIcon();
+
+L.Map.include({
+  'clearLayers': function (){
+    this.eachLayer(function (layer) {
+      this.removeLayer(layer);
+    }, this);
+  }
+});
+
+
+var sidebarToggle = new L.easyButton({
+  states: [{
+    stateName: 'open-sidebar',
+    icon: 'mdi mdi-menu',
+    title: 'Show Sidebar',
+    onClick: function(btn, map) {
+
+      sidebar.show();
+      btn.state('close-sidebar');
+
+    }
+  },{
+    stateName: 'close-sidebar',
+    icon: 'mdi mdi-silverware-variant',
+    title: 'Hide Sidebar',
+    onClick: function(btn, map) {
+
+      sidebar.hide();
+      btn.state('open-sidebar');
+      searchControl.addTo(map);
+    }
+  }],
+  id: 'menu'
+});
+var togglebar = L.easyBar([sidebarToggle], {id: 'toggle'}).addTo(map);
+sidebar.on('hide', function() {
+  sidebarToggle.state('open-sidebar')
+
+});
+sidebar.on('show', function(){
+  sidebarToggle.state('close-sidebar');
+
+});
+map.addControl( searchControl );
+setHeights();
+
+ $(window).resize(function(){
+        setTextareaWidth();
+        setHeights();
+    });
+
+
+map.on("enterFullscreen", function() {
+
+    var onepart = Math.ceil($(window).height())
+    var twopart = Math.ceil($(window).width())
+    $('#maptwo').hide();
+
+    $("#map").css('height',onepart);
+    $('#map').css('width', twopart);
+    $('#poptime').show();
+    $('#poptime').popover('show');
+    L.Util.requestAnimFrame(map.invalidateSize,map,!1,map._container);
+    //L.Util.requestAnimFrame(maptwo.invalidateSize,maptwo,!1,maptwo._container);
+    map.invalidateSize();
+   });
+map.on('exitFullscreen', function(){
+    var textHeight = $('#geoInput').height();
+    var onepart = Math.floor($(window).height());
+    var twopart = Math.floor($(window).width());
+
+    //$('#geoOutput').show();
+
+    //$('#maptwo').css('width', twopart - 145);
+    $('#map').css('width', twopart - 145);
+    //$('#maptwo').css('height', onepart + 160);
+    $('#map').css('height', onepart - textHeight);
+    $('#poptime').hide();
+    $('#poptime').popover('hide');
+    L.Util.requestAnimFrame(map.invalidateSize,map,!1,map._container);
+    //L.Util.requestAnimFrame(maptwo.invalidateSize,maptwo,!1,maptwo._container);
+    //maptwo.invalidateSize();
+    map.invalidateSize();
+
+});
+function setTextareaWidth() {
+        var widthMaps = $('#map').width() - 15;
+        $('#geoInput').width(widthMaps);
+        //$('#geoOutput').width(widthMaps);
+    }
+
+
+function setHeights() {
+
+        var w = $(window).width();
+
+        if (w > 1170) {
+          var textHeight = $('#geoInput').height();
+            var viewportHeight = $(window).height();
+            var viewportWidth = $(window).width();
+            var navbarHeight = $('.navbar').height();
+            var sidebarWidth = $('#leftsidebar').width();
+            var availableHeight = viewportHeight - textHeight;//- navbarHeight - 8 - 17 - 21 - 34;
+            var availableWidth = viewportWidth - sidebarWidth;
+            var equalParts = Math.floor(viewportHeight);
+            var equalwidth = Math.floor(availableWidth);
+            $('#map').css('height',equalParts - 20);
+            $('#map').css('width', equalwidth - 50);
+            $('#geoInput').css('height',equalParts);
+            //$('#maptwo').css('width', equalwidth - 145);
+            //$('#maptwo').css('height',equalParts + 160);
+            //$('#geoOutput').css('height',equalParts);
+            //$('#chloromap').css('height', equalParts);
+            // add margin, in case navbar is higher
+            if (navbarHeight > 50) {
+                $('body').css('margin-top','100px');
+            } else {
+                $('body').css('margin-top','8px');
+            }
+        } else if (w > 440) {
+          var viewportHeight = $(window).height();
+          var viewportWidth = $(window).width();
+          var newwidth = Math.floor(viewportWidth - 40);
+          var newheight = Math.floor(viewportHeight - 30);
+          $('#map').css('height', newheight);
+          $('#map').css('width', newwidth);
+
+        } else {
+            $('.buttonsAlign').css('margin-bottom','15px');
+        }
+        map.invalidateSize();
+        //maptwo.invalidateSize();
+    }
+ setTextareaWidth();
+eRay = {"moveend_idx": "", "zoomend_idx": "", "viewreset_idx": "", "pathend_idx": ""};
+function indexEvents(eRay){
+  var maplen = map._events.length;
+  var eraylen = eRay.length;
+  for (var i = 0; i < eraylen; ++i) {
+    var tt = map._events[i];
+    for (var e = 0; e < maplen; ++e) {
+      var ll = tt[e];
+      eRay[i] = ll;
+    }
+  }
+  return eRay;
+}
+
+function identifyFeature(id) {
+  var featureProperties = featureLayer.getLayer(id).feature.properties;
+  var content = "<table class='table table-striped table-bordered table-condensed'>";
+  var insideSidebarHead = "<li class='list-group-item'>";
+  var insideSidebar = '';
+  var outsideSidebar = "<table class='table'><thead class='text-primary'>"
+  var outsideSidebarBody = "<tbody>"
+  var outsideth = "";
+  var outsidetd = ""
+  $.each(featureProperties, function(key, value) {
+    insideSidebar += insideSidebarHead;
+    if (!value) {
+      value = "";
+    }
+    if (typeof value == "string" && (value.indexOf("http") === 0 || value.indexOf("https") === 0)) {
+      value = "<a href='" + value + "' target='_blank'>" + value + "</a>";
+    }
+    content += "<tr><th>" + key + "</th><td>" + value + "</td></tr>";
+    insideSidebar += "<h4 style='color:#fcbc94;'>" + key + "</h4><p>" + value + "</p></li>";
+    outsideth += "<th>"+key+"</th>";
+    outsidetd += "<td>"+value+"</td>";
+  });
+  content += "<table>";
+  allsidebar = outsideSidebar + outsideth + "</thead>" + outsideSidebarBody + outsidetd + "</tbody></table>";
+
+  $('#sidebarlist').html(insideSidebar);
+  sidebar.show();
+
+  //$("#feature-info").html(content);
+  //$("#featureModal").modal("show");
+}
+
+
+featuresOut = L.geoJson();
+featuresIn = L.geoJson();
+
+
+function identifyData(ray, config){
+  if(config.addProperties != ""){
+    f = config.addProperties;
+    props = ray.f;
+  } else {
+    f = {};
+    props = ray.f;
+  }
+ var  redef = {
+              "type": "FeatureCollection",
+              "features": [
+              {
+                "type": "Feature",
+                "properties" : props,
+                "type": config.geoType,
+                "coordinates": [
+                  [
+                    ray.geometry.coordinates,
+                  ]
+                ]
+              }
+            ]
+          };
+var newray = [];
+for(var i = 0; i < redef.features.length; i++){
+    f = redef.features[i];
+  }
+if(config.geoType == "Polygon") {
+
+  newray.push(turf.featureCollection(turf.polygon(f.geometry.coordinates, f.properties)));
+} else if(config.geoType == "multiPolygon") {
+  newray.push(turf.featureCollection(turf.multiPolygon(f.geometry.coordinates, f.properties)));
+} else if(config.geoType == "lineString") {
+  newray.push(turf.featureCollection(turf.lineString(f.geometry.coordinates, f.properties)));
+} else if(config.geoType == "multiLineString") {
+  newray.push(turf.featureCollection(turf.multiLineString(f.geometry.coordinates, f.properties)));
+}
+return newray;
+}
+
+
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info-control'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+info.update = function (props) {
+    this._div.innerHTML = "";
+};
+
+
+info.addTo(map);
+//info.addTo(maptwo);
+$(".info-control").hide();
+
+
+/*
+custBar = L.control.custom({
+            position: 'bottomleft',
+            content : '<div class="btn-toolbar" role="toolbar">'+
+                        '<div id="totalV" class="btn-group mr-2" role="group" aria-label="first group">'+
+                      '    <button id="lyrbtn" class="btn btn-sm btn-danger type="button">'+
+                      '       <i class="material-icons" >layers</i>'+
+                      '    </button>'+
+                      '    <button id="drawbtn" class="btn btn-sm btn-info" type="button" id="styleditorbtn">'+
+                      '       <i class="mdi mdi-marker" ></i>'+
+                      '    </button>'+
+                      '    <button id="clickNext" class="btn btn-sm btn-primary" type="button">'+
+                      '       <i class="material-icons">local_offer</i>'+
+                      '    </button>'+
+                      //'    <button class="btn btn-sm btn-rose" type="button">'+
+                      //'       <i class="material-icons">location_history</i>'+
+                      //'    </button>'+
+                      //'    <button class="btn btn-sm btn-success" type="button">'+
+                      //'       <i class="material-icons">my_location</i>'+
+                      //'    </button>'+
+                      //'    <button class="btn btn-sm btn-warning" type="button">'+
+                      //'       <i class="material-icons">map</i>'+
+                      //'    </button>'+
+                      '  </div>'+
+                      '</div>',
+            classes : 'btn-group-vertical btn-group-sm',
+            style   :
+            {
+                margin: '8px 10px 8px',
+                width: '15px',
+                padding: '0',
+                cursor: 'pointer'
+            },
+            datas   :
+            {
+                'foo': 'bar',
+            },
+            events:
+            {
+                click: function(data)
+                {
+                    console.log('wrapper div element clicked');
+                    console.log(data);
+                },
+                dblclick: function(data)
+                {
+                    console.log('wrapper div element dblclicked');
+                    console.log(data);
+                },
+                contextmenu: function(data)
+                {
+                    console.log('wrapper div element contextmenu');
+                    console.log(data);
+                },
+            }
+        });
+        custBar.addTo(map);
+
+*/
+
+map.on("click", function(e) {
+    highlightLayer.clearLayers();
+});
+
+
+var directionField = document.getElementById('date-label');
+var slider = document.getElementById('date-slider');
+var mileslider = document.getElementById('mile-slider');
+var mileField = document.getElementById('mile-label');
+
+
+$('#reload').click(function(){
+    location.reload();
+});
+
+$('#poptime').hide();
+
+
+noUiSlider.create(slider, {
+  start: 240,
+ // tooltips: [slider({decimals: 1 })],
+  connect: [true,false],
+  step: 1,
+  range: {
+    min: 0,
+    max: 500
+  }
+});
+noUiSlider.create(mileslider, {
+  start: 60,
+ // tooltips: [slider({decimals: 1 })],
+  connect: [true,false],
+  step: 1,
+  range: {
+    min: 0,
+    max: 250
+  }
+});
+
+slider.classList.add('s1-slide');
+
+slider.noUiSlider.on('update', function (values, handle) {
+    directionField.innerHTML = values[handle];
+    sliderVal = values[handle];
+});
+mileslider.noUiSlider.on('update', function (values, handle) {
+    mileField.innerHTML = values[handle];
+    mileVal = values[handle];
+});
+
+featuresdata1 = [];
+var ltlng = [];
+var featuresIn = L.layerGroup();
+var featuresOut = L.layerGroup();
+var result;
+var intersectL = [];
+var bufferL = [];
+var layerIn = '<ul id="ul">';
+var layerOut = '<div id="layerOut">';
+var count = 0;
+features1 = [];
+
+$('#routedata').click(function(){
+var pathGeo = 'data/route.geojson';
+opendata(pathGeo);
+});
+$('#tinfoleak').click(function(){
+  var tinfoPath = 'data/9-20to9-10.geojson';
+  opendata(tinfoPath);
+})
+$('#septroute').click(function(){
+  var septGeo = 'data/9-27.geojson';
+  opendata(septGeo);
+})
+$('#latedist').click(function(){
+  var lateGeo = 'data/latedist.geojson';
+  opendata(lateGeo);
+})
+$('#junegeo').click(function(){
+  var juneGeo = 'data/6-25.geojson';
+  opendata(juneGeo);
+})
+$('#latemay').click(function(){
+  var mayGeo = 'data/5-31.geojson';
+  opendata(mayGeo);
+})
+$('#latemaytwo').click(function(){
+  var mayGeo = 'data/5-30.geojson';
+  opendata(mayGeo);
+})
+$('#earlyaug').click(function(){
+  var augGeo = 'data/8-4.geojson';
+  opendata(augGeo);
+})
+$('#earlyaugtwo').click(function(){
+  var augGeo = 'data/8-5.geojson';
+  opendata(augGeo);
+})
+$('#midaug').click(function(){
+  var augGeo = 'data/8-17.geojson';
+  opendata(augGeo);
+})
+$('#midaugtwo').click(function(){
+  var augGeo = 'data/8-18.geojson';
+  opendata(augGeo);
+
+})
+$('#midaugthr').click(function(){
+  var augGeo = 'data/8-19.geojson';
+  opendata(augGeo);
+})
+$('#midaugfour').click(function(){
+  var augGeo = 'data/8-20.geojson';
+  opendata(augGeo);
+})
+
+
+
+function opendata(geoFile) {
+
+count += 1;
+
+
+
+   newfile = $.getJSON(geoFile, function(geoParse){
+    console.log(geoParse);
+    features1 = geoParse;
+    //return geoParse;
+
+   });
+   showCancelMessage();
+    //getFeatures = $('#geoInput').val();
+    //features1 = jQuery.parseJSON(getFeatures);
+    //features1 = featur
+  //});
+
+  //nowfile = newfile.responseText;
+
+};
+
+function showCancelMessage() {
+    swal({
+        title: "Loading Data",
+        text: "Click to finalize data load",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#29ab87",
+        confirmButtonText: "Yes, load data!",
+        cancelButtonText: "No, cancel please!",
+        closeOnConfirm: false,
+        closeOnCancel: false
+    }, function (isConfirm) {
+        if (isConfirm) {
+            swal("Loaded!", "Your Geo Data has been loaded.", "success");
+            pushdatathrough();
+        } else {
+            swal("Cancelled", "Data has not been loaded", "error");
+            features1 = [];
+            if(count >= 1) {
+              count -= 1;
+
+            }
+        }
+    });
+}
+function pushdatathrough(){
+
+    featuresdata1.push(features1);
+    features = $.map(features1.features, function(feature) {
+        return feature.properties;
+    });
+    bounding = $.map(features1.features, function(feature) {
+      return feature;
+    });
+    if (count == 1) {
+    features2 = L.geoJSON(features1);
+    featureLayer.addData(features1);
+    map.fitBounds(features2.getBounds());
+    //maptwo.fitBounds(features2.getBounds());
+    //pathing.addTo(map);
+    layerIn += '<li id="listInone"><div id="layerColorIn" style="background-color: blue; color: blue;"><p id="listInText" style="color: black;">' + 'Layer ' + count + '</p></div></li>';
+    } else if (count == 2) {
+     features2 = L.geoJson(features1);
+    featureLayerAlt.addData(features1);
+    map.fitBounds(features2.getBounds());
+    //maptwo.fitBounds(features2.getBounds());
+    layerIn += '<li id="listIntwo"><div id="layerColorIntwo" style="background-color: red; color: red;"><p id="listInText" style="color: black;">' + 'Layer ' + count + '</p></div></li>';
+
+    } else if (count == 3) {
+    features2 = L.geoJson(features1);
+    featureLayerAlt2.addData(features1);
+    map.fitBounds(features2.getBounds());
+    //maptwo.fitBounds(features2.getBounds());
+    layerIn += '<li id="listInthree"><div id="layerColorInthree" style="background-color: orange; color: orange;"><p id="listInText" style="color: black;">' + 'Layer ' + count + '</p></div></li>';
+
+    } else {alert('Too many Layers!');}
+    layerIn += '</ul>';
+    $('#layerIn').html(layerIn);
+    $('#layerIn').css('visibility','visible');
+    $('#map .leaflet-control-zoom').css('margin-left','5px');
+
+
+};
+
+
+function loadpleth(){
+
+function getColor(d){
+    return  d > 3200 ? '#fff9c4' :
+            d > 2800 ? '#fff4a0' :
+            d > 2000 ? '#fff280' :
+            d > 1800 ? '#fff060':
+            d > 1200 ? '#ffee40' :
+            d > 980 ? '#ffec20' :
+            d > 860 ? '#ffea00' :
+            d > 740 ? '#ffc969' :
+            d > 620 ? '#ffb754' :
+            d > 500 ? '#ffa53f' :
+            d > 380 ? '#ff932a' :
+            d > 280 ? '#ff8a65' :
+            d > 180 ? '#f67a56' :
+            d > 108 ? '#f06f49' :
+            d > 84 ? '#ea643c' :
+            d > 62 ? '#e4592f' :
+            d > 32 ? '#de4e22' :
+            d > 24 ? '#d84315' :
+            d > 16 ? '#bf360c' :
+            d > 10 ? '#b3300a' :
+            d > 6 ? '#aa2e0a' :
+            d > 4 ? '#a12c0a' :
+            d > 2 ? '#982a0a' :
+            d > 1 ? '#8f280a' :
+                    '#86260a';
+}
+
+$.getJSON('data/finished.geojson', function (geojson) {
+var geojsonlayer;
+// ... our listeners
+
+
+geojsonlayer = L.geoJson();
+function plethstyle(feature) {
+    return {
+        fillColor: getColor(feature.visits),
+        weight: 3,
+        opacity: 0.15,
+        color: '#c12700',
+        dashArray: '1',
+        fillOpacity: 0.75
+    };
+}
+
+function plethhighlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        dashArray: '',
+        fillOpacity: 0.5
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+    plethinfo.update(layer.feature);
+}
+function plethresetHighlight(e) {
+    geojsonlayer.resetStyle(e.target);
+    plethinfo.update();
+}
+function plethzoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+function plethonEachFeature(feature, layer) {
+    layer.on({
+        mouseover: plethhighlightFeature,
+        mouseout: plethresetHighlight,
+        click: plethzoomToFeature
+    });
+}
+
+geojsonlayer = L.geoJson(geojson, {
+    style: plethstyle,
+    onEachFeature: plethonEachFeature
+}).addTo(map);
+
+var plethinfo = L.control();
+
+plethinfo.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+plethinfo.update = function (props) {
+    this._div.innerHTML = '<h4>Visits to Locations</h4>' +  (props ?
+        '<b>' + props.visits + '</b><br />' + props.visits / 30 + ' hours / loc<sup></sup>'
+        : 'Hover over a Tract');
+  };
+
+  plethinfo.addTo(map);
+  });
+}
+
+
+$('#chorostart').click(function(){
+  loadpleth();
+});
+
+$('#menuWrangle').click(function(){
+
+});
+// should aim for path only animation, no marker
+$('#animateRoute').click(function(){
+   var tall = "path";
+   animationGenerator(tall);
+});
+// split route into many small points, click to advance route
+$('#perClickAnimate').click(function(){
+  var tom = "click";
+  animationGenerator(tom);
+});
+// pts and lines
+$('#d3ptline').click(function(){
+  var ptlin = "ptslines";
+  animationGenerator(ptlin);
+})
+// latedistcalcs or fore visual
+$('#latecalc').click(function(){
+  var latept = 'late';
+  animationGenerator(latept);
+})
+// anim for gquakes
+$('#showthemalld3').click(function(){
+  var type = "themall"
+
+  animationGenerator(type);
+})
+//aiming for movemarker()
+$('#newestd3anim').click(function() {
+  var clickload = "newest";
+animationGenerator(clickload);
+})
+// showthemall total points view
+$('#totalV').click(function(){
+  var tun = 'show';
+    animationGenerator(tun);
+  });
+
+// stepper, main
+$('#d3stepper').click(function(){
+
+  var tar = "stepper";
+  animationGenerator(tar);
+});
+//d3route
+$('#d3modal').click(function(){
+  var tad = "marker";
+  animationGenerator(tad);
+});
+
+function evalMile(milesEval){
+      return milesEval <= 61 ? 2 :
+            milesEval  <= 81 ? 3 :
+            milesEval  <= 101 ? 4 :
+            milesEval  >= 102 ? 5 :
+                          2;
+}
+
+function animationGenerator(type){
+ var truckpic =  L.control.custom({
+                    position: 'bottomright',
+                    content : '<img src="images/2.jpg" height="90vh" width="100vw" class="img-thumbnail" id="demoImage">',
+                    classes : '',
+                    style   :
+                    {
+                        margin: '0px 20px 20px 0',
+                        padding: '0px',
+                    },
+                });
+
+  tweenToggle = 0;
+  feat = features1.features;
+  stringcount = 0;
+  lines = 1;
+  lineholder = [];
+  propsholder = [];
+  proplen = {};
+  proplen[0] = 0;
+  timelen = {};
+  timelen[0] = 0;
+  pp = 0;
+  turfline = {};
+  turfline[0] = [];
+  miDiv = 12;
+  minslen = {};
+  minslen[0] = 0;
+  modlen = {};
+  modlen[0] = 0;
+  timeout = {};
+  timeout[0] = [];
+  timeholderIn = [];
+  timeholderOut = [];
+  timecount = 0;
+  linestring = {};
+  stringsout = [];
+  propsout = {};
+  propsout[0] = [];
+  medholder = [];
+  osrmline = '';
+  len = features1.features.length;
+  if(type == 'marker'){
+    for(var i = 0; i < features1.features[0].geometry.coordinates.length; ++i){
+      var f = features1.features[0].geometry.coordinates[i];
+      var fo = features1.features[0].geometry.coordinates[i+1]
+      lineholder.push([f,fo]);
+    }
+    var b = features1.features[0].properties
+    propsholder.push(b)
+  } else {
+  for(var i = 0; i < len; i++){
+    var f = features1.features[i].geometry.coordinates;
+
+    var b = features1.features[i].properties;
+    var tda = features1.features[i].properties.pickuptime;
+    var fda = features1.features[i].properties.medallion;
+    if(features1.features[i+1] !== undefined){
+    var to = features1.features[i+1].properties.pickuptime;
+    } else {
+      var to = features1.features[i].properties.pickuptime
+    }
+    lineholder.push(f);
+    propsholder.push(b);
+    timeholderIn.push([tda, to]);
+    medholder.push(fda);
+    osrmline += "&loc="+f[1]+"%2C"+f[0];
+  }
+}
+  startOsrm = "map.project-osrm.org/?z=12&center=33.404531%2C-111.963515"+osrmline+"&hl=en&alt=0";
+  //$('#geoOutput').val(startOsrm);
+
+  function clickstepper(){
+
+
+    var len = timeholderIn.length;
+
+    for(var i = 0; i < len; i++){
+      dateA = timeholderIn[i][0];
+      dateB = timeholderIn[i][1];
+      convertA = Date.parse(dateA);
+      convertB = Date.parse(dateB);
+      duration = convertB - convertA;
+      durmin = duration / 60000;
+      modified = durmin / 2;
+      seper = dateA.split(" ");
+      seperA = seper[1].split(":");
+      features1.features[i].properties.dur = durmin;
+      features1.features[i].properties.mod = modified;
+      features1.features[i].properties.rad = parseInt(seperA[0]);
+      dar = features1.features[i].properties.medallion;
+
+      timeArray.push({id: dar, pickup: dateA, dropoff: dateB, duration: duration, mins: durmin, modified: modified, hour:seperA[0]});
+    }
+
+      if(type == "themall") {
+      newmile = evalMile(mileVal)*580;
+      } else {
+      newmile = evalMile(mileVal);
+      }
+      icounter = 0 + newmile;
+
+    for(var ish = 0; ish < propsholder.length; ish++){
+      if(propsholder[ish].dist4 < 0.007) {
+        icounter += 1;
+      }
+      if(ish <= icounter) {
+        proplen[pp] += propsholder[ish].dist4;
+        timelen[pp] += timeArray[ish].duration;
+        minslen[pp] += timeArray[ish].mins;
+        modlen[pp] += timeArray[ish].modified;
+        timeout[pp].push(timeArray[ish]);
+
+      if(type == "themall"){
+        turfline[pp].push(lineholder[ish])
+      } else {
+      if(lineholder[ish+1] !== undefined){
+        turfline[pp].push(lineholder[ish], lineholder[ish+1]);
+      } else {
+          turfline[pp].push(lineholder[ish], lineholder[ish]);
+        }
+      }
+        propsout[pp].push(propsholder[ish]);
+      } else {
+        proplen[pp] += propsholder[ish].dist4;
+        timelen[pp] += timeArray[ish].duration;
+        minslen[pp] += timeArray[ish].mins;
+        modlen[pp] += timeArray[ish].modified;
+        timeout[pp].push(timeArray[ish]);
+
+      if(type == "themall"){
+        turfline[pp].push(lineholder[ish])
+      }
+      if(lineholder[ish+1] !== undefined){
+        turfline[pp].push(lineholder[ish], lineholder[ish+1]);
+      } else {
+          turfline[pp].push(lineholder[ish], lineholder[ish]);
+      }
+        propsout[pp].push(propsholder[ish]);
+
+
+      if(lineholder[ish+1] !== undefined){
+        icounter += newmile;
+        pp += 1;
+        proplen[pp] = 0;
+        timelen[pp] = 0;
+        minslen[pp] = 0;
+        modlen[pp] = 0;
+        timeout[pp] = [];
+        turfline[pp] = [];
+        propsout[pp] = [];
+      }
+    }
+  }
+}
+  function pathstepper(){
+  for(var i = 0; i < lineholder.length; i++){
+    if(proplen[pp] <= mileVal * 3) {
+      proplen[pp] += propsholder[i].dist4;
+      //turfline[pp].push(lineholder[i]);
+      propsout[pp].push(propsholder[i]);
+      if(lineholder[i+1] !== undefined){
+        turfline[pp].push(lineholder[i], lineholder[i+1]);
+      } else {
+        turfline[pp].push(lineholder[i], lineholder[i]);
+        }
+    } else {
+      if(lineholder[i+1] !== undefined){
+        turfline[pp].push(lineholder[i], lineholder[i+1]);
+      } else {
+        turfline[pp].push(lineholder[i], lineholder[i]);
+        }
+      propsout[pp].push(propsholder[i]);
+      proplen[pp] += propsholder[i].dist4;
+      pp += 1;
+      proplen[pp] = 0;
+      turfline[pp] = [];
+      propsout[pp] = [];
+    }
+  }
+}
+
+
+  timeArray = [];
+  function timestepper(){
+
+  var len = timeholderIn.length;
+    for(var i = 0; i < len; i++){
+      dateA = timeholderIn[i][0];
+      dateB = timeholderIn[i][1];
+      convertA = Date.parse(dateA);
+      convertB = Date.parse(dateB);
+      duration = convertB - convertA;
+      durmin = duration / 60000;
+      modified = durmin / 2;
+      seper = dateA.split(" ");
+      seperA = seper[1].split(":");
+      features1.features[i].properties.dur = durmin;
+      features1.features[i].properties.mod = modified;
+      features1.features[i].properties.rad = parseInt(seperA[0]);
+      timeArray.push({id: i, pickup: dateA, dropoff: dateB, duration: duration, mins: durmin, modified: modified, hour:parseInt(seperA[0])});
+    }
+    distanceholder = [];
+    for(var i = 0; i < timeArray.length; ++i) {
+      if(timeArray[i].hour > 20 || timeArray[i].hour < 4) {
+        var a = turf.point([features1.features[i].geometry.coordinates[1], features1.features[i].geometry.coordinates[0]]);
+        var b = turf.point([config.base[0], config.base[1]]);
+        distance = turf.distance(a, b, {units: 'miles'});
+        if(distance > 1){
+          distanceholder.push({dist:distance, ts:timeArray[i].pickup, coord:a,})
+        }
+      }
+    }
+   // var output = JSON.stringify(distanceholder, null, '\t');
+   // var outputText = $('#geoOutput').val(output);
+
+    for(var it = 0; it < propsholder.length; it++){
+      if(proplen[pp] <= mileVal) {
+        proplen[pp] += propsholder[it].dist4;
+        timelen[pp] += timeArray[it].duration;
+        minslen[pp] += timeArray[it].mins;
+        modlen[pp] += timeArray[it].modified;
+        timeout[pp].push(timeArray[it]);
+      if(lineholder[it+1] !== undefined){
+        turfline[pp].push(lineholder[it], lineholder[it+1]);
+      } else {
+        turfline[pp].push(lineholder[it], lineholder[it]);
+        }
+        propsout[pp].push(propsholder[it]);
+      } else {
+        proplen[pp] += propsholder[it].dist4;
+        timelen[pp] += timeArray[it].duration;
+        minslen[pp] += timeArray[it].mins;
+        modlen[pp] += timeArray[it].modified;
+        timeout[pp].push(timeArray[it]);
+      if(lineholder[it+1] !== undefined){
+        turfline[pp].push(lineholder[it], lineholder[it+1]);
+      } else {
+        turfline[pp].push(lineholder[it], lineholder[it]);
+      }
+        propsout[pp].push(propsholder[it]);
+        pp += 1;
+        proplen[pp] = 0;
+        timelen[pp] = 0;
+        minslen[pp] = 0;
+        modlen[pp] = 0;
+        timeout[pp] = [];
+        turfline[pp] = [];
+        propsout[pp] = [];
+      }
+
+    }
+
+  }
+  if(type == "themall") {
+    clickstepper();
+    for(var keyc in turfline){
+      stringsout.push(turf.multiPoint(turfline[keyc], {id: keyc, distance: proplen[keyc], areaItems: propsout[keyc], time:timelen[keyc], mins:minslen[keyc], mod:modlen[keyc], timeFeatures:timeout[keyc]}));
+  }
+  } else if(type == "nicelayer"){
+    timestepper();
+    for(var key in turfline){
+      stringsout.push(turf.lineString(turfline[key], {id: key, distance: proplen[key], areaItems: propsout[key], time:timelen[key], mins:minslen[key], mod:modlen[key], timeFeatures:timeout[key]}));
+  }
+  } else if(type == "stepper"){
+    timestepper();
+    for(var key in turfline){
+      stringsout.push(turf.lineString(turfline[key], {id: key, distance: proplen[key], areaItems: propsout[key], time:timelen[key], mins:minslen[key], mod:modlen[key], timeFeatures:timeout[key]}));
+  }
+  } else if(type == "ptslines"){
+    timestepper();
+    for(var key in turfline){
+      stringsout.push(turf.lineString(turfline[key], {id: key, distance: proplen[key], areaItems: propsout[key], time:timelen[key], mins:minslen[key], mod:modlen[key], timeFeatures:timeout[key]}));
+  }
+  } else if(type == "late"){
+    timestepper();
+    for(var key in turfline){
+      stringsout.push(turf.lineString(turfline[key], {id: key, distance: proplen[key], areaItems: propsout[key], time:timelen[key], mins:minslen[key], mod:modlen[key], timeFeatures:timeout[key]}));
+  }
+  }else if( type == "click"){
+    clickstepper();
+  for(var keyb in turfline){
+      stringsout.push(turf.lineString(turfline[keyb], {id: keyb, distance: proplen[keyb], areaItems: propsout[keyb], time:timelen[keyb], mins:minslen[keyb], mod:modlen[keyb], timeFeatures:timeout[keyb]}));
+  }
+  } else if( type == "newest"){
+    timestepper();
+  for(var keyb in turfline){
+      stringsout.push(turf.lineString(turfline[keyb], {id: keyb, distance: proplen[keyb], ddur: (proplen[keyb] * 3000), areaItems: propsout[keyb], time:timelen[keyb], mins:minslen[keyb], mod:modlen[keyb], timeFeatures:timeout[keyb]}));
+  }
+  } else if( type == "show"){
+    clickstepper();
+  for(var keyb in turfline){
+      stringsout.push(turf.lineString(turfline[keyb], {id: keyb, distance: proplen[keyb], areaItems: propsout[keyb], time:timelen[keyb], mins:minslen[keyb], mod:modlen[keyb], timeFeatures:timeout[keyb]}));
+  }
+  } else {
+  pathstepper();
+  for(var keya in turfline){
+    stringsout.push(turf.lineString(turfline[keya], {id: keya, distance: proplen[keya]}));
+  }
+}
+  //maptwo.toggleFullscreen()
+  collect = turf.featureCollection(stringsout);
+  if(type == 'late'){
+
+  } else if(type == 'path') {
+
+  } else {
+  for(var key in collect.features) {
+      featureLayerD3.addData(collect.features[key]);
+  }
+}
+  truckpic.addTo(map);
+  if(type == "path") {
+    animPolyPath();
+  } else if(type == "nicelayer") {
+    shownice(features1);
+  } else if(type == "themall") {
+    showthemall();
+  } else if(type == "newest") {
+    moveMarker();
+  } else if(type == "ptslines") {
+    ptsLines();
+  } else if(type == "marker") {
+    animD3Marker();
+  } else if (type == "stepper") {
+    animStepper();
+  } else if (type == "late") {
+    animLate();
+  } else if(type == "click") {
+    animClicker();
+  } else if(type == "show") {
+    showAll();
+  }
+}
+function animLate(){
+  var toCluster = features1.features;
+  var maxDist = 0.35;
+  var minPoints = 4;
+  clusterMap = turf.clustersDbscan(features1, maxDist, {minPoints: minPoints})
+  values = [];
+  turf.clusterEach(clusterMap, 'cluster', function(cluster, clusterValue, currentIndex){
+    console.log(cluster);
+    console.log(clusterValue);
+    console.log(currentIndex);
+    values.push(clusterValue);
+    centroid = turf.centroid(cluster);
+
+  featureLayerD3.addData(centroid);
+});
+  forceChart()
+}
+
+function forceChart(){
+  //$('#c3Gauge').modal('show')
+  height = 980;
+  width = 1800;
+  clusterCount = 0;
+  var nodes = d3.range(features1.features.length).map(function(i) {
+clusterCount ++;
+return {
+    type: clusterMap.features[i].properties.cluster,
+    radius: clusterMap.features[i].properties.rad / 6,
+    duration: clusterMap.features[i].properties.dur * 135,
+    fixed: false,
+    //type: i,
+    x: clusterMap.features[i].geometry.coordinates[0], //(i + 1) * (width / 6),
+    y: clusterMap.features[i].geometry.coordinates[1]
+    };
+  });
+  var xScale = d3.scaleLinear().domain([0,1]).range([0,width]);
+  var yScale = d3.scaleLinear().domain([0,1]).range([height,0]);
+  var color = d3.scaleOrdinal(d3.schemePaired);
+ // var color = d3.scaleOrdinal()
+  //      .range(['#f15525','#e84a5f','#266db8','#f37b2f','#c82a3f','#1352d2','#c3f71c','#fe4038','#8400ff']);
+
+  var sim = d3.forceSimulation(nodes)
+    .force('charge', d3.forceManyBody().strength(28))
+    .force('x', d3.forceX().x(function(d){return d.x}))
+    .force('y', d3.forceY().y(function(d){return d.y}))
+    //.force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(function(d){return d.radius}))
+    //.size([width, height])
+    .on('tick', ticked);
+
+  var svg = d3.select(map.getPanes().overlayPane).append('svg');
+  //.attr('width', width)
+  //.attr('height', height);
+
+var g = svg.append('g').attr('class', 'overlay-group');
+  var transform = d3.geoTransform({point: projectPoint});
+  var path = d3.geoPath().projection(transform);
+
+  //g.append('rect')
+  //.attr('width', width)
+  //.attr('height', height)
+  map.on('mousemove', mousemoved);
+  g.selectAll('circle')
+    .data(nodes)
+    .enter().append('circle')
+    .attr('cx', function(d) {return d.x})
+    .attr('cy', function(d) {return d.y})
+    .attr('r', function(d) { return d.radius; })
+    .style('fill', function(d) { return color(d.type);})
+    .on('mousemove', mousemoved);
+    var p0;
+    //force.start();
+    //force.force();
+    function mousemoved(e) {
+      //console.log(e);
+      da = e;
+      p1 = e.latlng;
+      p0 = p1;
+      var node = {
+        radius: Math.random() * 5 + 1,
+        type: Math.random() * clusterCount | 0,
+        x: e.containerPoint.x,
+        y: e.containerPoint.y,
+        px: (e.containerPoint.x || (e.containerPoint.x = e.containerPoint.x)),
+        py: e.containerPoint.y
+      };
+      g.append('circle')
+        .data(node)
+        .attr('cx', function(d) { return d.x; })
+        .attr('cy', function(d) { return d.y; })
+        .attr('r', function(d)  { return d.radius})
+        .style('fill', function(d) {return color(d.type);})
+        .style('opacity', 0.6)
+      .transition()
+        .delay(3000)
+        .attr('r', 1e-6)
+        .on('end', function() {nodes.splice(6, 1); })
+        .remove();
+
+        nodes.push(node);
+        sim.alpha([0.7]);
+        sim.nodes(nodes);
+}
+        function ticked() {
+          var u = d3.select('g')
+                  .selectAll('circle')
+                  .data(nodes);
+              u.enter()
+                .append('circle')
+                .attr('r', function(d) {
+                  return d.radius;
+                })
+                .style('fill', function(d) {
+                  return color(d.type);
+                })
+                .merge(u)
+                .attr('cx', function(d) {
+                  return d.x;
+                })
+                .attr('cy', function(d) {
+                  return d.y
+                })
+                u.exit().remove();
+}
+
+
+/*
+          var q = d3.quadtree(nodes),
+          k = e.alpha * 0.1,
+          i = 0,
+          n = nodes.length,
+          o;
+
+          while (++i < n) {
+            o = nodes[i];
+            if (o.fixed) continue;
+            c = nodes[o.type];
+            o.x += (c.x - o.x) * k;
+            o.y += (c.y - o.y) * k;
+            q.visit(collide(o));
+          }
+          svg.selectAll('circle')
+            .attr('cx', function(d) {return d.x;})
+            .attr('cy', function(d) {return d.y;});
+        }
+        function collide(node) {
+          var r = node.radius + 16,
+          nx1 = node.x - r,
+          nx2 = node.x + r,
+          ny1 = node.y - r,
+          ny2 = node.y + r;
+          return function(quad, x1, y1, x2, y2) {
+            if (quad.point && (quad.point !== node)) {
+              var x = node.x - quad.point.x,
+              y = node.y - quad.point.y,
+              l = Matj.sqrt(x * x + y * y),
+              r = node.radius + quad.point.radius;
+              if ( l < r) {
+                l = (l - r) / l * .5;
+                node.px += x * l;
+                node.py += y * l;
+              }
+            }
+            return x1 > nx2
+                || x2 < nx1
+                || y1 > ny2
+                || y2 < ny1;
+          }
+        }
+        */
+    }
+
+
+function ptsLines(){
+
+    var timecounter = 0;
+    var modcounter = 0;
+    var bombkeeper = [];
+    var setBombDelay = function() {
+      for(var i = 0, max = timeArray.length; i < max; i++){
+        var timeDiff =  timeArray[i].mins * 425 //Date.parse(timeArray[i].dropoff) - Date.parse(timeArray[i].pickup);
+        timecounter += 25;
+        var rodiff = timeDiff + timecounter;
+        var r = propsholder[i].dist4
+        modcounter = (timeArray[i].modified + 20) * 215;
+        //bombkeeper[i] = [];
+        bombkeeper.push({delay: rodiff, r:r, mod: modcounter, hr: timeArray[i].hour + 1})  ; // Speed up the animation, otherwise it would take 24 hours ><
+      }
+    }
+    setBombDelay();
+  animPoint(timecounter, bombkeeper);
+}
+function animPoint(timecounter, bombkeeper) {
+  //var animlayer = L.d3SvgOverlay(function(sel, proj){
+  animlayer = L.niceLayer(function(sel, proj){
+    var dsel = d3.select(map.getPanes().overlayPane);
+    dsel.selectAll("svg.running-path").remove();
+    var svg = dsel.append('svg').attr("class", "running-path");
+    g = svg.append('g').attr("class", "leaflet-zoom-hide");
+    var transform = d3.geoTransform({point: projectPoint});
+    var path = d3.geoPath().projection(transform);
+
+    var linedata = features1.features;
+
+
+     var color = d3.scaleOrdinal()
+          .range(['#880000','#9c2020','#b03c3c','#c05858','#ac783c','#bc8c4c','#e09470','#fcbc94','#ffcc99'])
+
+    var ptlngrp = sel.append('g')
+        .attr('id', 'ptsgrp');
+        /*
+    aLine = ptlngrp.selectAll('.aline')
+      .data([collect.features])
+      .enter().append('path')
+      .attr('class', 'aline');
+  */
+    var aPoint = ptlngrp.selectAll('.apoint')
+      .data(features1.features)
+      .enter().append('circle')
+      .attr('class', 'apoint')
+      .attr('cx', function(d) { return proj.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x})
+      .attr('cy', function(d) { return proj.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y})
+      .attr('r', 0.1)
+      .style('fill', '#ffff99')
+      .style('opacity', 1);
+
+
+ function timez(){
+
+  var datecounter = 0
+  for(var i = 0; i < timeArray.length; ++i){
+    var mins = (timeArray[i].mins / 20);
+    datecounter += mins;
+  }
+  //datecounter = datecounter * 60000;
+
+  // Setup future date object
+  var dateObj = Date.parse(new Date());
+  var future = dateObj + datecounter;
+  var newdate = new Date(future);
+
+  var x = d3.scaleTime()
+          .domain([new Date(), newdate])
+          .range([0, 1000]);
+
+  // Append the xAxis on top
+  var xAxis = sel.append('g')
+                 .attr('id', 'xAxis')
+                 .attr('transform', 'translate(20, -340)')
+                 .style('stroke', '#fff')
+                 .call(d3.axisTop(x));
+
+
+
+
+    // Grab the longest delay for the xAxis marker
+    var longestDelay = timecounter;
+    //bombkeeper[bombkeeper.length - 1].delay;
+
+    // Changes the radius of the earthquakes to their magnitue using a transition
+    // and the delay created from the setQuakeDelay function
+      var blowbomb = sel.selectAll('.apoint').data(linedata)
+      .transition()
+      .ease(d3.easeLinear)
+      .delay(function(d, i) { var ran = bombkeeper[i].delay; if(ran > 200000){ var rewa = ran / 8;} else if(ran < -1) { var rewa = 15000 * Math.random(1,9) } else {var rewa = ran } return rewa})
+      .duration(function(d, i) { return bombkeeper[i].mod})
+      .attr('r', function(d, i) {  if(bombkeeper[i].r < 0.1){(a = bombkeeper[i].r + 24) * 20} else if(bombkeeper[i].r < 0.5){(a = bombkeeper[i].r + 21) * 17} else if(bombkeeper[i].r < 0.95){(a = bombkeeper[i].r + 18) * 15} else if(bombkeeper[i].r < 1.5){(a = bombkeeper[i].r) * 12} else{ a = bombkeeper[i].r * 14} return a})
+      .style('opacity', 0)
+      .style('fill', function(d){return color(d.hr)});
+
+
+    var timeline = xAxis.append('circle')
+         .attr('class', 'transition-circle')
+         .attr('cx', 0)
+         .attr('cy', 0)
+         .attr('r', 7)
+         .style('fill', 'red')
+         .transition()
+         .ease(d3.easeSinInOut)
+         .duration(longestDelay + 2000)
+         .attr('cx', 1445)
+         .remove();
+}
+    function reseting(){
+       var bounds = map.getBounds(),
+       TLe = map.latLngToLayerPoint(bounds.getNorthWest()),
+       BRi = map.latLngToLayerPoint(bounds.getSouthEast());
+       sel.select("svg").style('width', map.getSize().x + "px")
+              .style('height', map.getSize().y + "px")
+              .style('left', TLe.x + "px")
+              .style('top', TLe.y + "px");
+
+
+
+
+          aPoint.selectAll('.apoint').data(linedata).attr("transform", function(d) { return "translate(" + proj.latLngToLayerPoint(d.geometry.coordinates).x + "," +  proj.latLngToLayerPoint(d.geometry.coordinates).y + ")" })
+              timez();
+            }
+
+  map.on("viewreset", reseting)
+  //ptlinerender(path, aLine);
+  reseting();
+
+});
+  animlayer.addTo(map);
+}
+
+function showthemall(){
+  var timeeval = 0;
+  var markers = new L.MarkerClusterGroup();
+
+  for (var i = 0; i < collect.features.length; i++) {
+   var  f = collect.features[i];
+
+    if (f.geometry) {
+      var marker = new L.marker(
+            new L.LatLng(f.geometry.coordinates[0][1], f.geometry.coordinates[0][0]), { id: f.properties.id, icon: miicon }
+    );
+    };
+    marker.on("click", function(event){
+      console.log(event);
+      sortelements(event);
+});
+
+  map.addLayer(marker);
+
+  }
+//maptwo.addLayer(markers)
+}
+
+function sortelements(event){
+for(var i = 0; i < collect.features.length; ++i){
+  var da = collect.features[i];
+  if(event.target.options.id == da.properties.id ){
+    var f = da;
+    break;
+  }
+}
+
+  if(f.geometry){
+    var reducedata = f;
+    var nawr = [];
+    for(var i = 0; i < f.geometry.coordinates.length; ++i){
+      var xa = f.properties.timeFeatures[i].id
+      nawr.push(xa)
+    }
+    var newfilter = features1.features.filter(function(item) {
+      return nawr.indexOf(item.properties.medallion) !== -1;
+    })
+  animateAll(newfilter);
+
+  }
+
+}
+  function animateAll(filter) {
+    //var timer;
+    var d3overlay = L.d3SvgOverlay(function(selection, projection){
+      var color = d3.scaleOrdinal()
+                .range(['#cb6a43','#db5e25','#e17262','#cd3d2c','#dd3825','#8d5b32','#a1662e','#bb7a40','#c27217','#e88500','#ff9700','#ffad55','#00623b','#008049','#387f5c','#539773','#6cb08b','#84c9a3','#63c893','#8c433a','#a34638','#b54437','#cd3d2c','#ee6755']);
+      var offsetColor = d3.scaleOrdinal()
+                .range(['#ffd740','#ff9100','#7c4dff','#e64a19','#00e676','#536dfe','#76ff03']);
+
+
+// Group to hold all of the earthquake elements
+var gQuakes = selection.append('g')
+                 .attr('id', 'all-quakes');
+
+
+     var quake = filter;
+
+    // Create a group with the quake id to hold the quake circle and pulse circle
+    var earthquakeGroups = gQuakes.selectAll('g')
+       .data(quake)
+       .enter().append('g')
+       .attr('id', function(d) {
+           return d.properties.medallion;
+       })
+       .attr('class', 'quake-group');
+
+    //Create the pulse-circle circles for the earthquake pulse
+    gQuakes.selectAll('.quake-group')
+       .append('circle')
+       .attr('class', 'circle pulse-circle')
+       .attr('cx', function(d)  { return projection.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x})
+       .attr('cy', function(d)  { return projection.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y})
+       .attr('r', function(d) {
+           return 0;
+       })
+       .attr('fill', '#fff');
+
+
+    // Create the main quake circle with title
+    gQuakes.selectAll('.quake-group')
+      .append('circle')
+      .attr('r', 0 )
+      .attr('cx', function(d)  { return projection.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).x})
+      .attr('cy', function(d)  { return projection.latLngToLayerPoint([d.geometry.coordinates[1], d.geometry.coordinates[0]]).y})
+      .attr('class', 'circle quake-circle')
+      .style('fill', 'red')
+      .style('opacity', 0.95)
+      .append('title')
+      .text(function(d) {
+        return 'Magnitude ' + d.properties.dist4 + ' ' + d.properties.pickuptime;
+      });
+   function trans(){
+  var datecounter = 0
+  for(var i = 0; i < filter.length; ++i){
+    var mins = (10000 * filter[i].properties.dur) / 1900;
+    datecounter += mins;
+  }
+  //datecounter = datecounter * 60000;
+
+  // Setup 24 hours ago object
+  var dateObj = Date.parse(new Date());
+  var future = dateObj + datecounter;
+  var newdate = new Date(future);
+
+var x = d3.scaleTime()
+            .domain([new Date(), newdate])
+            .range([0, 680]);
+//width - margin.right - margin.left
+  // Append the xAxis on top
+  var xAxis = selection.append('g')
+                 .attr('id', 'xAxis')
+                 .attr('transform', 'translate(20, -190)')
+                 .style('stroke', '#fff')
+                 .call(d3.axisTop(x));
+
+
+    var timecounter = 0;
+    var setQuakeDelay = function() {
+      for(var i = 0, max = quake.length; i < max; i++){
+        var timeDiff =  Date.parse(quake[i].properties.dropofftime) - Date.parse(quake[i].properties.pickuptime);
+        timecounter += timeDiff;
+        //var timedodad = Date.parse(timeno);
+       // var timenoob = (timeDiff * 9000) + timedodad
+        //var timeDiffObj = new Date(timenoob);
+        quake[i].delay = timecounter / 18200; // Speed up the animation, otherwise it would take 24 hours ><
+      }
+    }
+    setQuakeDelay();
+
+    // Grab the longest delay for the xAxis marker
+    var longestDelay = quake[quake.length - 1].delay;
+
+    // Changes the radius of the earthquakes to their magnitue using a transition
+    // and the delay created from the setQuakeDelay function
+    var quakeCircles = selection.selectAll('.quake-circle')
+       .data(quake)
+       .transition()
+       .ease(d3.easeLinear)
+       .delay(function(d) {
+         return d.delay / 1.95 ;
+       })
+       .duration(2100)
+       .attr('r', function(d) {
+
+         if(d.properties.rad  <= 1) {
+           return 9;
+         } else if(d.properties.rad < 12) {
+            return d.properties.rad * 1.6 * Math.random(1,6)
+         }else {
+           return d.properties.rad * 0.55 * Math.random();
+         }
+       })
+       .style('opacity', 0.1)
+       .style("fill", function(d) {return color(d.properties.rad)})
+
+
+       var pulseCircles = selection.selectAll('.pulse-circle')
+       .data(quake)
+       .transition()
+       .ease(d3.easeLinear)
+       .delay(function(d) {
+         return d.delay / 1.9 ;
+
+       })
+       .duration(2100)
+       .attr('r', function(d) {
+         if(d.properties.rad <= 1) {
+           return 2.1 * 8 * Math.random(1,10);
+         } else if(d.properties.rad < 12) {
+            return d.properties.rad * 1.8 * Math.random(1,7)
+         } else {
+           return d.properties.rad * 0.65 * Math.random(1,2);
+         }
+       })
+       .style('opacity', 0.1)
+       .style("fill", function(d) {return offsetColor(d.properties.rad)})
+       .style('stoke', '#fff')
+       .style('stroke-width', 0.5)
+       .style('stoke-opacity', 0.5)
+
+
+    // Add the time marker that moves across the xAxis while the animation it playing.
+    // It's not perfectly in sync, but it's close enough for this example. The length of
+    // the animation is equal to the longest delay that we calculated earlier.
+    var timeline = xAxis.append('circle')
+         .attr('class', 'transition-circle')
+         .attr('cx', 0)
+         .attr('cy', 0)
+         .attr('r', 4)
+         .style('fill', 'red')
+         .transition()
+         .ease(d3.easeSinInOut)
+         .duration(longestDelay + 2000)
+         .attr('cx', 675)
+         .remove();
+}
+    var timeno = new Date();
+    var collection = { type: "FeatureCollection", features: [filter]};
+    // Function that calculates the difference between the earthquake and 24 hours ago and
+    // creates a delay property.
+    function reseting(){
+       var bounds = maptwo.getBounds(),
+       TLe = map.latLngToLayerPoint(bounds.getNorthWest()),
+       BRi = map.latLngToLayerPoint(bounds.getSouthEast());
+       selection.select("svg").style('width', map.getSize().x + "px")
+              .style('height', map.getSize().y + "px")
+              .style('left', TLe.x + "px")
+              .style('top', TLe.y + "px");
+
+
+          gQuakes.selectAll('circle').data(filter).attr("transform", function(d) { return "translate(" + projection.latLngToLayerPoint(d.geometry.coordinates).x + "," +  projection.latLngToLayerPoint(d.geometry.coordinates).y + ")" });
+
+              trans();
+
+    }
+    //maptwo.on('viewreset', reseting);
+    //maptwo.on('zoomend', reseting);
+    reseting();
+
+})
+d3overlay.addTo(map);
+}
+
+
+
+$('#d3loading').click(function(){
+  d3file = 'data/8-18.geojson';
+  var type = 'nicelayer';
+  animationGenerator(type);
+})
+function shownice(collection){
+  //turfray = {};
+  //turfray[0] = [];
+  //turfray[0].geometry = [];
+  //turfray[0].properties = {};
+  //for (var i = 0; i < collection.features.length; ++i){
+    turfray = collection.features.map(function(d) {
+      newpoints = turf.point([d.geometry.coordinates[1], d.geometry.coordinates[0]], { dist4: d.properties.dist4, medallion: d.properties.medallion, rad: d.properties.rad, pickuptime: d.properties.pickuptime, dropofftime: d.properties.dropofftime, dur: d.properties.dur, accuracy: d.properties.Accuracy, mod: d.properties.mod});
+      return newpoints;
+    });
+
+    //collectionTurf = turf.point(collection.features.map(function(d){return d.geometry.coordinates}), {properties:collection.features.map(function(d){return d.properties})});
+    //turfray[i].geometry = [];
+    //turfray[i].geometry.push(collectionTurf);
+    //turfray[i].properties = []
+    //turfray[i].properties.push(collection.features[i].properties);
+
+  //}
+  //turfray = collectionTurf;
+  featuresTurf = turf.featureCollection(turfray);
+   nodes = d3.range(turfray.length).map(function(i) {
+
+        return {
+            type: turfray[i].properties.dist4,
+            id: turfray[i].properties.medallion,
+            radius: turfray[i].properties.rad / 6,
+            durExpanded: turfray[i].properties.dur * 135,
+            duration: turfray[i].properties.dur,
+            start: turfray[i].properties.pickuptime,
+            end: turfray[i].properties.dropofftime,
+            differenceMs: Date.parse(turfray[i].properties.dropofftime) - Date.parse(turfray[i].properties.pickuptime),
+            //type: i,
+            x: turfray[i].geometry.coordinates[0], //(i + 1) * (width / 6),
+            y: turfray[i].geometry.coordinates[1],
+            xy: turfray[i].geometry.coordinates,
+            };
+          });
+   var marker = new L.marker(new L.latLng(turfray[0].geometry.coordinates[0],turfray[0].geometry.coordinates[1]), {icon: miicon});
+      var Emarker = new L.marker(new L.latLng(turfray[turfray.length - 1].geometry.coordinates[0], turfray[turfray.length - 1].geometry.coordinates[1]), {icon: wiicon})
+      marker.on('click', function(e){
+        timeNice(e, nodes)
+      })
+      marker.addTo(map);
+      Emarker.addTo(map);
+
+}
+function timeNice(e, nodes) {
+  var zoomSnap = 0.1;
+  var zoomDelta = 0.5;
+  var wheelPxPerZoomLevel = 100;
+  var azlayer = new L.niceLayer({zIndex:0}).addTo(map);
+
+
+}
+
+function niceMarkers(nodes){
+
+
+  niceSvg = new L.niceLayer({zIndex: 1}).addTo(map);
+    g = d3.select(niceSvg.getPathRoot());
+    line = d3.line()
+      .curve(d3.curveLinear)
+      .x(function(d) {return rpath(d.xy).x})
+      .y(function(d) {return rpath(d.xy).y});
+
+   var ptFeatures = g.selectAll("circle")
+                .data(nodes)
+                .enter()
+                .append("circle")
+                .attr("r", 3)
+                .attr("class", "waypoints");
+
+   var linePath = g.selectAll(".lineConnect")
+                .data([nodes])
+                .enter()
+                .append("path")
+                .attr("class", "lineConnect");
+        linePath.append('.lineConnect')
+                .style( 'stroke', 'Blue')
+                .stryle( 'fill', 'none')
+                .style('stroke-width', '6px' )
+                .style("opacity", ".6");
+
+          var marker = g.append("circle")
+                .attr("r", 10)
+                .attr("id", "marker")
+                .attr("class", "travelMarker");
+
+
+
+        reset(niceSvg);
+        niceSvg.resetSvg = reset;
+        transition();
+        function reset(layer) {
+           var line = d3.line()
+                  .curve(d3.curveLinear)
+                  .x(function(d) {
+                    console.log(d);
+                    return applyLayer(d.xy).x;
+                  })
+                  .y(function(d){
+                    return applyLayer(d.xy).y;
+                  })
+
+                  ptFeatures.attr("transform",
+                    function (d) {
+                      console.log(d);
+                        return "translate(" +
+                            applyLayer(d).x + "," +
+                            applyLayer(d).y + ")";
+                    });
+                   marker.attr("transform",
+                    function (d) {
+                      console.log(d);
+                        //var y = featuresdata[0].geometry.coordinates[1];
+                        //var x = featuresdata[0].geometry.coordinates[0];
+                        return "translate(" +
+                            layer.getMap().latLngToLayerPoint(new L.LatLng(d.y, d.x)).x + "," +
+                            layer.getMap().latLngToLayerPoint(new L.LatLng(d.y, d.x)).y + ")";
+                    });
+                    linePath.attr("d", line).call(transitpath);
+}
+
+    function transitpath(path) {
+      path.transition()
+          .duration(function(d){
+            doncole.log(d);
+            return d.dur * (d.distance + (d.mod * d.mod));
+          })
+          .attrTween("stroke-dasharray", tweenDash)
+
+    }
+    function tweenDash() {
+      var l = this.getTotalLength(),
+          i = d3.interpolateString("0, " + l, l + "," + l);
+          xa = this;
+          return function(d, i, a) {
+      return function(t) {;
+          var p = x.getPointAtLength(t * l);
+          ptmarker = d3.select('#navmark');
+            ptmarker.attr('transform', "translate("+p.x+","+p.y+")")
+            if(tweenToggle == 0){
+              tweenToggle = 1;
+              var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+              map.panTo(newCenter, 14);
+            } else {
+              tweenToggle = 0;
+            }
+            return i(t);
+          }
+        }
+    };
+
+}
+function applyLayer(d){
+  y = d[1];
+  x = d[0];
+  point = map.latLngToLayerPoint(new L.LatLng(y,x));
+  return d3.geoStream({
+    points: function(x,y){
+      this.stream.point(point.x, point.y);
+  }})
+}
+/*
+function niceMarkers(nodes){
+  overlayNice = new L.niceOverlay(function(sel, proj) {
+    niceSvg = L.niceLayer({zIndex: 1}).addTo(map);
+    g = d3.select(niceSvg.getPathRoot());
+    function paintLine(lines){
+    var line = d3.line()
+      .curve(d3.curveLinear)
+      .x(function(d) {console.log(d); return proj.applyTwo(d.xy).x})
+      .y(function(d) {console.log(d); return proj.applyTwo(d.xy).y});
+     console.log(line);
+     sel.append('path')
+      .datum(lines)
+      .attr({
+        "class": 'niceline',
+        'd': line,
+        'fill': "transparent",
+        'stroke': 'steelblue',
+        'stroke-width': 0.5,
+        'shape-rendering': 'crispEdges'
+      })
+    }
+    function paintPointPath(points) {
+      console.log(points);
+      sel.append('g')
+        .selectAll('circle')
+        .data(points)
+        .enter()
+        .append('circle')
+        .attr({
+          'cx': function (d) {
+            return proj.applyToLayer(d.xy).x;
+          },
+          'cy': function (d) {
+            return proj.applyToLayer(d.xy).y
+          },
+          'r': 2
+        });
+    }
+    function paints(){
+      paintLine(nodes[0]);
+      paintLine(nodes[1]);
+      paintPointPath(nodes[0])
+    }
+    function painting(){
+      paintPointPath(nodes[0])
+    }
+    function delayed(callback) {
+      setTimeout(function(){
+        console.log("hi");
+        callback(null);
+      }, 10)
+    }
+   delayed(paints);
+   delayed(painting);
+  });
+  overlayNice.addTo(map)
+};
+      //sel = g;
+       //featuresdata = collection.features.filter(function(d){
+       // return d;
+      //});
+      */
+   /*
+
+      var niceFeatures = sel.selectAll('circle')
+        .data(nodes)
+        .enter()
+        .append('circle')
+        .attr('r', 3)
+        .attr('class', 'niceWay');
+
+      var nicepath = sel.selectAll('.niceConnect')
+        .data([nodes])
+        .enter()
+        .append('path')
+        .attr('class', 'niceConnect')
+
+      var nicePu = sel.append('circle')
+        .attr('r', 1)
+        .attr('id', 'nicePul')
+        .attr('class', 'NicePulse')
+
+      var nicePull = sel.append('circle')
+        .attr('r', 3)
+        .attr('id', 'nicePull')
+        .attr('class', 'NicePulse')
+
+      var niceMk = sel.append('circle')
+        .attr('r', 10)
+        .attr('id', 'nicelydone')
+        .attr('class', 'travelNice')
+
+
+
+        reset(niceSvg);
+        niceSvg.resetSvg = reset;
+        //transition();
+
+        function reset(layer){
+          var applyLayer = function(d){
+            var y = d.geometry.coordinates[1];
+            var x = d.geometry.coordinates[0];
+            return layer.getMap().latLngToLayerPoint(new L.LatLng(y,x));
+          }
+          niceFeatures.attr("transform",
+            function (d) {
+              return "translate(" +
+                proj.coordsToPoint(d.xy).x + "," +
+                proj.coordsToPoint(d.xy).y + ")";
+            });
+          var toLine = d3.line()
+          .curve(d3.curveLinear)
+          .x(function (d) {
+            return applyLayer(d).x;
+          })
+          .y(function (d) {
+            return applyLayer(d).y;
+          });
+          nicepath.attr('d', toLine).call(proj.transitionTween(nicepath, TweenDash));
+        }
+        function transition(){
+          nicepath.transition()
+            .duration(duration)
+            .attrTween('stroke-dasharray', TweenDash);
+        }
+        function TweenDash(){
+          return function(t){
+            var l = nicepath.node().getTotalLength();
+             i = d3.interpolateString('0, ' + l, l + "," + l);
+             var marks = d3.select('#nicelydone')
+             var pulses = d3.select('circle').selectAll('.NicePulse')
+             var p = nicepath.node().getPointAtLength(t * l);
+             marks.attr("transform", "translate("+p.x+","+p.y+")");
+             pulses.attr("transform", "translate("+p.x+","+p.y+")");
+             if(tweenToggle == 0){
+              tweenToggle = 1;
+              var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+              map.panTo(newCenter, 14);
+            } else {
+              tweenToggle = 0;
+            }
+            return i(t);
+          }
+        }
+    });
+    overlayNice.addTo(map);
+  };
+
+*/
+function moveMarker(){
+  var markers = new L.MarkerClusterGroup();
+
+  var fealen = collect.features.length;
+  for (var i = 0; i < fealen; ++i) {
+    var f = collect.features[i];
+  if (f.geometry){
+  var marker = new L.marker(
+        new L.LatLng(f.geometry.coordinates[0][1], f.geometry.coordinates[0][0]), { id: f.properties.id, icon: tlicon }
+    );
+  marker.on('click', showptPath)
+  markers.addLayer(marker);
+
+  }
+}
+map.addLayer(markers);
+}
+function showptPath(event) {
+  var collectPath;
+  var clen = collect.features.length;
+  for (var i = 0; i < clen; ++i) {
+    var f = collect.features[i]
+
+    if(f.properties.id == event.target.options.id) {
+      collectPath = f;
+      break
+    }
+  }
+  //maptwo.fitBounds(new L.GeoJSON(collectPath).getBounds());
+  var duration = []
+  for (var i = 0; i < collectPath.properties.areaItems.length; ++i){
+      duration.push(collectPath.properties.areaItems[i].dist4 * 2500);
+  }
+  d3.select('svg.niceSVG').remove();
+  renderMarker(collectPath, duration);
+}
+function renderMarker(collection, duration){
+  //var d3svglayover =  L.d3SvgOverlay(function(sel, proj){
+
+    nicelayer = new L.niceLayer().addTo(map);
+    nicelayer.addTo(featureLayerAlt2);
+    nicePath = d3.select(nicelayer.getPathRoot());
+    //var  dsel = d3.select(map.getPanes().overlayPane);
+    nicePath.selectAll("svg.running-path").remove();
+    // var svg = dsel.append('svg').attr("class", "running-path");
+     //g = svg.append('g').attr("class", "leaflet-zoom-hide");
+    //var svg = sel;
+    var  transform = d3.geoTransform({point: projectPoint});
+     var d3path = d3.geoPath().projection(transform);
+     //var overPath = proj.pathFromGeojson();
+    //d3.json("https://raw.githubusercontent.com/higheredbob/design/master/9.geojson", function(collection) {
+    var  featuresdata = collection //.map(function(d){
+      //pp = proj.pP();
+     var collectFeatures = { type: "FeatureCollection", features: [featuresdata]};
+    var pulseinData = {
+        r: 25,
+        pulse: false
+      };
+     var rScale = d3.scaleSqrt()
+            .domain(pulseinData.r)
+            .range([1,25]);
+
+    const toLine = d3.line()
+       .curve(d3.curveLinear)
+       .x((d) => ApplyLatLngToLayer(d.geometry.coordinates[0],d.geometry.coordinates[0]).x)
+       .y((d) => ApplyLatLngToLayer(d.geometry.coordinates[0],d.geometry.coordinates[0]).y);
+
+    var ptsGroup = nicePath.append('g')
+          .attr('id', 'pathPoints');
+      ptPath = ptsGroup.selectAll('.linePoint')
+      .data([featuresdata])
+      .enter()
+      .append('path')
+      .attr('class', 'linePoint')
+      //.attr('d', d3path);
+
+
+    pulcounter = 1;
+
+    var pulsein = ptsGroup.append('circle')
+        .attr('class', 'ptPulse')
+        .attr('id', 'pulseone')
+        .attr('r', 3)
+
+        //d3.select('#pulseone').data(pulseinData)
+
+        .attr('r', function (d){
+
+            var pulsel = d3.select(this)
+            fireup(pulsel);
+
+        });
+   var newpulsein = ptsGroup.append('circle')
+        .attr('class', 'ptPulse')
+        .attr('id', 'pulsetwo')
+        .attr('r', 1)
+
+        //d3.select('#pulseone').data(pulseinData)
+
+        .attr('r', function (d){
+
+            var pulsell = d3.select(this)
+            fireup(pulsell);
+
+        });
+
+
+     var ptMark = ptsGroup.append('circle')
+        .attr('r', 8)
+        .attr('id', 'ptMark')
+        .attr('class', 'travelingPt');
+
+     var newMark = ptsGroup.append('circle')
+        .attr('r', 15)
+        .attr('id', 'ptMarkII')
+        .attr('class', 'travelingPt')
+        .style('fill', '#fb8c00')
+        .style('opacity', 0.4);
+
+      function fireup(pulsel){
+        //repeat();
+        console.log(pulsel);
+
+         ( function repeat() {
+        pulsel.transition()
+          //.delay(function(d){
+          //  return d.random * d.category * sliderVal / 5
+          //})
+          .delay(function (d) {pulcounter += 2; return pulcounter * Math.random()  })
+          .duration(8)
+          //.attr("stroke-width", 2)
+          .attr("r", 0.3)
+          .style('fill', '#ffd180')
+          .style('opacity', 0.87)
+          .transition()
+          .duration(2100)
+          //.attr('stroke-width', 0.5)
+          .attr("r", function(d) {return 48 * Math.random() + 5 } )
+          .style('fill', '#ff1744')
+          .style('opacity', 0)
+          .on("end", repeat);
+          //.ease('sine')
+
+          //.each("end", repeat);
+
+          })();
+          }
+
+
+
+      //transitionPt();
+      //transitionPt();
+    nicelayer.resetSvg = function () {
+      nicePath.selectAll('path')
+        .attr('d', d3path)
+    }
+    render(nicelayer);
+    nicelayer.resetSvg = render;
+    //transitionPt();
+    function render(layer){
+      /*
+      var bounds = d3path.bounds(collectFeatures),
+
+              topLeft = bounds[0],
+              bottomRight = bounds[1];
+
+          topLeft[0] -= 120;
+          topLeft[1] -= 120;
+          bottomRight[0] += 120;
+          bottomRight[1] += 120;
+
+          svg .attr("width", bottomRight[0] - topLeft[0])
+              .attr("height", bottomRight[1] - topLeft[1])
+              .style("left", topLeft[0] + "px")
+              .style("top", topLeft[1] + "px");
+
+
+      ptsGroup .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+    */
+    //d3.select('path').selectAll('.lineConnect').attr('transform', d => 'translate('+ApplyLatLngToLayer(d.geometry.coordinates[0], d.geometry.coordinates[0]).x+","+ApplyLatLngToLayer(d.geometry.coordinates[0], d.geometry.coordinates[0]).y+")");
+    ptPath.attr('d', d3path).call(transitionPt);
+      //ptPath.attr('d', pp).call(proj.transitionTween);
+       //ptPath.attr("d", d3path).call(proj.transitionTween(ptPath, tweenPt))
+      //ptPath.attr('d', function(d) {console.log(d); return projection.toLine(d.geometry.coordinates)});//d.map(function(e){projection.toLine(e.geometry.coordinates)}) });
+      //projection.transition(ptPath, ptMark);
+    }
+
+    function transitionPt(path) {
+        //duration = duration.map(function(d){return d})
+        //console.log(duration);
+      path.transition()
+        .duration(function (d) { return d.properties.ddur})
+        .attrTween('stoke-dasharray', tweenPt)
+
+    }
+    function tweenPt() {
+        var x = this;
+      return function(t) {
+       var l = ptPath.node().getTotalLength();
+
+
+        i = d3.interpolateString("0," + l, l + "," + l);
+        var p = ptPath.node().getPointAtLength(t * l);
+        var pulsedad = d3.selectAll('.ptPulse')
+          .attr("transform", "translate(" + p.x + "," + p.y + ")");
+        var marker = d3.selectAll('.travelingPt')
+          .attr("transform", "translate(" + p.x + "," + p.y + ")");
+         if(tweenToggle == 0){
+              tweenToggle = 1;
+              var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+              map.panTo(newCenter, 14);
+            } else {
+              tweenToggle = 0;
+            }
+        return i(t);
+      }
+    }
+    //render();
+    //render(ptPath, pp);
+    //map.on("viewreset", render);
+    //map.on('zoomend', render);
+    //render(ptPath, d3path);
+};
+
+//d3svglayover.addTo(map);
+
+function applyPTLatLngToLayer(d) {
+
+  return map.latLngtoLayerPoint(
+      new L.LatLng(d[1], d[0])
+    );
+}
+
+
+ function arcTween(radius, delay) {
+  return function() {
+    d3.select(this).transition().delay(delay).attrTween("d", function(d){
+      var i = d3.interpolate(d.r, radius);
+      return function(t) {d.r = i(t); return radius(d)}
+    })
+  }
+ }
+
+
+function showAll(){
+  operator = [];
+  for(var i = 0; i < features1.features.length; ++i){
+    var tf = timeArray[i];
+    var df = lineholder[i];
+    var pf = propsholder[i];
+    operator.push({type: 'Feature', geometry: { type: 'Point', coordinates: df}, properties: { distance: pf.dist4, accuracy: pf.Accuracy, duration: tf.duration, category: tf.hour, durmod: tf.modified }});
+  }
+  addStuff();
+}
+var clickerCounter = 0;
+function addStuff(){
+  var collen = collect.features.length - 1;
+  var endlen = collect.features[collect.features.length - 1].geometry.coordinates.length;
+  var startlenX = collect.features[0].geometry.coordinates[0][0];
+  var startlenY = collect.features[0].geometry.coordinates[0][1];
+  var marker = new L.marker(
+        new L.LatLng(startlenY, startlenX), {icon: wiicon}
+    );
+  //var endMarker = new L.marker(
+  //    new L.LatLng(collect.features[collen].geometry.coordinates[endlen - 1][1], collect.features[collen].geometry.coordinates[endlen - 1][0])
+  //  );
+  marker.addTo(map);
+
+  marker.on("click", function(event){
+    nextRoute(event);
+  })
+}
+function nextRoute(event) {
+  var hoursstart = [];
+  var f = operator;
+  var durmod = [];
+  var flen = f.length;
+
+  animateGeo(f, durmod, hoursstart);
+}
+function animateGeo(f, durmod, hoursstart) {
+ var  colorRange = ['#d500f9', '#ffdd5b', '#76ff03', '#b9f6ca', '#3e2723', '#4e342e', '#5d4037', '#6d4c41', '#795548', '#8d6e63', '#a1887f', '#a1887f', '#a1887f', '#a1887f', '#8d6e63', '#795548', '#6d4c41', '#5d4037', '#4e342e', '#3e2723', '#ee6134', '#885dff', '#ff9100', '#f90a05'];
+
+ var nodes = d3.range(f.length).map(function(d, i) {
+    return {
+      x: f[i].geometry.coordinates[0],
+      y: f[i].geometry.coordinates[1],
+      //coordinates: [f[i].geometry.coordinates[0], f[i].geometry.coordinates[1]],
+      //coords: [applyLatLngToLayer(f[i].geometry.coordinates[0], f[i].geometry.coordinates[1])],
+      geometry: {type: 'Point', coordinates: [f[i].geometry.coordinates[0], f[i].geometry.coordinates[1]]},
+      //features: {type: 'Feature', geometry: {type: 'Point', coordinates: [f[i].geometry.coordinates]}},
+      radius: parseInt(f[i].properties.category) +5 * 6,
+      hours: parseInt(f[i].properties.category),
+      duration: f[i].properties.durmod * sliderVal,
+      category: i % 8,
+      random: Math.random() * 15,
+      fill: colorRange[parseInt(f[i].properties.category)],
+      pulsing: false
+
+    }
+  })
+    var  h = 900;
+     var  w = 1200;
+  var d3overlay = d3.select(map.getPanes().overlayPane);
+      d3overlay.selectAll("svg.running-marker").remove();
+      //var minsvg = d3.select(maptwo.getPanes().overlayPane).append("svg");
+      //var svg = d3overlay.append("svg").attr("class", "running-marker");
+      var svg = d3overlay.append("svg").attr("class", "running-marker");
+      g = svg.append("g").attr("class", "leaflet-zoom-hide");
+      var transform = d3.geoTransform({point: projectPoint});
+      var path = d3.geoPath().projection(transform);
+
+      var bounds = path.bounds(features1);
+                    var topLeft = [bounds[0][0] + 80 , bounds[0][1] - 80];
+                    var bottomRight = [bounds[1][0] - 80 , bounds[1][1] + 80];
+                // Setting the size and location of the overall SVG container
+                svg
+                    .attr("width", bottomRight[0] - topLeft[0] )
+                    .attr("height", bottomRight[1] - topLeft[1] )
+                    .style("left", topLeft[0] + "px")
+                    .style("top", topLeft[1]  + "px");
+                g.attr("transform", "translate(" + (-topLeft[0]+40 ) + "," + (-topLeft[1]+40 ) + ")");
+
+      //var output = JSON.stringify(nodes, null, '\t');
+      //var outputText = $('#geoOutput').val(output);
+      var markerCol = { type: "FeatureCollection", features: [nodes]};
+
+    var scaleQuantRad = d3.scaleQuantile()
+                              .domain([0, 3, 11, 101, 316000 ])
+                              .range([3, 4, 5, 6]);
+    var rScale = d3.scaleSqrt()
+          .domain(d3.extent(nodes, function(d) {return d.hours;}))
+          .range([1,24])
+
+  var cScale = d3.scaleSqrt()
+                .domain(rScale.domain())
+                .range(['#00897b', '#4caf50']);
+
+var pulsers = svg.selectAll("circle")
+      .data(nodes)
+      .enter()
+      .append("circle")
+      .classed('pulsers', true)
+      .attr("stroke-width", 2)
+      .attr("r", 2)
+      .attr("cx", function(d){
+             return  d.x;
+      })
+      .attr("cy", function(d){
+              return d.y;
+      })
+      .attr('fill', function(d) {return cScale(d.hours)})
+      .attr("transform", function(d) {
+        return  "translate(" + applyLatLngToLayer(d).x + "," +
+                            applyLatLngToLayer(d).y + ")";
+      })
+      .on("mouseover", function(d){
+       var selection = d3.select(this);
+       pulse(selection);
+
+      });
+      //.each(pulse);
+
+    function pulse(selection) {
+      var circle = svg.select('circle');
+      //selection = d3.select(this)
+      ( function repeat() {
+        selection.transition()
+          //.delay(function(d){
+          //  return d.random * d.category * sliderVal / 5
+          //})
+          .duration(1000)
+          .attr("stroke-width", 2)
+          .attr("r", function(d){
+            return rScale(d.radius) / 6
+          })
+          .style('opacity', 0.75)
+          .transition()
+          .duration(function(d) {
+            return d.duration
+          })
+          .attr('stroke-width', 0.5)
+          .attr("r", function(d){
+            return d.radius * 2
+          })
+          .style('opacity', 0.1)
+          .style('fill', function(d){
+            return d.fill
+          })
+          .on("end", repeat);
+          //.ease('sine')
+
+          //.each("end", repeat);
+
+      })();
+
+    }
+
+         var  width = 1000;
+
+
+   map.on("viewreset", reset);
+       reset();
+
+        function reset() {
+                var bounds = path.bounds(features1);
+                 var  topLeft = [bounds[0][0] + 10 , bounds[0][1] - 10];
+                 var   bottomRight = [bounds[1][0] + 10 , bounds[1][1] + 10];
+                // Setting the size and location of the overall SVG container
+                svg
+                    .attr("width", bottomRight[0] - topLeft[0] )
+                    .attr("height", bottomRight[1] - topLeft[1] )
+                    .style("left", topLeft[0] + "px")
+                    .style("top", topLeft[1]  + "px");
+                g.attr("transform", "translate(" + (-topLeft[0] ) + "," + (-topLeft[1] ) + ")");
+                pulsers.attr("transform",
+                    function(d) {
+                        return "translate(" +
+                            applyLatLngToLayer(d).x + "," +
+                            applyLatLngToLayer(d).y + ")";
+                    }).on("load", function(d) {
+                      d.pulsing = !d.pulsing;
+                      if(d.pulsing){
+                        var selection = d3.select(this);
+                        pulse(selection);
+
+                      }
+                    });
+        }
+
+}
+
+function animClicker() {
+    var timefeatlen = collect.features[collect.features.length - 1].properties.timeFeatures.length;
+   var propdur = {
+    timedur: 0,
+    distdur: 0,
+    pickup: collect.features[0].properties.timeFeatures[0].pickup,
+    dropoff: collect.features[collect.features.length - 1].properties.timeFeatures[timefeatlen - 1].dropoff
+  };
+  for(var i = 0; i < collect.features.length; i++) {
+    var m = collect.features[i];
+    propdur.timedur += m.properties.time;
+    propdur.distdur += m.properties.distance;
+  }
+  addPoints(propdur);
+}
+
+
+function addPoints(propdur){
+  var coordlen = collect.features[collect.features.length - 1].geometry.coordinates.length;
+  var marker = new L.marker(
+      new L.LatLng(collect.features[0].geometry.coordinates[0][1], collect.features[0].geometry.coordinates[0][0]), {id: 0, duration: propdur.distdur, time: propdur.timedur, pickup: propdur.pickup, dropoff: propdur.dropoff, icon: riicon }
+    );
+  var endMarker = new L.marker(
+      new L.LatLng(collect.features[collect.features.length - 1].geometry.coordinates[coordlen - 1][1], collect.features[collect.features.length - 1].geometry.coordinates[coordlen - 1][0], {icon: qiicon})
+    );
+  marker.addTo(map);
+  endMarker.addTo(map);
+  marker.on("click", function(event){
+    showClickPath(event);
+  });
+}
+
+
+clickCounter = 0;
+function showClickPath(event) {
+  clicklen = collect.features.length;
+  for(var i = 0; i < clicklen; ++i) {
+    var m = collect.features[i];
+    if (m.properties.id === event.target.options.id) {
+      startGeo = m;
+      startPath(startGeo);
+    }
+  }
+
+    $('#clickNext').click(function() {
+
+        nextGeo = collect.features[clickCounter];
+        nextPath(nextGeo);
+        clickCounter += 1;
+    });
+ }
+
+function startPath(geo) {
+ var  dur = (geo.properties.time / 60000) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+
+    animateClick(geo, dur);
+    updateGeoboard(geo.properties, dur);
+}
+
+function nextPath(geo) {
+  if(geo.properties.time > 80000000) {
+    dur = (geo.properties.time / 370000) * sliderVal;
+  } else if(geo.properties.time > 36000000) {
+    dur = (geo.properties.time / 240000) * sliderVal;
+  } else if(geo.properties.time > 18000000) {
+    dur = (geo.properties.time / 150000) * sliderVal;
+  } else if(geo.properties.time > 9000000) {
+  dur = (geo.properties.time / 83000) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+ } else  if(geo.properties.time > 6000000) {
+  dur = (geo.properties.time / 59000) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+  } else  if(geo.properties.time > 3000000) {
+  dur = (geo.properties.time / 49000) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+ } else if(geo.properties.time > 1000000) {
+   dur = (geo.properties.time / 16000) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+ } else if(geo.properties.time > 600000) {
+   dur = (geo.properties.time / 12500) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+ }else {
+  dur = (geo.properties.time / 9100) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+ }
+    animateClick(geo, dur);
+    updateGeoboard(geo.properties, dur);
+}
+
+
+function updateGeoboard(props, dur){
+  $('#poptime').show();
+  $('#poptime').popover('show');
+  var dis = Math.round(props.distance);
+  var tilen = props.timeFeatures.length;
+  var starttime = props.timeFeatures[0].pickup;
+  var endtime = props.timeFeatures[tilen - 1].pickup;
+  var acttime = props.time / 60000;
+  var _second = 1000;
+  var _minute = _second * 60;
+  var _hour = _minute * 60;
+  var _day = _hour *24;
+  var timer;
+  var addate = new Date();
+  var paddate = Date.parse(addate);
+  var upDate = paddate + dur;
+
+
+  function showRemaining() {
+    var now = new Date();
+    var getDate = new Date(upDate);
+    var distance = getDate - now;
+    if (distance < 1 ) {
+       clearInterval( timer ); // stop the timer from continuing ..
+    }
+    var days = Math.floor(distance / _day);
+    var hours = Math.floor( distance  / _hour );
+    var minutes = Math.floor( (distance % _hour) / _minute );
+    var seconds = Math.floor( (distance % _minute) / _second );
+    var milliseconds = distance % _second;
+    var parentElement = $('h3.popover-header');
+        parentElement.html(hours + 'h ' + //days  + 'd ' +
+                           minutes + 'm ' +
+                           seconds + 's ' +
+                           milliseconds + 'ms');
+  }
+  $('div.popover-body').html('Total Mi: ' + dis + '<br>' +
+                             'start: ' + starttime + '<br>' +
+                             'arrival: ' + endtime + '<br>' +
+                             'act duration: ' + acttime);
+  timer = setInterval(showRemaining, 15);
+}
+
+
+function animateClick(geo, dur){
+      console.log(geo);
+      var d3overlay = d3.select(map.getPanes().overlayPane);
+      d3overlay.selectAll("svg.running-marker").remove();
+      //var minsvg = d3.select(maptwo.getPanes().overlayPane).append("svg");
+      var svg = d3overlay.append("svg").attr("class", "running-marker");
+      g = svg.append("g").attr("class", "leaflet-zoom-hide");
+      var transform = d3.geoTransform({point: projectPoint});
+      var path = d3.geoPath().projection(transform);
+      var markerCol = { type: "FeatureCollection", features: [geo]};
+      //var output = JSON.stringify(geo, null, '\t');
+      //var outputText = $('#geoOutput').val(output);
+
+
+    var linePath = g.selectAll('.line')
+              .data([geo])
+              .enter()
+              .append("path")
+              .attr("class", "clickConnect");
+
+      var ptFeatures = g.selectAll('circle')
+          .data(geo)
+          .enter()
+          .append('circle')
+          .attr("r", 4)
+          .attr("class", "waypoints");
+
+      var marker = g.append("circle")
+          .attr("r", 7)
+          .attr("id", "marker")
+          .attr("class", "clickMarker");
+
+
+      function newreset() {
+          var bounds = path.bounds(markerCol),
+
+          topLeft = bounds[0],
+          bottomRight = bounds[1];
+
+          topLeft[0] -= 20;
+          topLeft[1] -= 20;
+          bottomRight[0] += 20;
+          bottomRight[1] += 20;
+
+          svg .attr("width", bottomRight[0] - topLeft[0] + 2)
+              .attr("height", bottomRight[1] - topLeft[1] + 2)
+              .style("left", topLeft[0] + "px")
+              .style("top", topLeft[1]  + "px");
+
+
+          g .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+          linePath.attr("d", path).call(cktransition);
+        }
+
+        function cktransition(path) {
+
+          path.transition()
+              .duration(dur)
+              .attrTween("stroke-dasharray", cktweenDash);
+        }
+
+        function cktweenDash() {
+          var x = this;
+
+          return function(t) {
+
+            var l = x.getTotalLength();
+            var i = d3.interpolateString("0," + l, l + "," + l);
+            var marker = d3.select('#marker');
+            var p = x.getPointAtLength(t * l);
+            marker.attr('transform', "translate(" + p.x + "," + p.y + ")");
+
+            if(tweenToggle == 0){
+              tweenToggle = 1;
+              var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+              map.panTo(newCenter, 10);
+            } else {
+              tweenToggle = 0;
+            }
+            return i(t);
+          };
+        }
+
+          map.on("viewreset", newreset);
+          newreset(linePath, path);
+          newreset();
+  }
+
+function animPolyPath(){
+
+ addMarkers();
+}
+
+function addMarkers() {
+  var markers = new L.MarkerClusterGroup();
+
+   for (var i = 0; i < collect.features.length; i++) {
+    var f = collect.features[i];
+
+    if (f.geometry) {
+      var marker = new L.marker(
+            new L.LatLng(f.geometry.coordinates[0][1], f.geometry.coordinates[0][0]), { id: f.properties.id, icon: miicon }
+    );
+
+      marker.on('click', function(event){
+        showRunPath(event);
+      });
+      markers.addLayer(marker);
+    }
+  }
+  map.addLayer(markers);
+}
+
+function durCount(n){
+  return n < 13 ? 103 * sliderVal:
+         n < 17 ? 185 * sliderVal:
+          250 * sliderVal;
+}
+function showRunPath(event) {
+
+    var GeoPath;
+
+  for (var i = 0; i < collect.features.length; i++) {
+    var f = collect.features[i];
+
+    if (f.properties.id === event.target.options.id) {
+      GeoPath = f;
+      break;
+    }
+  }
+
+
+  if (GeoPath) {
+    if (!(GeoPath.geometry.coordinates[0] instanceof Array) ) {
+      minifier = new GeojsonMinifier({ precision: 6 });
+      GeoPath.geometry.coordinates = minifier.decodeGeometry(GeoPath.geometry.coordinates);
+  }
+    //maptwo.fitBounds(new L.GeoJSON(geoPath).getBounds());
+    var duration = durCount(GeoPath.properties.distance); //< 13 ? 11300 : < 17 ? 22600 : 32900;
+    drawPath(GeoPath, duration);
+    }
+
+}
+
+function updateDahsboard(data, duration) {
+  //data should be at collect.features.properties
+
+i = 0;
+  var distanceLabel = document.querySelector('#distance > span');
+    meters = 8000;
+     timeout = Math.floor((3000 / meters) * 10);
+  function printText() {
+    distanceLabel.innerText = i;
+    i += 202;
+
+    if (i < meters) {
+      setTimeout(printText, timeout);
+    } else {
+      distanceLabel.innerText = meters;
+    }
+  }
+
+  printText();
+}
+
+function drawPath(GeoPath, duration) {
+  tweenToggle = 0;
+  var pane = d3.select(map.getPanes().overlayPane);
+  pane.selectAll("svg.running-path").remove();
+  var svg = pane.append("svg").attr("class", "running-path"),
+      g = svg.append("g").attr("class", "leaflet-zoom-hide");
+
+  var transform = d3.geoTransform({point: projectPoint});
+  var path = d3.geoPath().projection(transform);
+  var coll =  { type: "FeatureCollection", features: [GeoPath] };
+  //var output = JSON.stringify(geoPath, null, '\t');
+  //var outputText = $('#geoOutput').val(output);
+
+  var line = g.selectAll(".line")
+                .data([GeoPath])
+                .enter()
+                .append("path")
+                .attr("class", "line");
+
+
+
+  function reset() {
+    var bounds = path.bounds(coll),
+
+        topLeft = bounds[0],
+        bottomRight = bounds[1];
+
+    topLeft[0] -= 1;
+    topLeft[1] -= 1;
+    bottomRight[0] += 1;
+    bottomRight[1] += 1;
+
+    svg .attr("width", bottomRight[0] - topLeft[0] + 2)
+        .attr("height", bottomRight[1] - topLeft[1] + 2)
+        .style("left", topLeft[0] + "px")
+        .style("top", topLeft[1] + "px");
+
+    g .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+
+    line.attr("d", path).call(transition);
+  }
+
+  function transition(path) {
+    console.log(path);
+    path.transition()
+        .duration(duration)
+        .attrTween("stroke-dasharray", tweenDash);
+  }
+
+  function tweenDash() {
+    var l = this.getTotalLength(),
+        i = d3.interpolateString("0," + l, l + "," + l);
+    var x = this;
+
+    return function(t) {
+      var p = x.getPointAtLength(t * l);
+      if(tweenToggle == 0){
+        tweenToggle = 1;
+        var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+        map.panTo(newCenter, 16);
+      } else {
+        tweenToggle = 0;
+      }
+      return i(t); };
+  }
+
+  map.on("viewreset", reset);
+  //maptwo.on("zoomend", reset);
+  reset(line, path);
+  reset();
+}
+
+function animStepper(){
+$('#stepper-main').show();
+ addStepMarkers();
+}
+
+function addStepMarkers() {
+  var markers = new L.MarkerClusterGroup();
+
+   for (var i = 0; i < collect.features.length; i++) {
+    var f = collect.features[i];
+
+    if (f.geometry) {
+      var marker = new L.marker(
+            new L.LatLng(f.geometry.coordinates[0][1], f.geometry.coordinates[0][0]), { id: f.properties.id, icon: tlicon }
+    );
+
+
+      marker.on('click', function(event){
+        showStepRunPath(event);
+      });
+      markers.addLayer(marker);
+    }
+
+  }
+
+  map.addLayer(markers);
+}
+
+function showStepRunPath(event) {
+
+    stepPath = [];
+
+  for (var i = 0; i < collect.features.length; i++) {
+    var f = collect.features[i];
+
+    if (f.properties.id === event.target.options.id) {
+      stepPath = f;
+      break;
+    }
+  }
+
+    //maptwo.fitBounds(new L.GeoJSON(stepPath).getBounds());
+    if(stepPath.properties.mod > 900) {
+    dur = (stepPath.properties.mod / 4) * sliderVal; //260durd3Count(stepPath.properties.distance) //< 13 ? 11300 : < 17 ? 22600 : 32900;
+  } else if(stepPath.properties.mod > 400) {
+    dur = (stepPath.properties.mod / 3) * sliderVal;
+  } else if(stepPath.properties.mod > 200) {
+    dur = (stepPath.properties.mod / 2) * sliderVal;
+  } else {
+    dur = stepPath.properties.mod * sliderVal;
+  }
+    animateStep(stepPath, dur);
+    updateDashboard(stepPath.properties, dur);
+  }
+
+  function updateDashboard(props, dur){
+  $('#poptime').show();
+  $('#poptime').popover('show');
+  var dis = Math.round(props.distance);
+  var tilen = props.timeFeatures.length;
+  var starttime = props.timeFeatures[0].pickup;
+  var endtime = props.timeFeatures[tilen - 1].pickup;
+  var acttime = props.time / 60000;
+  var _second = 1000;
+  var _minute = _second * 60;
+  var _hour = _minute * 60;
+  var _day = _hour *24;
+  var timer;
+  var addate = Date();
+  var paddate = Date.parse(addate);
+  var upDate = paddate + dur;
+
+  function showRemaining() {
+    var now = new Date();
+    var getDate = new Date(upDate);
+    var distance = getDate - now;
+    if (distance < 1 ) {
+       clearInterval( timer ); // stop the timer from continuing ..
+    }
+    //var days = Math.floor(distance / _day);
+    var hours = Math.floor( distance  / _hour );
+    var minutes = Math.floor( (distance % _hour) / _minute );
+    var seconds = Math.floor( (distance % _minute) / _second );
+    var milliseconds = distance % _second;
+    var parentElement = $('h3.popover-header');
+        parentElement.html(hours + 'h ' + //days  + 'd ' +
+                           minutes + 'm ' +
+                           seconds + 's ' +
+                           milliseconds + 'ms');
+  }
+  $('div.popover-body').html('Total Mi: ' + dis + '<br>' +
+                             'start: ' + starttime + '<br>' +
+                             'arrival: ' + endtime + '<br>' +
+                             'act duration: ' + acttime);
+  timer = setInterval(showRemaining, 15);
+
+  }
+
+
+    function animateStep(stepPath, dur){
+
+      console.log(stepPath);
+      var d3overlay = d3.select(map.getPanes().overlayPane);
+      d3overlay.selectAll("svg.running-marker").remove();
+      var svg = d3overlay.append("svg").attr("class", "running-marker");
+      g = svg.append("g").attr("class", "leaflet-zoom-hide");
+      var transform = d3.geoTransform({point: projectPoint});
+      var path = d3.geoPath().projection(transform);
+      var markerCol = { type: "FeatureCollection", features: [stepPath]};
+      //var output = JSON.stringify(stepPath, null, '\t');
+      //var outputText = $('#geoOutput').val(output);
+
+    var linePath = g.selectAll('.line')
+              .data([stepPath])
+              .enter()
+              .append("path")
+              .attr("class", "stepConnect");
+
+
+      var ptFeatures = g.selectAll('circle')
+          .data(stepPath)
+          .enter()
+          .append('circle')
+          .attr("r", 4)
+          .attr("class", "waypoints");
+
+
+      var marker = g.append("circle")
+          .attr("r", 7)
+          .attr("id", "marker")
+          .attr("class", "stepMarker");
+
+      var outering = g.append("circle")
+        .attr('r', 15)
+        .attr('id', 'outering')
+        .attr("class", "stepRing")
+        .style("fill", '#039be5')
+        .style('opacity', 0.45);
+
+
+      function newreset() {
+            var bounds = path.bounds(markerCol),
+
+              topLeft = bounds[0],
+              bottomRight = bounds[1];
+
+          topLeft[0] -= 20;
+          topLeft[1] -= 20;
+          bottomRight[0] += 20;
+          bottomRight[1] += 20;
+
+          svg .attr("width", bottomRight[0] - topLeft[0])
+              .attr("height", bottomRight[1] - topLeft[1])
+              .style("left", topLeft[0] + "px")
+              .style("top", topLeft[1] + "px");
+
+
+
+          g .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+          linePath.attr("d", path).call(sttransition);
+          //linePath.attr("d", path).call(transition)
+          //line.attr("d", path).call(transition);
+        }
+
+        function sttransition(path) {
+          path.transition()
+              .duration(dur)
+              .attrTween("stroke-dasharray", sttweenDash);
+        }
+
+        function sttweenDash() {
+          var x = this;
+
+          return function(t) {
+
+            var l = x.getTotalLength();
+            var i = d3.interpolateString("0," + l, l + "," + l);
+            //var markerPulse = d3.select('.pulseMarker')
+            var marker = d3.select('#marker');
+            var ring = d3.select('#outering');
+            var p = x.getPointAtLength(t * l);
+
+            //markerPulse.attr('transform', "translate(" + p.x + "," + p.y + ")");
+            marker.attr('transform', "translate(" + p.x + "," + p.y + ")");
+            ring.attr('transform', "translate(" + p.x + "," + p.y + ")");
+            if(tweenToggle == 0){
+              tweenToggle = 1;
+              var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+              map.panTo(newCenter, 10);
+            } else {
+              tweenToggle = 0;
+            }
+            return i(t);
+          };
+        }
+
+          map.on("viewreset", newreset);
+          newreset(linePath, path);
+          newreset();
+
+      }
+
+function translatePoint(d) {
+    var point = map.latLngToLayerPoint(new L.LatLng(d[1],d[0]));
+
+    return "translate(" + point.x + "," + point.y + ")";
+}
+
+function coordToLatLon(coord) {
+var point = map.layerPointToLatLng(new L.Point(coord[0],coord[1]));
+return point;
+}
+
+$('#geoInput').focus(function(){
+        $(this).val('');
+    });
+  $('#cleardata').click(function(){
+    featureLayer.clearLayers();
+    featureLayerAlt.clearLayers();
+    featureLayerAlt2.clearLayers();
+    featuresIn.clearLayers();
+    featureLayerD3.clearLayers();
+    geoFile = '';
+    layerIn = '';
+    featuresdata = [];
+  });
+  /*
+    // Button to clear map and input text area:
+    $('#btnInputClear').click(function(){
+        count = 0;
+        featuresIn.clearLayers();
+        featureLayer.clearLayers();
+        featuresdata = [];
+        layerIn = '';
+        $('#geoInput').val('');
+        $('#layerIn').html('');
+    });
+*/
+    // Generate output geojson:
+    $('#btnOutput').click(function(){
+        var output = JSON.stringify(result, null, '\t');
+        var outputText = $('#geoOutput').val(output);
+    });
+    $('#poilink').click(function() {
+
+      var AirIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'airport.png'
+        }
+      });
+      var EatIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'dining.png'
+        }
+      });
+      var BarIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'bar.png'
+        }
+      });
+      var ShopIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'shopping.png'
+        }
+      });
+      var CasIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'casino.png'
+        }
+      });
+      var SportIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'sport.png'
+        }
+      });
+      var UnivIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'univ.png'
+        }
+      });
+      var GenIcon = L.Icon.Default.extend({
+        options: {
+              iconUrl: 'blue-marker.png'
+        }
+      });
+      var airicon = new AirIcon(),
+          eaticon = new EatIcon(),
+          baricon = new BarIcon(),
+          shopicon = new ShopIcon(),
+          univicon = new UnivIcon(),
+          sporticon = new SportIcon(),
+          casicon = new CasIcon(),
+          genicon = new GenIcon();
+      var poimarkers = [];
+      var plen = poi.features.length;
+      for(var i = 0; i < plen; i++) {
+        var p = poi.features[i];
+        if(p.properties.bus == 'nightlife'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:baricon, id: i}).addTo(maptwo));
+      } else if(p.properties.bus == 'shopping'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:shopicon, id: i}).addTo(maptwo));
+      } else if(p.properties.bus == 'sports'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:sporticon, id: i}).addTo(maptwo));
+        } else if(p.properties.bus == 'dining'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:eaticon, id: i}).addTo(maptwo));
+        } else if(p.properties.bus == 'airport'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:airicon, id: i}).addTo(maptwo));
+        } else if(p.properties.bus == 'casino'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:casicon, id: i}).addTo(maptwo));
+        } else if(p.properties.bus == 'university'){
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:univicon, id: i}).addTo(maptwo));
+        } else {
+          poimarkers.push(new L.marker(new L.latLng(p.geometry.coordinates[1], p.geometry.coordinates[0]), {icon:genicon, id: i}).addTo(maptwo));
+        }
+      }
+      featureLayer.addData(poimarkers);
+
+    });
+
+
+    // Clear button to clear output map and output geojson text area:
+    $('#btnOutputClear').click(function(){
+        map.clearLayers();
+        featuresOut.clearLayers();
+        featureLayer.clearLayers();
+        $('#demoImage').parent().remove();
+        $('#geoOutput').val('');
+        intersectL = [];
+        bufferL = [];
+    });
+
+
+function routingInit(caller){
+  var len = collect.features.length;
+  routes = [];
+
+  function sortgeom(array) {
+    raylen = array.geometry.coordinates.length;
+    returnray = [];
+    console.log(array.geometry.coordinates);
+    for( var w = 0; w < raylen; w++){
+      returnray.push(new L.latLng(array.geometry.coordinates[w][1], array.geometry.coordinates[w][0]));
+    }
+    return returnray;
+  }
+  function sortRoute(array) {
+    var arrlen = array.length;
+    var copyray = [];
+    for(var w = 0; w < arrlen; w++) {
+      copyray.push(array[w]);
+    }
+    return copyray;
+  }
+  for(var i = 0; i < len; i++) {
+
+    routes[i] = [];
+    ltlgs[i] = [];
+  }
+  for(var i = 0; i < len; i++) {
+     r = collect.features[i];
+     //ltlgs[i].push(sortgeom(r))
+     routes[i].push(L.Routing.control({waypoints: sortgeom(r), geocoder: L.Control.Geocoder.nominatim()}).addTo(map));
+
+  }
+
+}
+    $('#clean').click(function(){
+        var len = features1.features.length;
+        result = [];
+        for(var i = 0; i < len; i++){
+            result.push(turf.cleanCoords(features1.features[i]).geometry.coordinates);
+        }
+        resultOut = {
+            "type": "FeatureCollection",
+            "features": result
+        };
+        //result = turf.cleanCoords(features1.geometry.coordinates).geometry.coordinates;
+        var resultShow = L.marker(result, {
+            style: style,
+            onEachFeature: onEachFeature
+        });
+        featuresLayer.addLayer(resultShow).addTo(map);
+        //maptwo.fitBounds(resultShow.getBounds());
+
+    });
+
+    //to polyline
+    $('#toPolyline').click(function(){
+        var len = features1.features.length;
+        geo = features1.features;
+        result = [];
+        for(var i = 0; i < len; i++){
+
+            result.push(new L.LatLng(geo[i].geometry.coordinates[1], geo[i].geometry.coordinates[0]));
+        }
+      //res = turf.featurecollection(result);
+      featureLayer.addLayer(L.marker(result[0]));
+      featureLayer.addLayer(L.marker(result[len - 1]));
+      var resultShow = L.polyline(result);
+      featureLayer.addLayer(resultShow).addTo(map);
+
+  });
+
+map.on("click", function(e) {
+  highlightLayer.clearLayers();
+});
+
+    $('#clusterKmeans').click(function(){
+        var options = {numberOfClusters: 25};
+        result = [];
+        var len = features1.features.length;
+            clustered = turf.clustersKmeans(features1, options);
+        for(var i = 0; i < clustered.features.length; i++){
+            result.push(new L.LatLng(clustered.features[i].properties.centroid[1], clustered.features[i].properties.centroid[0]));
+        }
+        console.log(result);
+        for(var i = 0; i < result.length; i++){
+        featureLayer.addLayer(L.circleMarker(result[i]));
+    }
+    });
+    function clusterDbscan(){
+      var maxDistance = 75;
+      var result = [];
+      var len = features1.features.length;
+      var clustered = turf.clustersDbscan(features1, maxDistance);
+      for(var i = 0; i < clustered.features.length; i++) {
+        result.push(new L.latLng(clustered.features[i].properties.centroid[1], clustered.features[i].properties.centroid[0]));
+        featureLayer.addData(L.circleMarker(result[i]));
+      }
+    }
+    function measurePointDist(){
+      var measured = [];
+      var len = features1.features.length;
+      var opts = {units: 'miles'};
+      for(var i = 0; i < len; i++) {
+        var f = features1.features;
+        var from = f[i].geometry.coordinates;
+        var to = f[i+1].geometry.coordinates;
+        measured.push(turf.distance(from, to, opts));
+      }
+      featureLayer.addData(measured);
+    }
+    $('#clusterDBscan').click(function(){
+      clusterDbscan();
+    });
+    $('#distPoint').click(function(){
+      measurePointDist();
+    });
+
+function animD3Marker(){
+   $('.slower').click(function(){
+      if(timeFactor > 1){
+        timeFactor -= 1;
+      }
+      $('.timeFactor').html(timeFactor);
+    });
+    $('.faster').click(function(){
+        timeFactor += 1;
+      $('.timeFactor').html(timeFactor);
+    });
+    $('.reload').click(function(){
+      location.reload();
+    });
+    $('.about').click(function(){
+      $('.aboutPopup').fadeIn();
+    });
+
+ addD3Markers();
+}
+
+
+function addD3Markers() {
+  var markers = new L.MarkerClusterGroup();
+
+   for (var i = 0; i < collect.features.length; i++) {
+    var f = collect.features[i];
+
+    if (f.geometry) {
+      var marker = new L.marker(
+            new L.LatLng(f.geometry.coordinates[0][1], f.geometry.coordinates[0][0]), { id: f.properties.id }
+    );
+
+
+      marker.on('click', function(event){
+        showD3RunPath(event);
+
+      });
+      markers.addLayer(marker);
+    }
+  }
+
+  map.addLayer(markers);
+
+}
+
+function durd3Count(n){
+  return n < 18 ? 63 * sliderVal:
+         n < 28 ? 115 * sliderVal:
+          166 * sliderVal;
+}
+function showD3RunPath(event) {
+
+    var markerPath;
+
+  for (var i = 0; i < collect.features.length; i++) {
+    var f = collect.features[i];
+
+    if (f.properties.id === event.target.options.id) {
+      markerPath = f;
+      break;
+    }
+  }
+
+
+  if (markerPath) {
+    if (!(markerPath.geometry.coordinates[0] instanceof Array) ) {
+      d3minifier = new GeojsonMinifier({ precision: 6 });
+      markerPath.geometry.coordinates = d3minifier.decodeGeometry(markerPath.geometry.coordinates);
+  }
+    //maptwo.fitBounds(new L.GeoJSON(markerPath).getBounds());
+    var duration = durd3Count(markerPath.properties.distance); //< 13 ? 11300 : < 17 ? 22600 : 32900;
+    animateMarker(markerPath, duration);
+    //updateDahsboard(r);
+    }
+
+}
+
+  function areaChartBuild(){
+    var margin = {top: 10, right:8, bottom:8, left:14},
+    areaChartWidth = $(window).width() - margin.left - margin.right - 40,
+    areaChartHeight = 140 - margin.top - margin.bottom;
+    var x = d3.scale.linear()
+      .range([0, areaChartWidth]);
+    var y = d3.scale.linear()
+      .range([areaChartHeight, 0]);
+
+    var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .ticks(4);
+    var areaChartSvg = d3.select(".areaChartBox").append("svg")
+      .attr("width", areaChartWidth + margin.left + margin.right)
+      .attr("height", areaChartHeight + margin.top + margin.bottom)
+      .attr("class", "areaChart")
+      .append("g")
+      .attr("transform", "translate("+margin.left+","+margin.top+")");
+  }
+
+
+    function animateMarker(markerPath, duration){
+      var pulseData = [
+        {"r": 1, "pulse": false},
+        {"r": 3, "pulse": false}
+      ];
+      console.log(markerPath);
+      var d3overlay = d3.select(map.getPanes().overlayPane);
+      d3overlay.selectAll("svg.running-marker").remove();
+      var minsvg = d3.select(map.getPanes().overlayPane).append("svg");
+      var svg = d3overlay.append("svg").attr("class", "running-marker");
+      g = svg.append("g").attr("class", "leaflet-zoom-hide");
+      var transform = d3.geoTransform({point: projectPoint});
+      var path = d3.geoPath().projection(transform);
+      var markerCol = { type: "FeatureCollection", features: [markerPath]};
+
+      var ptFeatures = g.selectAll('circle')
+          .data(markerPath)
+          .enter()
+          .append('circle')
+          .attr("r", 2)
+          .attr("class", "waypoints");
+
+      var linePath = g.selectAll('.line')
+          .data([markerPath])
+          .enter()
+          .append("path")
+          //.attr("class", "line")
+          .attr("class", "lineConnect");
+
+
+
+      var marker = g.append("circle")
+          .attr("r", 5)
+          .attr("id", "marker")
+          .attr("class", "travelMarker");
+
+      var markerPulse = g.selectAll("circle").data(pulseData);
+          markerPulse.enter()
+          .append('circle')
+
+          .attr("opacity", 0.3)
+          .attr("class", "pulseMarker");
+      g.selectAll('circle')
+          .attr('r', function(d) {
+            d.pulse = !d.pulse;
+            if (d.pulse) {
+              sel = d3.select(this);
+              pulsate(sel);
+            }
+          });
+
+      var upd = markerPath.geometry.coordinates.length;
+      var startAndEnd = [markerPath.geometry.coordinates[0], markerPath.geometry.coordinates[upd - 1]];
+      var begend = g.selectAll('.srtend')
+          .data(startAndEnd)
+          .enter()
+          .append("circle", ".srtend")
+          .attr("r", 35)
+          .style('fill', '#d500f9')
+          .style('opacity', ".3");
+
+
+      function reset() {
+            var bounds = path.bounds(markerCol),
+
+              topLeft = bounds[0],
+              bottomRight = bounds[1];
+
+          topLeft[0] -= 20;
+          topLeft[1] -= 20;
+          bottomRight[0] += 20;
+          bottomRight[1] += 20;
+
+          svg .attr("width", bottomRight[0] - topLeft[0])
+              .attr("height", bottomRight[1] - topLeft[1])
+              .style("left", topLeft[0] + "px")
+              .style("top", topLeft[1] + "px");
+
+
+
+          g .attr("transform", "translate(" + -topLeft[0] + "," + -topLeft[1] + ")");
+          linePath.attr("d", path).call(transition);
+          //line.attr("d", path).call(transition);
+        }
+
+        function transition(path) {
+
+          path.transition()
+              .duration(duration)
+              .attrTween("stroke-dasharray", tweenDash);
+
+        }
+
+        function tweenDash() {
+          var x = this;
+
+          return function(t) {
+
+            var l = x.getTotalLength();
+            var i = d3.interpolateString("0," + l, l + "," + l);
+            var markerPulse = d3.select('.pulseMarker');
+            var marker = d3.select('#marker');
+            var p = x.getPointAtLength(t * l);
+            markerPulse.attr('transform', "translate(" + p.x + "," + p.y + ")");
+            marker.attr('transform', "translate(" + p.x + "," + p.y + ")");
+
+            if(tweenToggle == 0){
+              tweenToggle = 1;
+              var newCenter = map.layerPointToLatLng(new L.Point(p.x,p.y));
+              map.panTo(newCenter, 12);
+            } else {
+              tweenToggle = 0;
+            }
+            return i(t);
+          };
+        }
+        function pulsate(selection) {
+              recursive_transitions();
+
+              function recursive_transitions(){
+                if (selection.data()[0].pulse) {
+                  selection.transition()
+                  .duration(25)
+                  .attr("r", function(d){
+                    return d.r * 0.25;
+                  })
+                  .attr('opacity', 1)
+                  .ease('sin-in')
+                  .transition()
+                  .duration(1200)
+                  .attr('opacity', 0)
+                  .attr('r', function(d){
+                    return d.r * 7;
+                  })
+                  .ease('ease-out')
+                  .each("end", recursive_transitions);
+                } else {
+                  selection.transition()
+                    .duration(200)
+                    .attr('r', 1)
+                    .attr('opacity', 1);
+                }
+              }
+            }
+        map.on("viewreset", reset);
+        reset(linePath, path);
+        reset(begend, path);
+        reset();
+
+
+      }
+
+
+function projectPoint(x, y) {
+  var point = map.latLngToLayerPoint(new L.LatLng(y, x));
+  this.stream.point(point.x, point.y);
+}
+function applyLatLngToLayer(d, i) {
+  console.log(d);
+  console.log(map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[i][1], d.geometry.coordinates[i][0])));
+  return map.latLngToLayerPoint(new L.LatLng(d.geometry.coordinates[i][1], d.geometry.coordinates[i][0]));
+}
+function ApplyLatLngToLayer(a, b) {
+                x = a
+                y = b
+                return map.latLngToLayerPoint(new L.LatLng(x[1], y[0]))
+            }
+$('#styleditorbtn').click(function(){
+  let styleEditor = L.control.styleEditor({
+    position: 'topleft',
+    useGrouping: false
+  });
+  map.addControl(styleEditor);
+  let drawnItems = new L.FeatureGroup();
+  featureLayer.addLayer(drawnItems);
+
+  let drawControl = new L.Control.Draw({
+    draw: {
+      position: 'topleft',
+      polygon: {
+        title: 'Draw a sexy polygon!',
+        allowIntersection: false,
+        drawError: {
+          color: '#b00b00',
+          timeout: 1000
+        },
+        shapeOptions: {
+          color: '#bada55'
+        },
+        showArea: true
+      },
+      polyline: {
+        metric: false
+      },
+      circle: {
+        shapeOptions: {
+          color: '#662d91'
+        }
+      },
+      marker: {
+        icon: styleEditor.getDefaultIcon()
+      }
+    },
+    edit: {
+      featureGroup: drawnItems
+    }
+  });
+  map.addControl(drawControl);
+  map.on('draw:created', function(e){
+    let type = e.layerType,
+    layer = e.layer;
+    if(type === 'marker') {
+      layer.bindPopup('A popup');
+    }
+    drawnItems.addLayer(layer);
+  });
+});
+//$('#menuchart').removeClass('show');
+//  $('#chartDrop').attr('aria-expanded', "false");
+
+$('#menuWrangle').click(function(){
+  $('#wrangleModal').modal('show');
+});
+$('#clusterDBscan').click(function(){
+
+});
+$('#geocodingbtn').click(function(){
+  //$('#georoutes').show();
+  var caller = "generic";
+  routingInit(caller);
+});
+
+
+    $('#kinks').click(function(){
+        var data = [];
+
+        $.each(featuresdata[0].features, function(i1,v1){
+            kinks = turf.kinks(v1.geometry).intersections;
+
+            for (var i=0; i<kinks.features.length; i++) {
+                data.push(kinks.features[i]);
+            }
+        });
+
+        result = {
+            "type": "FeatureCollection",
+            "features": data
+        };
+
+        // Add result to output map:
+        var resultShow = L.geoJson(result, {
+            width: 5,
+            color: 'red',
+        });
+        featuresOut.addLayer(resultShow).addTo(map);
+
+        var showFeatures = L.geoJson(featuresdata[0], {
+            width: 5,
+            color: 'red',
+        });
+        featuresOut.addLayer(showFeatures).addTo(map);
+    });
+
+$("#geo-stats").click(function(){
+  if(timeArray){
+
+    var result = {};
+
+    var traveladd = 0;
+    var timeadd = 0;
+    for(key in timelen) {
+
+      timeadd = timeadd +  timelen[key];
+      traveladd = traveladd +  proplen[key];
+    }
+    var minutes = timeadd/60000;
+    var hours = minutes/60;
+    var reportRange = timeout[0][0].pickup;
+    var travelDist = traveladd;
+
+    result = {minutes: minutes, hours: hours, daterange:reportRange, travelDistance:travelDist};
+
+  } else if(geojson){
+    var visitcount = 0;
+    for(var i = 0; i < geojson.features.length; i++){
+      counting = geojson.features[i].visits;
+      visitcount = visitcount + counting;
+
+    }
+    result = {totalVisits: visitcount};
+  }
+   var output = JSON.stringify(result, null, '\t');
+    var outputText = $('#geoOutput').val(output);
+});
+
+$('#processLink').click(function(){
+
+  var dataKey = "trucks";
+  var locdata = 'data/truckData.json';
+  processTables(locdata, dataKey);
+})
+
+function processTables(processParse, dataKey){
+    var phead = '<thead><tr>',
+      pfoot = '<tfoot><tr>',
+      pbody = '<tbody>',
+      ptable = '<div class="table-responsive"><table class="table striped js-exportable dataTable" id="proTable">',
+      pfinal = '',
+      processData = [];
+     $.getJSON(processParse, function(parseTable){
+      for(var t = 0; t < parseTable.tableHead.length; ++t) {
+
+          pfoot += '<th>'+parseTable.tableHead[t]+'</th>';
+          phead += '<th>'+parseTable.tableHead[t]+'</th>';
+      }
+        for(var i = 0; i < parseTable[dataKey].length; ++i){
+          ff = parseTable[dataKey];
+          pbody += '<tr id="dataTruckid'+i+'">'+ff[i]+'</tr>';
+        }
+
+
+
+
+    phead += '</tr></thead>';
+    pfoot += '</tr></tfoot>';
+    pbody += '</tbody>'
+    pfinal = ptable+phead+pfoot+pbody+"</table></div>";
+    $('#tableBody').html(pfinal);
+    var datesHold = [];
+    var rowDate = document.getElementsByClassName('final');
+          for(var i = 0; i < rowDate.length; ++i){
+              datesHold.push(Date.parse(rowDate[i].innerText));
+            }
+            var sorted = datesHold.slice().sort(function(a, b) {
+              return a - b;
+            })
+            var earliest = sorted[0];
+            var latest = sorted[sorted.length - 1];
+            differenceDay = datediff(earliest, latest);
+
+
+
+
+    $('#proTable').DataTable({
+      dom: 'Bfrtip',
+      responsive: true,
+      buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+      ]
+    });
+})
+
+};
+$('#fancyclick').click(function(){
+  buildFancy();
+})
+function buildFancy(){
+  $('#tableModal').css('width', '90vw');
+  //$('.modal-dialog.modal-lg').css('width', '90vw');
+  $('#tableModal').css('max-height', '90%');
+      var clients = [
+        { "Name": "Otto Clay", "Age": 25, "Country": 1, "Address": "Ap #897-1459 Quam Avenue", "Married": false },
+        { "Name": "Connor Johnston", "Age": 45, "Country": 2, "Address": "Ap #370-4647 Dis Av.", "Married": true },
+        { "Name": "Lacey Hess", "Age": 29, "Country": 3, "Address": "Ap #365-8835 Integer St.", "Married": false },
+        { "Name": "Timothy Henson", "Age": 56, "Country": 1, "Address": "911-5143 Luctus Ave", "Married": true },
+        { "Name": "Ramona Benton", "Age": 32, "Country": 3, "Address": "Ap #614-689 Vehicula Street", "Married": false }
+    ];
+
+    var countries = [
+        { Name: "", Id: 0 },
+        { Name: "United States", Id: 1 },
+        { Name: "Canada", Id: 2 },
+        { Name: "United Kingdom", Id: 3 }
+    ];
+
+    $("#tableBody").jsGrid({
+        width: '1000px',
+        height: "500px",
+
+        inserting: true,
+        editing: true,
+        sorting: true,
+        paging: true,
+        filtering: true,
+        selecting: true,
+        heading: true,
+        pageSize:25,
+        pageButtonCount: 5,
+
+        data: clients,
+
+        fields: [
+            { name: "Name", type: "text", width: 150, validate: "required" },
+            { name: "Age", type: "number", width: 50 },
+            { name: "Address", type: "text", width: 200 },
+            { name: "Country", type: "select", items: countries, valueField: "Id", textField: "Name" },
+            { name: "Married", type: "checkbox", title: "Is Married", sorting: false },
+            { type: "control" }
+        ]
+    });
+}
+function parseDate(str) {
+    var mdy = str.split('/');
+    return new Date(mdy[2], mdy[0]-1, mdy[1]);
+}
+
+function datediff(first, second) {
+    // Take the difference between the dates and divide by milliseconds per day.
+    // Round to nearest whole number to deal with DST.
+    return Math.round((second-first)/(1000*60*60*24));
+}
+
+//alert(datediff(parseDate(first.value), parseDate(second.value)));
+
+
+$('#geoTables').click(function(){
+
+});
+
+$(':radio').each(function(){
+
+  $(this).parent().addClass('radiocontainer');
+
+  var previous = $(this).parent().find('span')
+  var oldtext =  previous.text();
+  previous.text('');
+  previous.html('<p>'+oldtext+'</p>');
+  previous.addClass('checkmark');
+
+})
+$('.checkmark').find('p').css('left', '40px').css('position', 'relative').css('font-size', '12px').css('white-space', 'nowrap');
+$(':checkbox').each(function(){
+
+  $(this).parent().addClass('checkcontainer');
+
+  var previous = $(this).parent().find('span');
+  var oldtext =  previous.text();
+  previous.text('');
+  previous.html('<p>'+oldtext+'</p>');
+  previous.addClass('boxmark');
+
+})
+$('.boxmark').find('p').css('left', '37px').css('position', 'relative').css('font-size', '12px').css('white-space', 'nowrap');
+$('.leaflet-control-layers-list').css('width', '15rem').css('padding-right', '25px');
+
+});
